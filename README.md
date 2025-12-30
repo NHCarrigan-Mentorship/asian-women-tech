@@ -1,6 +1,6 @@
 # **1. Asian Women Tech**
 
-A site to highlight Asian women in tech and showcase their impact.
+Discover the stories, achievements, and impact of Asian women leaders who are transforming the technology industry worldwide.
 
 ## 1.1. **Pages**
 
