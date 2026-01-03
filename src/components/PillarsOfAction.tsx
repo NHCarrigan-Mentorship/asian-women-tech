@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 interface Pillar {
   title: string;
   subtitle: string;
