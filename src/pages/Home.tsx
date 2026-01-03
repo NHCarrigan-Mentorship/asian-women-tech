@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PillarsOfAction from "../components/PillarsOfAction";
 import { Rocket } from "lucide-react";
 
 export default function Home() {
@@ -36,6 +37,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* Pillars of Action Section */}
+      <PillarsOfAction />
     </div>
   );
 }
