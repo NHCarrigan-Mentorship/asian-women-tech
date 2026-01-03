@@ -18,7 +18,7 @@ export default function Home() {
           </p>
           <Link
             to="/login"
-            className="inline-flex items-center justify-center gap-2 group mt-6 px-8 py-4 bg-white text-purple-600 text-lg rounded-lg hover:bg-purple-50 transition-all hover:scale-105 shadow-xl cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 group mt-6 px-8 py-4 bg-white text-purple-600 text-lg font-bold rounded-lg hover:bg-purple-50 transition-all hover:scale-105 shadow-xl cursor-pointer"
           >
             Join Now
             <Rocket className="w-5 h-5" />
