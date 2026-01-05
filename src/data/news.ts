@@ -1,4 +1,4 @@
-export interface News {
+export interface NewsArticle {
   id: string;
   headline: string;
   summary: string;
