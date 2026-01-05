@@ -16,7 +16,7 @@ export interface Profile {
   social?: {
     linkedin?: string;
     twitter?: string;
-    wikipedia?: string;
+    website?: string;
   };
 }
 
