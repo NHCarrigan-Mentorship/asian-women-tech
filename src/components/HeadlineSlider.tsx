@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { newsArticles } from "../data/news";
 
 interface Headline {
@@ -19,8 +19,23 @@ const headlines: Headline[] = featuredArticles.map((featured) => ({
 }));
 
 export default function HeadlineSlider() {
-  const [currentIndex, setIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+
+  // Auto-rotate headline every 4 seconds
+  useEffect(() => {
+    // Stop when paused
+    if (isPaused) {
+      return;
+    }
+    // Move to next headline every 4 seconds, loop back to start when reaching the end
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % headlines.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative bg-gradient-to-br from-purple-900 to-pink-700 py-16 md:py-24 text-white overflow-hidden mt-12">
