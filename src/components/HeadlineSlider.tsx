@@ -22,8 +22,6 @@ export default function HeadlineSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-
-  // Auto-rotate headline every 4 seconds
   useEffect(() => {
     // Stop when paused
     if (isPaused) {
@@ -35,7 +33,7 @@ export default function HeadlineSlider() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused, headlines]);
 
   return (
     <div className="relative bg-gradient-to-br from-purple-900 to-pink-700 py-16 md:py-24 text-white overflow-hidden mt-12">
