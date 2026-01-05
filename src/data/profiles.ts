@@ -13,7 +13,7 @@ export interface Profile {
     metrics?: string[];
   };
 
-  socials?: {
+  social?: {
     linkedin?: string;
     twitter?: string;
     wikipedia?: string;
