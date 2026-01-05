@@ -3,7 +3,7 @@ export interface Profile {
   name: string;
   role: string;
   company: string;
-  image: string;
+  imageUrl: string;
   bio: string;
   location: string;
   achievements: string[];
@@ -26,8 +26,8 @@ export const profiles: Profile[] = [
     name: "Dr. Mei Chen",
     role: "Chief AI Officer",
     company: "TechVision AI",
-    image:
-      "https://images.unsplash.com/photo-1592393532405-fb1f165c4a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwZG9jdG9yJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY3NTkwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    imageUrl:
+      "https://imageUrls.unsplash.com/photo-1592393532405-fb1f165c4a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwZG9jdG9yJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY3NTkwMTcxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Pioneering artificial intelligence research with a focus on ethical AI development and implementation in healthcare technology.",
     location: "San Francisco, CA",
     achievements: [
@@ -62,8 +62,8 @@ export const profiles: Profile[] = [
     name: "Priya Sharma",
     role: "Founder & CEO",
     company: "CloudScale Solutions",
-    image:
-      "https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGJ1c2luZXNzd29tYW4lMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3Njc1OTAxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    imageUrl:
+      "https://imageUrls.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGJ1c2luZXNzd29tYW4lMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3Njc1OTAxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building next-generation cloud infrastructure that powers sustainable and scalable digital transformation for enterprises worldwide.",
     location: "Seattle, WA",
     achievements: [
@@ -92,8 +92,8 @@ export const profiles: Profile[] = [
     name: "Yuki Tanaka",
     role: "VP of Engineering",
     company: "Quantum Dynamics",
-    image:
-      "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwc29mdHdhcmUlMjBlbmdpbmVlcnxlbnwxfHx8fDE3Njc1OTAxODR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    imageUrl:
+      "https://imageUrls.unsplash.com/photo-1573496799652-408c2ac9fe98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwc29mdHdhcmUlMjBlbmdpbmVlcnxlbnwxfHx8fDE3Njc1OTAxODR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading quantum computing research and development, making quantum technology accessible to developers and researchers globally.",
     location: "Tokyo, Japan",
     achievements: [
@@ -127,8 +127,8 @@ export const profiles: Profile[] = [
     name: "Sarah Kim",
     role: "Head of Cybersecurity",
     company: "SecureNet Global",
-    image:
-      "https://images.unsplash.com/photo-1740153204804-200310378f2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwdGVjaCUyMHByb2Zlc3Npb25hbCUyMGNvbmZpZGVudHxlbnwxfHx8fDE3Njc1OTAxNzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    imageUrl:
+      "https://imageUrls.unsplash.com/photo-1740153204804-200310378f2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwdGVjaCUyMHByb2Zlc3Npb25hbCUyMGNvbmZpZGVudHxlbnwxfHx8fDE3Njc1OTAxNzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Protecting critical infrastructure through innovative cybersecurity solutions and leading initiatives to increase diversity in information security.",
     location: "Austin, TX",
     achievements: [
@@ -163,8 +163,8 @@ export const profiles: Profile[] = [
     name: "Dr. Anh Nguyen",
     role: "Director of Research",
     company: "BioTech Innovations",
-    image:
-      "https://images.unsplash.com/photo-1618053448748-b7251851d014?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwc2NpZW50aXN0JTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY3NTkwMTczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    imageUrl:
+      "https://imageUrls.unsplash.com/photo-1618053448748-b7251851d014?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwc2NpZW50aXN0JTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY3NTkwMTczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Revolutionizing biotech through computational biology and advancing personalized medicine with cutting-edge data science.",
     location: "Boston, MA",
     achievements: [
@@ -198,8 +198,8 @@ export const profiles: Profile[] = [
     name: "Maya Zhang",
     role: "Chief Product Officer",
     company: "MobileFirst Labs",
-    image:
-      "https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGJ1c2luZXNzd29tYW4lMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3Njc1OTAxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    imageUrl:
+      "https://imageUrls.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGJ1c2luZXNzd29tYW4lMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3Njc1OTAxNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Creating award-winning mobile experiences that have been downloaded over 500 million times worldwide, focusing on emerging markets.",
     location: "Singapore",
     achievements: [
