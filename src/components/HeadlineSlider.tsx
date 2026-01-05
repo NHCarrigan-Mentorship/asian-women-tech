@@ -10,6 +10,13 @@ interface Headline {
 // Filter only featured articles and map to headline format
 const featuredArticles = newsArticles.filter((article) => article.featured);
 
+const headlines: Headline[] = featuredArticles.map((featured) => ({
+  title: featured.headline,
+  description: featured.summary,
+  source: featured.source,
+  relatedProfileId: featured.relatedProfileId,
+}));
+
 export default function HeadlineSlider() {
   return (
     <div className="relative bg-gradient-to-br from-purple-900 to-pink-700 py-16 md:py-24 text-white overflow-hidden mt-12">
