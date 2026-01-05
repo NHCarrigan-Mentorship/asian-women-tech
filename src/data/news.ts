@@ -10,7 +10,7 @@ export interface NewsArticle {
   relatedProfileId?: string;
 }
 
-export const NewsArticles: NewsArticle[] = [
+export const newsArticles: NewsArticle[] = [
   {
     id: "1",
     headline:
