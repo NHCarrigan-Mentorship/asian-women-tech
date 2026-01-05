@@ -4,8 +4,11 @@ interface Headline {
   title: string;
   description: string;
   source: string;
-  relatedProfileId: string;
+  relatedProfileId?: string;
 }
+
+// Filter only featured articles and map to headline format
+const featuredArticles = newsArticles.filter((article) => article.featured);
 
 export default function HeadlineSlider() {
   return (
