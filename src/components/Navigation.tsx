@@ -21,7 +21,7 @@ export default function Navigation() {
               <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
                 <img src={faviconUrl} alt="" className="w-8 h-8" />
               </div>
-              <span className="text-xl">Her Tech Story</span>
+              <span className="text-xl hidden md:inline">Her Tech Story</span>
             </Link>
             <div className="flex gap-6">
               <Link
