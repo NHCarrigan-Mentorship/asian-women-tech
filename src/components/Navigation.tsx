@@ -1,5 +1,6 @@
 import { useLocation, Outlet, Link } from "react-router-dom";
 import { Users, Info } from "lucide-react";
+import faviconUrl from "/favicon.svg";
 
 export default function Navigation() {
   const location = useLocation();
@@ -18,7 +19,7 @@ export default function Navigation() {
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5 text-white" />
+                <img src={faviconUrl} alt="" className="w-8 h-8" />
               </div>
               <span className="text-xl">Her Tech Story</span>
             </Link>
