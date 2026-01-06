@@ -31,7 +31,7 @@ export default function Navigation() {
                 }`}
               >
                 <Users className="w-4 h-4" />
-                <span>Discover</span>
+                <span>Home</span>
               </Link>
               <Link
                 to="/"
