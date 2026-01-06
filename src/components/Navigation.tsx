@@ -1,5 +1,5 @@
 import { useLocation, Outlet, Link } from "react-router-dom";
-import { Users, Info } from "lucide-react";
+import { Users, LogIn } from "lucide-react";
 import faviconUrl from "/favicon.svg";
 
 export default function Navigation() {
@@ -36,11 +36,11 @@ export default function Navigation() {
               <Link
                 to="/"
                 className={`flex gap-2 px-3 py-2 items-center justify-center ${
-                  isActive("/about") ? activeStyles : defaultStyles
+                  isActive("/login") ? activeStyles : defaultStyles
                 }`}
               >
-                <Info className="w-4 h-4"></Info>
-                <span>About</span>
+                <LogIn className="w-4 h-4"></LogIn>
+                <span>Login</span>
               </Link>
             </div>
           </div>
