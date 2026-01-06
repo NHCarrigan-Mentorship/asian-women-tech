@@ -34,7 +34,7 @@ export default function Navigation() {
                 <span>Home</span>
               </Link>
               <Link
-                to="/"
+                to="/login"
                 className={`flex gap-2 px-3 py-2 items-center justify-center ${
                   isActive("/login") ? activeStyles : defaultStyles
                 }`}
