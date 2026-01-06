@@ -20,7 +20,7 @@ export default function Navigation() {
               <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
                 <Users className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl">Asian Women Tech</span>
+              <span className="text-xl">Her Tech Story</span>
             </Link>
             <div className="flex gap-6">
               <Link
