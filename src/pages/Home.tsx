@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Rocket } from "lucide-react";
 import { useAuth } from "../contexts/authContext";
+import Features from "../components/Features";
 
 export default function Home() {
   const { isAuthenticated, user } = useAuth();
@@ -31,6 +32,7 @@ export default function Home() {
         </div>
       </div>
       {/* Features Section */}
+      {!isAuthenticated && <Features />}
       {}
     </div>
   );
