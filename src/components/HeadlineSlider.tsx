@@ -1,21 +1,16 @@
 import { useState, useEffect } from "react";
-import { newsArticles } from "../data/news";
+import { profiles } from "../data/profiles";
 
 interface Headline {
-  title: string;
-  description: string;
-  source: string;
+  text: string;
+  name: string;
   relatedProfileId?: string;
 }
 
-// Filter only featured articles and map to headline format
-const featuredArticles = newsArticles.filter((article) => article.featured);
-
-const headlines: Headline[] = featuredArticles.map((featured) => ({
-  title: featured.headline,
-  description: featured.summary,
-  source: featured.source,
-  relatedProfileId: featured.relatedProfileId,
+const headlines: Headline[] = profiles.flatMap((profile) => ({
+  text: profile.achievements[0],
+  name: profile.name,
+  relatedProfileId: profile.id,
 }));
 
 export default function HeadlineSlider() {
