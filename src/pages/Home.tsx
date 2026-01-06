@@ -20,13 +20,11 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Celebrating Asian Women
-            <br />
-            Shaping the Future of Tech
+            Her Tech Story
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mb-8">
-            Discover the stories, achievements, and impact of Asian women
-            leaders who are transforming the technology industry worldwide.
+            Create your public profile, control how you’re represented, and
+            discover other inspiring women in tech.
           </p>
           <Link
             to="/join"
@@ -37,7 +35,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* Pillars of Action Section */}
       {/* Headline Slider Section */}
       <HeadlineSlider />
     </div>
