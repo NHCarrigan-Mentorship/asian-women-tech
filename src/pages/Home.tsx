@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Rocket } from "lucide-react";
 import { useAuth } from "../contexts/authContext";
-import Features from "../components/Features";
+import ProfileCreationAnimation from "../components/ProfileCreationAnimation";
 
 export default function Home() {
   const { isAuthenticated, user } = useAuth();
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </div>
       {/* Features Section */}
-      {!isAuthenticated && <Features />}
+      {!isAuthenticated && <ProfileCreationAnimation />}
       {}
     </div>
   );
