@@ -6,17 +6,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-purple-600 to-pink-600 text-white py-16 md:py-24 overflow-hidden">
+      <div className="relative text-white py-16 md:py-24 overflow-hidden bg-gradient-to-br from-brand-purple to-brand-pink">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1650784853603-bd1ee8fb6712?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWVuJTIwdGVjaCUyMGNvbmZlcmVuY2V8ZW58MXx8fHwxNzY3NDI3Njc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)",
-          }}
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/85 to-pink-900/85" />
+        <div className="absolute inset-0 bg-cover bg-center" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">

@@ -31,7 +31,7 @@ export default function HeadlineSlider() {
   }, [isPaused, headlines]);
 
   return (
-    <div className="relative bg-gradient-to-br from-purple-900 to-pink-700 py-16 md:py-24 text-white overflow-hidden mt-12">
+    <div className="relative bg-gradient-to-br from-brand-purple to-brand-pink py-16 md:py-24 text-white overflow-hidden mt-12">
       Headline here
     </div>
   );
