@@ -1,17 +1,21 @@
-# Asian Women Tech
+# **Her Tech Story**
 
-A responsive website celebrating Asian women leaders shaping the future of technology.
+A platform where women in tech can create and manage their public profiles, control how they’re represented, and discover other inspiring members in the industry.
 
-## About
+## **Unauthenticated / Authenticated Pages View**
 
-This platform showcases the achievements and impact of Asian women in tech across AI, cloud computing, quantum computing, cybersecurity, biotech, and mobile technology. It addresses representation challenges while inspiring the next generation of tech leaders.
+**Unauthenticated View**
 
-## Pages
+- **Home** – Mission highlights, member benefits checklist, headline slider showcasing achievements
+- **Discover** – Browse and search profiles with filtering and clickable cards
+- **Join / Log In** – Sign-up and login with social authentication
 
-- **Home** – Hero section, four pillars of action, news slider, statistics dashboard, leader spotlight carousel, and community CTAs
-- **Leader Profiles** – Individual pages with biography, achievements, expertise tags, impact metrics, news, and external links
-- **About** – Mission statement, methodology, why this matters, four pillars breakdown, and movement goals
-- **Join** – Login form with social authentication options (Google, GitHub, LinkedIn)
+**Authenticated View**
+
+- **Home** – Personalized welcome and streamlined experience without join/signup CTAs
+- **Discover** – Same browse and search functionality as unauthenticated view
+- **My Profile** – View and edit personal details, expertise tags, key achievements, and social links
+- **Log Out** – Return to the public view
 
 ## Tech Stack
 
