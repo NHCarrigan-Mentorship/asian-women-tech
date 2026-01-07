@@ -34,13 +34,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Load user from localStorage on mount
   useEffect(() => {
-    const savedUser = localStorage.getItem("herTechStoryUser");
+    const savedUser = localStorage.getItem("pinkTechUser");
     if (savedUser) {
       try {
         setUser(JSON.parse(savedUser));
       } catch (error) {
         console.error("Failed to parse saved user:", error);
-        localStorage.removeItem("herTechStoryUser");
+        localStorage.removeItem("pinkTechUser");
       }
     }
   }, []);
@@ -48,9 +48,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Save user to localStorage whenever it changes
   useEffect(() => {
     if (user) {
-      localStorage.setItem("herTechStoryUser", JSON.stringify(user));
+      localStorage.setItem("pinkTechUser", JSON.stringify(user));
     } else {
-      localStorage.removeItem("herTechStoryUser");
+      localStorage.removeItem("pinkTechUser");
     }
   }, [user]);
 

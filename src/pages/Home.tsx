@@ -15,7 +15,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Her Tech Story
+            PinkTech
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mb-8">
             Create your public profile, control how you’re represented, and

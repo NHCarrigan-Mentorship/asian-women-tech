@@ -1,4 +1,4 @@
-# **Her Tech Story**
+# **PinkTech**
 
 A platform where women in tech can create and manage their public profiles, control how they’re represented, and discover other inspiring members in the industry.
 
