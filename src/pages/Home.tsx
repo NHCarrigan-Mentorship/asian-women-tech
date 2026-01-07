@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Rocket } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import ProfileCreationAnimation from "../components/ProfileCreationAnimation";
-import FeaturedLeaders from "../components/FeaturedProfiles";
 import FeaturedProfiles from "../components/FeaturedProfiles";
 
 export default function Home() {
