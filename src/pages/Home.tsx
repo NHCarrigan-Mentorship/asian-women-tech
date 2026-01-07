@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { Rocket } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import ProfileCreationAnimation from "../components/ProfileCreationAnimation";
-import FeaturedLeaders from "../components/FeaturedLeaders";
+import FeaturedLeaders from "../components/FeaturedProfiles";
+import FeaturedProfiles from "../components/FeaturedProfiles";
 
 export default function Home() {
   const { isAuthenticated, user } = useAuth();
@@ -34,7 +35,7 @@ export default function Home() {
       </div>
       {/* Features Section */}
       {!isAuthenticated && <ProfileCreationAnimation />}
-      <FeaturedLeaders />
+      <FeaturedProfiles />
     </div>
   );
 }
