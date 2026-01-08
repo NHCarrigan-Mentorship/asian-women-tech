@@ -5,7 +5,7 @@ import ProfileCreationAnimation from "../components/ProfileCreationAnimation";
 import FeaturedProfiles from "../components/FeaturedProfiles";
 
 export default function Home() {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   return (
     <div className="min-h-screen bg-gray-50">
