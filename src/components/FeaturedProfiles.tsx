@@ -1,7 +1,7 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { profiles } from "../data/profiles";
 
 export default function FeaturedProfiles() {
@@ -30,10 +30,6 @@ export default function FeaturedProfiles() {
   }, [isPaused]);
 
   const currentProfile = profiles[currentIndex];
-
-  const handleLearnMore = () => {
-    navigate(`/profile/${currentProfile.id}`);
-  };
 
   const handleCardClick = () => {
     navigate(`/profile/${currentProfile.id}`);
@@ -167,13 +163,13 @@ export default function FeaturedProfiles() {
                       </p>
                     </blockquote>
 
-                    <button
-                      onClick={handleLearnMore}
+                    <Link
+                      to={`profile/${currentProfile.id}`}
                       className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-xl group cursor-pointer"
                     >
                       Learn About Her Story
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                   </motion.div>
                 </div>
               </div>
