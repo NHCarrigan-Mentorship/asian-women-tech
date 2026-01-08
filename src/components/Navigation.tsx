@@ -1,6 +1,30 @@
 import { useLocation, Outlet, Link } from "react-router-dom";
 import { Users, LogIn } from "lucide-react";
-import faviconUrl from "/favicon.svg";
+
+const Logo = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    className="w-8 h-8 rounded-lg"
+  >
+    <defs>
+      <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: "#f9a8d4", stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: "#f472b6", stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+    <rect width="100" height="100" fill="url(#logo-grad)" rx="15" />
+    <path
+      d="M65 25 L75 35 L45 65 L30 70 L35 55 Z M62 28 L72 38"
+      stroke="white"
+      strokeWidth="4"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />``
+    <circle cx="70" cy="30" r="3" fill="white" />
+  </svg>
+);
 
 export default function Navigation() {
   const location = useLocation();
@@ -9,7 +33,7 @@ export default function Navigation() {
     return location.pathname === path;
   };
 
-  const activeStyles = "bg-purple-50 text-purple-600";
+  const activeStyles = "bg-pink-50 text-pink-700";
   const defaultStyles = "text-gray-600 hover:bg-gray-50";
 
   return (
@@ -18,9 +42,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-                <img src={faviconUrl} alt="" className="w-8 h-8" />
-              </div>
+              <Logo />
               <span className="text-xl hidden md:inline">PinkTech</span>
             </Link>
             <div className="flex gap-6">

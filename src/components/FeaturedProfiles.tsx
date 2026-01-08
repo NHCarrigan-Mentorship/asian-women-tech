@@ -101,7 +101,7 @@ export default function FeaturedProfiles() {
             className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer"
             aria-label="Previous leader"
           >
-            <ChevronLeft className="w-6 h-6 text-purple-600" />
+            <ChevronLeft className="w-6 h-6 text-pink-600" />
           </button>
 
           <button
@@ -109,7 +109,7 @@ export default function FeaturedProfiles() {
             className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer"
             aria-label="Next leader"
           >
-            <ChevronRight className="w-6 h-6 text-purple-600" />
+            <ChevronRight className="w-6 h-6 text-pink-600" />
           </button>
 
           <AnimatePresence mode="wait">
@@ -144,7 +144,7 @@ export default function FeaturedProfiles() {
                     transition={{ delay: 0.2, duration: 0.6 }}
                   >
                     <div className="mb-4">
-                      <div className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm mb-4">
+                      <div className="inline-block px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm mb-4">
                         Featured Leader
                       </div>
                     </div>
@@ -153,7 +153,7 @@ export default function FeaturedProfiles() {
                       {currentLeader.name}
                     </h3>
 
-                    <p className="text-xl text-purple-600 mb-2">
+                    <p className="text-xl text-pink-500 mb-2">
                       {currentLeader.role}
                     </p>
 
@@ -161,7 +161,7 @@ export default function FeaturedProfiles() {
                       {currentLeader.company}
                     </p>
 
-                    <blockquote className="border-l-4 border-purple-600 pl-4 mb-8">
+                    <blockquote className="border-l-4 border-pink-400 pl-4 mb-8">
                       <p className="text-lg text-gray-700 italic">
                         "{currentLeader.impact.description}"
                       </p>
@@ -169,7 +169,7 @@ export default function FeaturedProfiles() {
 
                     <button
                       onClick={handleLearnMore}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition-colors group cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-pink-400 text-white font-bold rounded-lg hover:bg-pink-500 transition-colors group cursor-pointer"
                     >
                       Learn About Her Story
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -188,7 +188,7 @@ export default function FeaturedProfiles() {
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all cursor-pointer ${
                   index === currentIndex
-                    ? "w-8 h-2 bg-purple-600"
+                    ? "w-8 h-2 bg-pink-400"
                     : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                 } rounded-full`}
                 aria-label={`View leader ${index + 1}`}

@@ -9,7 +9,6 @@ const steps = [
     icon: User,
     title: "Create Your Profile",
     description: "Add your name, photo, and professional headline",
-    color: "from-brand-purple to-brand-pink",
     preview: {
       name: "Priya Chen",
       role: "AI Research Engineer",
@@ -21,7 +20,6 @@ const steps = [
     icon: Briefcase,
     title: "Share Your Experience",
     description: "Highlight your roles, companies, and career journey",
-    color: "from-brand-purple to-brand-pink",
     preview: {
       company: "Google AI",
       experience: "8 years",
@@ -33,7 +31,6 @@ const steps = [
     icon: Award,
     title: "Showcase Your Impact",
     description: "Share achievements, projects, and technical expertise",
-    color: "from-brand-purple to-brand-pink",
     preview: {
       expertise: ["Machine Learning", "NLP", "Computer Vision"],
       achievements: "Led team of 12 engineers",
@@ -44,7 +41,6 @@ const steps = [
     icon: Sparkles,
     title: "Go Live!",
     description: "Your profile is now discoverable by the community",
-    color: "from-brand-purple to-brand-pink",
     preview: {
       status: "Published",
       views: "live",
@@ -82,7 +78,7 @@ export default function ProfileCreationAnimation() {
   const Icon = step.icon;
 
   return (
-    <div className="py-16 md:py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50">
+    <div className="py-16 md:py-20 bg-gradient-to-br from-pink-50 via-pink-100 to-rose-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <motion.h2
@@ -110,7 +106,7 @@ export default function ProfileCreationAnimation() {
               <motion.div
                 className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all ${
                   index === currentStep
-                    ? "bg-gradient-to-r from-brand-purple to-brand-pink text-white scale-110 shadow-lg"
+                    ? "bg-gradient-to-r from-pink-300 to-pink-400 text-white scale-110 shadow-lg"
                     : completedSteps.includes(index)
                     ? "bg-green-500 text-white"
                     : "bg-gray-200 text-gray-500"
@@ -129,7 +125,7 @@ export default function ProfileCreationAnimation() {
               {index < steps.length - 1 && (
                 <div className="w-12 md:w-20 h-1 mx-1 bg-gray-200 rounded overflow-hidden">
                   <motion.div
-                    className="h-full bg-gradient-to-r from-brand-purple to-brand-pink"
+                    className="h-full bg-gradient-to-r from-pink-300 to-pink-400"
                     initial={{ width: 0 }}
                     animate={{
                       width: completedSteps.includes(index) ? "100%" : "0%",
@@ -155,7 +151,7 @@ export default function ProfileCreationAnimation() {
               className="space-y-6"
             >
               <motion.div
-                className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${step.color} shadow-xl`}
+                className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-pink-300 to-pink-400 shadow-xl"
                 animate={{
                   rotate: [0, 5, -5, 0],
                 }}
@@ -180,7 +176,7 @@ export default function ProfileCreationAnimation() {
                     key={index}
                     className={`h-1 rounded-full flex-1 ${
                       index === currentStep
-                        ? "bg-gradient-to-r from-brand-purple to-brand-pink"
+                        ? "bg-gradient-to-r from-pink-300 to-pink-400"
                         : completedSteps.includes(index)
                         ? "bg-green-500"
                         : "bg-gray-300"
@@ -213,7 +209,7 @@ export default function ProfileCreationAnimation() {
                 >
                   <div className="flex items-center gap-4">
                     <motion.div
-                      className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-pink-400"
+                      className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-300 to-pink-400"
                       animate={{
                         scale: [1, 1.05, 1],
                       }}
@@ -225,13 +221,13 @@ export default function ProfileCreationAnimation() {
                     />
                     <div className="flex-1">
                       <motion.div
-                        className="h-6 bg-gradient-to-r from-purple-200 to-pink-200 rounded mb-2"
+                        className="h-6 bg-gradient-to-r from-pink-200 to-pink-300 rounded mb-2"
                         initial={{ width: 0 }}
                         animate={{ width: "80%" }}
                         transition={{ delay: 0.3, duration: 0.5 }}
                       />
                       <motion.div
-                        className="h-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded"
+                        className="h-4 bg-gradient-to-r from-pink-100 to-pink-200 rounded"
                         initial={{ width: 0 }}
                         animate={{ width: "60%" }}
                         transition={{ delay: 0.5, duration: 0.5 }}
@@ -257,9 +253,9 @@ export default function ProfileCreationAnimation() {
                   className="space-y-4"
                 >
                   <div className="flex items-center gap-3">
-                    <Briefcase className="w-6 h-6 text-purple-600" />
+                    <Briefcase className="w-6 h-6 text-pink-600" />
                     <motion.div
-                      className="h-5 bg-gradient-to-r from-purple-200 to-pink-200 rounded flex-1"
+                      className="h-5 bg-gradient-to-r from-pink-200 to-pink-300 rounded flex-1"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ delay: 0.3, duration: 0.5 }}
@@ -271,8 +267,8 @@ export default function ProfileCreationAnimation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <div className="h-4 bg-purple-100 rounded w-3/4" />
-                    <div className="h-4 bg-pink-100 rounded w-1/2" />
+                    <div className="h-4 bg-pink-100 rounded w-3/4" />
+                    <div className="h-4 bg-pink-200 rounded w-1/2" />
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -293,9 +289,9 @@ export default function ProfileCreationAnimation() {
                   className="space-y-6"
                 >
                   <div className="flex items-center gap-2">
-                    <Award className="w-6 h-6 text-purple-600" />
+                    <Award className="w-6 h-6 text-pink-600" />
                     <motion.div
-                      className="h-5 bg-gradient-to-r from-purple-200 to-pink-200 rounded flex-1"
+                      className="h-5 bg-gradient-to-r from-pink-200 to-pink-300 rounded flex-1"
                       initial={{ width: 0 }}
                       animate={{ width: "70%" }}
                       transition={{ delay: 0.3, duration: 0.5 }}
@@ -305,12 +301,12 @@ export default function ProfileCreationAnimation() {
                     {[1, 2, 3].map((i) => (
                       <motion.div
                         key={i}
-                        className="px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full"
+                        className="px-4 py-2 bg-gradient-to-r from-pink-100 to-pink-200 rounded-full"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.3 + i * 0.1, duration: 0.3 }}
                       >
-                        <div className="h-3 w-16 bg-gradient-to-r from-purple-300 to-pink-300 rounded" />
+                        <div className="h-3 w-16 bg-gradient-to-r from-pink-300 to-pink-400 rounded" />
                       </motion.div>
                     ))}
                   </div>
@@ -376,7 +372,7 @@ export default function ProfileCreationAnimation() {
                       <div className="text-xs text-gray-500">Visible</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-semibold text-pink-600">
+                      <div className="text-2xl font-semibold text-pink-500">
                         ∞
                       </div>
                       <div className="text-xs text-gray-500">Searchable</div>
@@ -406,7 +402,7 @@ export default function ProfileCreationAnimation() {
           </p>
           <Link
             to="/join"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-purple to-brand-pink text-white rounded-lg hover:from-purple-800 hover:to-pink-800 transition-all hover:scale-105 shadow-xl text-lg cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-300 to-pink-400 text-white rounded-lg hover:from-pink-400 hover:to-pink-500 transition-all hover:scale-105 shadow-xl text-lg cursor-pointer"
           >
             <span className="font-bold">Join Now</span>
             <Rocket className="w-5 h-5" />
