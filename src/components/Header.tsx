@@ -26,7 +26,7 @@ const Logo = () => (
   </svg>
 );
 
-export default function Navigation() {
+export default function Header() {
   const location = useLocation();
 
   const isActive = (path: string) => {
