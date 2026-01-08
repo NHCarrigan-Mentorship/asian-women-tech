@@ -2,16 +2,12 @@ export interface Profile {
   id: string;
   name: string;
   role: string;
-  company: string;
-  imageUrl: string;
+  company?: string;
+  imageUrl?: string;
+  location?: string;
   bio: string;
-  location: string;
-  achievements: string[];
   expertise: string[];
-  impact: {
-    description: string;
-    metrics?: string[];
-  };
+  achievements?: string[];
 
   social?: {
     linkedin?: string;
@@ -42,15 +38,6 @@ export const profiles: Profile[] = [
       "Healthcare Tech",
       "Ethics in AI",
     ],
-    impact: {
-      description:
-        "Developed AI systems that have improved diagnostic accuracy by 40% and reduced healthcare costs by $2B annually",
-      metrics: [
-        "500+ hospitals using her AI tools",
-        "2M+ patients benefited",
-        "$2B in healthcare savings",
-      ],
-    },
     social: {
       linkedin: "#",
       twitter: "#",
@@ -73,15 +60,6 @@ export const profiles: Profile[] = [
       "MIT Technology Review's 35 Under 35",
     ],
     expertise: ["Cloud Computing", "DevOps", "Enterprise Software", "SaaS"],
-    impact: {
-      description:
-        "CloudScale Solutions serves Fortune 500 companies, reducing their infrastructure costs by 60% while improving performance",
-      metrics: [
-        "200+ enterprise clients",
-        "99.99% uptime guarantee",
-        "60% cost reduction for clients",
-      ],
-    },
     social: {
       linkedin: "#",
       website: "#",
@@ -108,15 +86,6 @@ export const profiles: Profile[] = [
       "Software Architecture",
       "API Design",
     ],
-    impact: {
-      description:
-        "Democratized quantum computing access through developer-friendly tools used by 10,000+ researchers worldwide",
-      metrics: [
-        "10,000+ developers using quantum API",
-        "50+ research institutions partnered",
-        "100+ quantum algorithms published",
-      ],
-    },
     social: {
       linkedin: "#",
       twitter: "#",
@@ -143,15 +112,6 @@ export const profiles: Profile[] = [
       "Threat Intelligence",
       "Risk Management",
     ],
-    impact: {
-      description:
-        "Developed security frameworks protecting billions of dollars in assets and trained 5,000+ women in cybersecurity",
-      metrics: [
-        "$5B+ in assets protected",
-        "10,000+ attacks prevented",
-        "5,000+ women trained in cybersecurity",
-      ],
-    },
     social: {
       linkedin: "#",
       twitter: "#",
@@ -179,15 +139,6 @@ export const profiles: Profile[] = [
       "Genomics",
       "Bioinformatics",
     ],
-    impact: {
-      description:
-        "Created algorithms that accelerated genetic research by 10x, enabling faster drug discovery and personalized treatments",
-      metrics: [
-        "300+ research papers cite her work",
-        "10x faster genetic analysis",
-        "20+ FDA-approved treatments enabled",
-      ],
-    },
     social: {
       linkedin: "#",
       website: "#",
@@ -214,18 +165,5 @@ export const profiles: Profile[] = [
       "UX Design",
       "Growth Strategy",
     ],
-    impact: {
-      description:
-        "Built mobile platforms that bridge the digital divide in emerging markets, providing access to millions of underserved users",
-      metrics: [
-        "500M+ downloads",
-        "50M+ monthly active users",
-        "Available in 100+ countries",
-      ],
-    },
-    social: {
-      linkedin: "#",
-      twitter: "#",
-    },
   },
 ];
