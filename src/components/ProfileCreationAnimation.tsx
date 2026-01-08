@@ -171,7 +171,7 @@ export default function ProfileCreationAnimation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl text-gray-900 mb-4"
+            className="text-3xl md:text-4xl text-gray-900 font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -279,7 +279,7 @@ export default function ProfileCreationAnimation() {
                 </motion.div>
 
                 <div>
-                  <h3 className="text-2xl md:text-3xl text-gray-900 mb-3">
+                  <h3 className="text-2xl md:text-3xl text-gray-900 font-bold mb-3">
                     {step.title}
                   </h3>
                   <p className="text-lg text-gray-600">{step.description}</p>
@@ -518,7 +518,7 @@ export default function ProfileCreationAnimation() {
           </p>
           <Link
             to="/join"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-xl text-lg cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-xl text-lg cursor-pointer"
           >
             <span>Join Now</span>
             <Rocket className="w-5 h-5" />
