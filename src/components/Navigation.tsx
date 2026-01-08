@@ -9,8 +9,8 @@ const Logo = () => (
   >
     <defs>
       <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style={{ stopColor: "#f9a8d4", stopOpacity: 1 }} />
-        <stop offset="100%" style={{ stopColor: "#f472b6", stopOpacity: 1 }} />
+        <stop offset="0%" style={{ stopColor: "#ec4899", stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: "#f43f5e", stopOpacity: 1 }} />
       </linearGradient>
     </defs>
     <rect width="100" height="100" fill="url(#logo-grad)" rx="15" />
@@ -21,7 +21,7 @@ const Logo = () => (
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-    />``
+    />
     <circle cx="70" cy="30" r="3" fill="white" />
   </svg>
 );

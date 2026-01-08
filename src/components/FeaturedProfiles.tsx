@@ -161,7 +161,7 @@ export default function FeaturedProfiles() {
                       {currentLeader.company}
                     </p>
 
-                    <blockquote className="border-l-4 border-pink-400 pl-4 mb-8">
+                    <blockquote className="border-l-4 border-pink-500 pl-4 mb-8">
                       <p className="text-lg text-gray-700 italic">
                         "{currentLeader.impact.description}"
                       </p>
@@ -169,7 +169,7 @@ export default function FeaturedProfiles() {
 
                     <button
                       onClick={handleLearnMore}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-pink-400 text-white font-bold rounded-lg hover:bg-pink-500 transition-colors group cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-pink-500 text-white font-bold rounded-lg hover:bg-rose-600 transition-colors group cursor-pointer"
                     >
                       Learn About Her Story
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -188,7 +188,7 @@ export default function FeaturedProfiles() {
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all cursor-pointer ${
                   index === currentIndex
-                    ? "w-8 h-2 bg-pink-400"
+                    ? "w-8 h-2 bg-pink-500"
                     : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                 } rounded-full`}
                 aria-label={`View leader ${index + 1}`}
