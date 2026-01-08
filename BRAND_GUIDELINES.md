@@ -1,103 +1,264 @@
 # PinkTech Brand Guidelines
 
-## Brand Overview
-
-**Mission:** Empowering women in tech to create their public profiles, control their representation, and discover other inspiring women in the community.
-
-**Voice:** Bold, empowering, professional, inclusive, and tech-forward.
-
----
-
-## Color Palette
-
-### Primary Colors
-
-#### Pink-500 (Primary Brand Color)
-
-- **Hex:** `#ec4899`
-- **RGB:** `rgb(236, 72, 153)`
-- **Tailwind:** `pink-500`
-- **Usage:** Primary brand color, buttons, accents, icons
-
-#### Rose-500 (Secondary Brand Color)
-
-- **Hex:** `#f43f5e`
-- **RGB:** `rgb(244, 63, 94)`
-- **Tailwind:** `rose-500`
-- **Usage:** Gradient endpoints, hover states, emphasis
+## Colors
 
 ### Brand Gradient
 
-**Primary Gradient:**
+**Pink → Rose**: `from-pink-500 to-rose-500`
 
-```css
-background: linear-gradient(to right, #ec4899, #f43f5e);
-/* or */
-background: linear-gradient(to bottom right, #ec4899, #f43f5e);
+- Pink-500: `#ec4899`
+- Rose-500: `#f43f5e`
+
+### Common Patterns
+
+```jsx
+// Primary CTA Button
+bg-gradient-to-r from-pink-500 to-rose-500
+
+// Hero Sections
+bg-gradient-to-br from-pink-500 to-rose-500
+
+// Hover States
+hover:from-pink-600 hover:to-rose-600
+
+// Light Backgrounds
+bg-gradient-to-br from-pink-50 via-pink-100 to-rose-50
+
+// Badges (Light)
+bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700
 ```
 
-**Tailwind Classes:**
+### Neutrals
 
-- `bg-gradient-to-r from-pink-500 to-rose-500` (horizontal)
-- `bg-gradient-to-br from-pink-500 to-rose-500` (diagonal)
+- **Backgrounds**: `bg-gray-50`, `bg-white`
+- **Text**: `text-gray-900` (headings), `text-gray-600` (body), `text-gray-500` (secondary)
+- **Borders**: `border-gray-200`, `border-pink-100`
 
-### Supporting Colors
+### Accents
 
-#### Lighter Tones (Backgrounds & Accents)
-
-- **Pink-50:** `#fdf2f8` - Light backgrounds
-- **Pink-100:** `#fce7f3` - Soft backgrounds, badges
-- **Pink-200:** `#fbcfe8` - Subtle accents
-- **Rose-50:** `#fff1f2` - Alternative light background
-
-#### Darker Tones (Hover States & Depth)
-
-- **Pink-600:** `#db2777` - Hover states, emphasis
-- **Rose-600:** `#e11d48` - Strong CTAs, active states
-
-#### Neutral Colors
-
-- **White:** `#ffffff` - Primary text on colored backgrounds
-- **Gray-50:** `#f9fafb` - Page backgrounds
-- **Gray-100:** `#f3f4f6` - Section dividers
-- **Gray-200:** `#e5e7eb` - Borders, inactive elements
-- **Gray-300:** `#d1d5db` - Disabled states
-- **Gray-500:** `#6b7280` - Secondary text
-- **Gray-600:** `#4b5563` - Body text
-- **Gray-900:** `#111827` - Headings, primary text
-
-#### Accent Colors
-
-- **Green-500:** `#22c55e` - Success states, completion indicators
-- **Emerald-500:** `#10b981` - Alternative success color
+- **Success**: `bg-green-500`, `from-green-400 to-emerald-500`
+- **Emphasis**: `text-rose-600`, `border-rose-500`
 
 ---
 
 ## Typography
 
-### Font Family
+**Font Stack**: System UI (system-ui, Avenir, Helvetica, Arial, sans-serif)
 
-**Primary Font Stack:**
+### Hierarchy
 
-```css
-font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+```jsx
+// Hero Heading
+text-4xl md:text-5xl font-bold text-white
+
+// Section Heading
+text-3xl md:text-4xl font-bold text-gray-900
+
+// Card Heading
+text-2xl md:text-3xl font-bold text-gray-900
+
+// Body Large
+text-lg text-gray-600
+
+// Body
+text-base text-gray-600
 ```
 
-**Rationale:** System fonts ensure optimal performance and native feel across all platforms.
+---
 
-### Font Sizes & Hierarchy
+## Components
 
-#### Headings
+### Buttons
 
-- **H1 (Hero):** `text-4xl md:text-5xl lg:text-6xl` (36px/48px/60px)
+**Primary CTA**
 
-  - Font weight: `font-bold` (700)
-  - Color: `text-gray-900` or `text-white` (on colored backgrounds)
+```jsx
+className =
+  "inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-xl cursor-pointer";
+```
 
-- **H2 (Section Titles):** `text-3xl md:text-4xl` (30px/36px)
+**Navigation Button (Active)**
 
-  - Font weight: `font-bold` (700)
-  - Color: `text-gray-900`
+```jsx
+className = "bg-pink-50 text-pink-700";
+```
+
+**Icon Button**
+
+```jsx
+className =
+  "p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110";
+```
+
+### Cards
+
+**Standard Card**
+
+```jsx
+className = "bg-white rounded-2xl shadow-xl p-8 border-2 border-pink-100";
+```
+
+**Interactive Card**
+
+```jsx
+className =
+  "bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all hover:scale-[1.02]";
+```
+
+### Badges
+
+**Featured Badge**
+
+```jsx
+className =
+  "inline-block px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700 rounded-full text-sm font-bold";
+```
+
+### Sections
+
+**Hero Section**
+
+```jsx
+className =
+  "relative text-white py-16 md:py-24 overflow-hidden bg-gradient-to-br from-pink-500 to-rose-500";
+```
+
+**Content Section**
+
+```jsx
+className = "py-16 md:py-20 bg-gray-50";
+```
+
+**Animation Section**
+
+```jsx
+className =
+  "py-16 md:py-20 bg-gradient-to-br from-pink-50 via-pink-100 to-rose-50";
+```
+
+### Progress Elements
+
+**Progress Bar (Active)**
+
+```jsx
+className = "h-2 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full";
+```
+
+**Dot Indicator (Active)**
+
+```jsx
+className = "w-8 h-2 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full";
+```
+
+**Dot Indicator (Inactive)**
+
+```jsx
+className = "w-2 h-2 bg-gray-300 rounded-full";
+```
+
+**Step Bubble (Active)**
+
+```jsx
+className =
+  "w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white";
+```
+
+**Step Bubble (Completed)**
+
+```jsx
+className = "w-10 h-10 rounded-full bg-green-500 text-white";
+```
+
+---
+
+## Logo
+
+**SVG Gradient**:
+
+```jsx
+<linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" style={{ stopColor: "#ec4899", stopOpacity: 1 }} />
+  <stop offset="100%" style={{ stopColor: "#f43f5e", stopOpacity: 1 }} />
+</linearGradient>
+```
+
+**Size**: `w-8 h-8 rounded-lg`
+
+---
+
+## Spacing
+
+### Container
+
+- Max width: `max-w-7xl mx-auto`
+- Padding: `px-4 sm:px-6 lg:px-8`
+
+### Sections
+
+- Vertical: `py-16 md:py-20`
+- Large gaps: `gap-8`
+- Medium gaps: `gap-6`
+- Small gaps: `gap-2`
+
+---
+
+## Borders & Shadows
+
+**Radius**:
+
+- Small: `rounded-lg` (buttons)
+- Large: `rounded-2xl` (cards)
+- Full: `rounded-full` (circles, pills)
+
+**Shadows**:
+
+- Standard: `shadow-xl`
+- Hover: `shadow-2xl`
+- Large: `shadow-lg`
+
+---
+
+## Animations
+
+**Standard Transition**: `transition-all duration-300`
+
+**Hover Scale**:
+
+- Buttons: `hover:scale-105`
+- Cards: `hover:scale-[1.02]`
+- Icons: `hover:scale-110`
+
+---
+
+## Quick Reference
+
+### Most Common Classes
+
+```
+// Gradient backgrounds
+bg-gradient-to-r from-pink-500 to-rose-500
+bg-gradient-to-br from-pink-500 to-rose-500
+
+// White text on gradient
+text-white font-bold
+
+// Standard spacing
+py-16 md:py-20 px-4 sm:px-6 lg:px-8
+
+// Cards
+rounded-2xl shadow-xl p-8
+
+// Hover effects
+hover:scale-105 transition-all
+
+// Border
+border-2 border-pink-100
+border-l-4 border-rose-500
+```
+
+---
+
+_Last Updated: January 8, 2026_
 
 - **H3 (Subsections):** `text-2xl md:text-3xl` (24px/30px)
 
@@ -337,27 +498,6 @@ hover: scale - 110; /* Icon buttons */
 - Don't combine too many bright colors
 - Don't use rounded corners inconsistently
 - Don't place important text on busy backgrounds
-
----
-
-## File Organization
-
-### Component Structure
-
-```
-src/
-  components/
-    Layout.tsx         # Main layout wrapper
-    Navigation.tsx     # Header/navigation
-    Footer.tsx         # Footer
-    FeaturedProfiles.tsx
-    ProfileCreationAnimation.tsx
-  pages/
-    Home.tsx
-    Login.tsx
-  styles/
-    index.css          # Global styles
-```
 
 ---
 
