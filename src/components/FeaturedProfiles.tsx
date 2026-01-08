@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -29,14 +29,14 @@ export default function FeaturedProfiles() {
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  const currentLeader = profiles[currentIndex];
+  const currentProfile = profiles[currentIndex];
 
   const handleLearnMore = () => {
-    navigate(`/profile/${currentLeader.id}`);
+    navigate(`/profile/${currentProfile.id}`);
   };
 
   const handleCardClick = () => {
-    navigate(`/profile/${currentLeader.id}`);
+    navigate(`/profile/${currentProfile.id}`);
   };
 
   const handlePrevious = (e: React.MouseEvent) => {
@@ -81,7 +81,7 @@ export default function FeaturedProfiles() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl text-gray-900 font-bold mb-3">
+          <h2 className="text-3xl md:text-4xl text-gray-900 mb-3 font-bold">
             Inspiring Leader Spotlight
           </h2>
           <p className="text-lg text-gray-600">
@@ -101,7 +101,7 @@ export default function FeaturedProfiles() {
             className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer"
             aria-label="Previous leader"
           >
-            <ChevronLeft className="w-6 h-6 text-pink-600" />
+            <ChevronLeft className="w-6 h-6 text-pink-500" />
           </button>
 
           <button
@@ -109,7 +109,7 @@ export default function FeaturedProfiles() {
             className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer"
             aria-label="Next leader"
           >
-            <ChevronRight className="w-6 h-6 text-pink-600" />
+            <ChevronRight className="w-6 h-6 text-pink-500" />
           </button>
 
           <AnimatePresence mode="wait">
@@ -129,8 +129,8 @@ export default function FeaturedProfiles() {
                 {/* Image - Portrait orientation (2 columns, narrower) */}
                 <div className="md:col-span-2 relative h-[400px] md:h-[500px]">
                   <img
-                    src={currentLeader.imageUrl}
-                    alt={currentLeader.name}
+                    src={currentProfile.imageUrl}
+                    alt={currentProfile.name}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -144,32 +144,32 @@ export default function FeaturedProfiles() {
                     transition={{ delay: 0.2, duration: 0.6 }}
                   >
                     <div className="mb-4">
-                      <div className="inline-block px-3 py-1 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-sm mb-4">
+                      <div className="inline-block px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700 rounded-full text-sm mb-4 font-bold">
                         Featured Leader
                       </div>
                     </div>
 
-                    <h3 className="text-3xl md:text-4xl text-gray-900 font-bold mb-3">
-                      {currentLeader.name}
+                    <h3 className="text-3xl md:text-4xl text-gray-900 mb-3 font-bold">
+                      {currentProfile.name}
                     </h3>
 
-                    <p className="text-xl text-rose-600 mb-2">
-                      {currentLeader.role}
+                    <p className="text-xl text-pink-500 mb-2">
+                      {currentProfile.role}
                     </p>
 
                     <p className="text-lg text-gray-600 mb-6">
-                      {currentLeader.company}
+                      {currentProfile.company}
                     </p>
 
-                    <blockquote className="border-l-4 border-rose-500 pl-4 mb-8">
+                    <blockquote className="border-l-4 border-pink-500 pl-4 mb-8">
                       <p className="text-lg text-gray-700 italic">
-                        "{currentLeader.impact.description}"
+                        "{currentProfile.impact.description}"
                       </p>
                     </blockquote>
 
                     <button
                       onClick={handleLearnMore}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-lg group cursor-pointer"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-xl group cursor-pointer"
                     >
                       Learn About Her Story
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
