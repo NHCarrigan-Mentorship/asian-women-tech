@@ -1,4 +1,4 @@
-import { Rocket } from "lucide-react";
+import { UserPlus } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
@@ -19,11 +19,11 @@ export default function Hero() {
             </p>
 
             <Link
-              to="/login"
+              to="/signup"
               className="px-8 py-4 bg-white text-pink-500 font-bold rounded-lg hover:bg-pink-500 hover:text-white transition-all hover:scale-105 shadow-lg text-lg inline-flex items-center gap-2 group cursor-pointer"
             >
-              Join Now
-              <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Create Profile
+              <UserPlus className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </>
         </div>
