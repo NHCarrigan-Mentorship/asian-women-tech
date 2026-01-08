@@ -2,6 +2,7 @@ import { useAuth } from "../contexts/AuthContext";
 import Hero from "../components/Hero";
 import ProfileCreationAnimation from "../components/ProfileCreationAnimation";
 import FeaturedProfiles from "../components/FeaturedProfiles";
+import CallToAction from "../components/CallToAction";
 
 export default function Home() {
   const { isAuthenticated } = useAuth();
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       {!isAuthenticated && <ProfileCreationAnimation />}
       <FeaturedProfiles />
+      {!isAuthenticated && <CallToAction />}
     </div>
   );
 }
