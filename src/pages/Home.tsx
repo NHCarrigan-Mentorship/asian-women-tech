@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Hero />``
+      <Hero />
       {!isAuthenticated && <ProfileCreationAnimation />}
       <FeaturedProfiles />
     </div>
