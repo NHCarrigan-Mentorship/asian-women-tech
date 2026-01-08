@@ -1,4 +1,4 @@
-import { useLocation, Outlet, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Users, LogIn } from "lucide-react";
 
 const Logo = () => (
@@ -37,7 +37,7 @@ export default function Header() {
   const defaultStyles = "text-gray-600 hover:bg-gray-50";
 
   return (
-    <>
+    <header>
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -68,7 +68,6 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <Outlet />
-    </>
+    </header>
   );
 }
