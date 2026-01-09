@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import type { PanInfo } from "motion/react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Briefcase,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { profiles } from "../data/profiles";
 
 export default function FeaturedProfiles() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [direction, setDirection] = useState(0);
   const navigate = useNavigate();
 
   // Minimum swipe distance (in px)
-  const minSwipeDistance = 50;
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity;
+  };
 
   useEffect(() => {
     if (isPaused) return;
@@ -23,6 +32,7 @@ export default function FeaturedProfiles() {
     if (!mediaQuery.matches) return; // Don't auto-play on mobile
 
     const interval = setInterval(() => {
+      setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % profiles.length);
     }, 5000);
 
@@ -31,145 +41,188 @@ export default function FeaturedProfiles() {
 
   const currentProfile = profiles[currentIndex];
 
+  const handleLearnMore = () => {
+    navigate(`/profile/${currentProfile.id}`);
+  };
+
   const handleCardClick = () => {
     navigate(`/profile/${currentProfile.id}`);
   };
 
   const handlePrevious = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + profiles.length) % profiles.length);
   };
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % profiles.length);
   };
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
+  const handleDragEnd = (
+    e: MouseEvent | TouchEvent | PointerEvent,
+    { offset, velocity }: PanInfo
+  ) => {
+    const swipe = swipePower(offset.x, velocity.x);
 
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      // Swipe left - go to next
+    if (swipe < -swipeConfidenceThreshold) {
+      // Swiped left - go to next
+      setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % profiles.length);
-    }
-
-    if (isRightSwipe) {
-      // Swipe right - go to previous
+    } else if (swipe > swipeConfidenceThreshold) {
+      // Swiped right - go to previous
+      setDirection(-1);
       setCurrentIndex((prev) => (prev - 1 + profiles.length) % profiles.length);
     }
   };
 
+  const variants = {
+    enter: (direction: number) => {
+      return {
+        x: direction > 0 ? 300 : -300,
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 300 : -300,
+        opacity: 0,
+      };
+    },
+  };
+
   return (
-    <div className="py-16 md:py-20 bg-gray-50">
+    <div className="py-8 md:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl text-gray-900 mb-3 font-bold">
-            Inspiring Leader Spotlight
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-4xl text-gray-900 mb-2 font-bold border-b-2 border-pink-200 pb-2 inline-block">
+            Featured Leader
           </h2>
-          <p className="text-lg text-gray-600">
-            Meet the trailblazers transforming technology
+          <p className="text-sm md:text-base text-gray-600 mt-3 md:mt-4">
+            Highlighting trailblazers transforming technology
           </p>
         </div>
 
-        {/* Leader Card */}
+        {/* Profile Card */}
         <div
-          className="max-w-4xl mx-auto relative"
+          className="max-w-5xl mx-auto relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Navigation Arrows - Only visible on mobile */}
+          {/* Navigation Arrows */}
           <button
             onClick={handlePrevious}
-            className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer"
-            aria-label="Previous leader"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 p-1.5 md:p-2 rounded-full shadow-md border border-pink-200 transition-all cursor-pointer"
+            aria-label="Previous profile"
           >
-            <ChevronLeft className="w-6 h-6 text-pink-500" />
+            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-pink-600" />
           </button>
 
           <button
             onClick={handleNext}
-            className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer"
-            aria-label="Next leader"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 p-1.5 md:p-2 rounded-full shadow-md border border-pink-200 transition-all cursor-pointer"
+            aria-label="Next profile"
           >
-            <ChevronRight className="w-6 h-6 text-pink-500" />
+            <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-pink-600" />
           </button>
 
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6 }}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              custom={direction}
+              transition={{ duration: 0.3 }}
               onClick={handleCardClick}
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+              onDragEnd={handleDragEnd}
+              drag
+              dragConstraints={{ left: 0, right: 0 }}
+              className="bg-white border-2 border-pink-200 rounded overflow-hidden cursor-pointer hover:border-pink-400 transition-all"
             >
-              <div className="grid md:grid-cols-5 gap-0">
-                {/* Image - Portrait orientation (2 columns, narrower) */}
-                <div className="md:col-span-2 relative h-[400px] md:h-[500px]">
+              <div className="grid md:grid-cols-3 gap-0">
+                {/* Image */}
+                <div className="md:col-span-1 relative h-[250px] md:h-[400px] border-r-2 border-pink-200">
                   <img
                     src={currentProfile.imageUrl}
                     alt={currentProfile.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
 
-                {/* Content (3 columns, wider) */}
-                <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+                {/* Content */}
+                <div className="md:col-span-2 p-4 md:p-8">
                   <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
                   >
-                    <div className="mb-4">
-                      <div className="inline-block px-3 py-1 bg-gradient-to-r from-pink-100 to-rose-100 text-pink-700 rounded-full text-sm mb-4 font-bold">
-                        Featured Leader
-                      </div>
+                    <div className="mb-2 md:mb-3">
+                      <span className="px-2 py-1 bg-pink-100 text-pink-700 text-xs rounded border border-pink-200 font-bold">
+                        Featured Profile
+                      </span>
                     </div>
 
-                    <h3 className="text-3xl md:text-4xl text-gray-900 mb-3 font-bold">
+                    <h3 className="text-xl md:text-3xl text-gray-900 mb-2 font-bold border-b border-pink-200 pb-2">
                       {currentProfile.name}
                     </h3>
 
-                    <p className="text-xl text-pink-500 mb-2">
-                      {currentProfile.role}
+                    <div className="space-y-1 md:space-y-1.5 mb-3 md:mb-4 text-xs md:text-sm">
+                      <div className="flex items-center gap-2 text-gray-700">
+                        <Briefcase className="w-3 h-3 md:w-4 md:h-4 text-pink-600" />
+                        <span>
+                          {currentProfile.role} at {currentProfile.company}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-gray-700">
+                        <MapPin className="w-3 h-3 md:w-4 md:h-4 text-pink-600" />
+                        <span>{currentProfile.location}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-sm md:text-base text-gray-900 mb-3 md:mb-4 leading-relaxed">
+                      {currentProfile.bio}
                     </p>
+                    {currentProfile.achievements &&
+                      currentProfile.achievements.length > 0 && (
+                        <div className="mb-3 md:mb-4 p-2 md:p-3 bg-pink-50 border-l-4 border-pink-500">
+                          <p className="text-xs md:text-sm text-gray-800">
+                            {currentProfile.achievements[0]}
+                          </p>
+                        </div>
+                      )}
 
-                    <p className="text-lg text-gray-600 mb-6">
-                      {currentProfile.company}
-                    </p>
+                    {/* Expertise Tags */}
+                    <div className="flex flex-wrap gap-1 md:gap-1.5 mb-3 md:mb-4">
+                      {currentProfile.expertise
+                        .slice(0, 4)
+                        .map((exp, index) => (
+                          <span
+                            key={index}
+                            className="px-2 py-0.5 bg-white border border-pink-200 text-pink-700 rounded text-xs"
+                          >
+                            {exp}
+                          </span>
+                        ))}
+                    </div>
 
-                    <blockquote className="border-l-4 border-pink-500 pl-4 mb-8">
-                      <p className="text-lg text-gray-700 italic">
-                        "{currentProfile.impact.description}"
-                      </p>
-                    </blockquote>
-
-                    <Link
-                      to={`profile/${currentProfile.id}`}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all hover:scale-105 shadow-xl group cursor-pointer"
+                    <button
+                      onClick={handleLearnMore}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded hover:from-pink-600 hover:to-rose-600 transition-all text-xs md:text-sm group cursor-pointer"
                     >
-                      Learn About Her Story
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                      Read Full Profile
+                      <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
                   </motion.div>
                 </div>
               </div>
@@ -177,17 +230,17 @@ export default function FeaturedProfiles() {
           </AnimatePresence>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-4 md:mt-6">
             {profiles.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all cursor-pointer ${
                   index === currentIndex
-                    ? "w-8 h-2 bg-gradient-to-r from-pink-500 to-rose-500"
-                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                    ? "w-5 h-1.5 md:w-6 md:h-2 bg-pink-500"
+                    : "w-1.5 h-1.5 md:w-2 md:h-2 bg-gray-300 hover:bg-gray-400"
                 } rounded-full`}
-                aria-label={`View leader ${index + 1}`}
+                aria-label={`View profile ${index + 1}`}
               />
             ))}
           </div>
