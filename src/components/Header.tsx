@@ -43,7 +43,9 @@ export default function Header() {
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center gap-2">
               <Logo />
-              <span className="text-xl hidden md:inline">PinkTech</span>
+              <span className="text-xl hidden md:inline font-bold">
+                PinkTech
+              </span>
             </Link>
             <div className="flex gap-6">
               <Link
