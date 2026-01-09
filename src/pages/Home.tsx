@@ -1,6 +1,6 @@
 import { useAuth } from "../contexts/AuthContext";
 import Hero from "../components/Hero";
-import ProfileCreationAnimation from "../components/ProfileCreationAnimation";
+import ProfileCreation from "../components/ProfileCreation";
 import FeaturedProfiles from "../components/FeaturedProfiles";
 import CallToAction from "../components/CallToAction";
 
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Hero />
-      {!isAuthenticated && <ProfileCreationAnimation />}
+      {!isAuthenticated && <ProfileCreation />}
       <FeaturedProfiles />
       {!isAuthenticated && <CallToAction />}
     </div>
