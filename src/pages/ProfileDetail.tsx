@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
+import { profiles } from "../data/profiles";
+import BackNavigation from "../components/BackNavigation";
 
 export default function ProfileDetail() {
-  // Get profile ID
-  // Render profile
-
   const { id } = useParams();
 
   return (
-    <div>
+    <div className="min-h-screen bg-white">
+      <BackNavigation />
+      {/* Render profile */}
       <h1>Dr. Amara Johnson</h1>
     </div>
   );
