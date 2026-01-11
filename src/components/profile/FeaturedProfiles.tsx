@@ -193,7 +193,7 @@ export default function FeaturedProfiles() {
                       currentProfile.achievements.length > 0 && (
                         <div className="mb-3 md:mb-4 p-2 md:p-3 bg-pink-50 border-l-4 border-pink-500">
                           <p className="text-xs md:text-sm text-gray-800">
-                            {currentProfile.achievements[0]}
+                            {currentProfile.achievements[0].text}
                           </p>
                         </div>
                       )}
