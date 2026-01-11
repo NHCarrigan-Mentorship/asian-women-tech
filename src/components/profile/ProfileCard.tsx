@@ -1,4 +1,4 @@
-import ProfileInfobox from "../ProfileInfobox";
+import ProfileInfobox from "./ProfileInfobox";
 
 interface ProfileCardProps {
   id: string;

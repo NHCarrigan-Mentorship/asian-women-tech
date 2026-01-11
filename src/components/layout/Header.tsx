@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Users, Compass, LogIn, User, LogOut, Menu, X } from "lucide-react";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 
 export default function Header() {
