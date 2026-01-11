@@ -6,7 +6,7 @@ import {
   Twitter,
   Globe,
 } from "lucide-react";
-import { profiles } from "../data/profiles";
+import { profiles } from "../../data/profiles";
 
 interface ProfileInfoboxProps {
   id: string;

@@ -1,8 +1,8 @@
 import { useAuth } from "../contexts/AuthContext";
-import Hero from "../components/Hero";
-import ProfileCreation from "../components/ProfileCreation";
-import FeaturedProfiles from "../components/FeaturedProfiles";
-import CallToAction from "../components/CallToAction";
+import Hero from "../components/layout/Hero";
+import ProfileCreation from "../components/profile/ProfileCreation";
+import FeaturedProfiles from "../components/profile/FeaturedProfiles";
+import CallToAction from "../components/layout/CallToAction";
 
 export default function Home() {
   const { isAuthenticated } = useAuth();

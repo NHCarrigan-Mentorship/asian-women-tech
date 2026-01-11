@@ -1,4 +1,4 @@
-import ErrorBackNavigation from "./ErrorBackNavigation";
+import ErrorBackNavigation from "../navigation/ErrorBackNavigation";
 import { User } from "lucide-react";
 
 export default function ProfileNotFound() {
