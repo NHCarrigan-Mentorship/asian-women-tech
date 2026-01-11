@@ -2,18 +2,21 @@ export interface Profile {
   id: string;
   name: string;
   role: string;
-  company?: string;
-  imageUrl?: string;
-  location?: string;
+  company: string;
+  imageUrl: string;
   bio: string;
+  location: string;
+  achievements: {
+    text: string;
+    link?: string;
+  }[];
   expertise: string[];
-  achievements?: string[];
-
   social?: {
     linkedin?: string;
     twitter?: string;
     website?: string;
   };
+  lastUpdated?: string;
 }
 
 export const profiles: Profile[] = [
@@ -27,10 +30,22 @@ export const profiles: Profile[] = [
     bio: "Pioneering artificial intelligence research with a focus on ethical AI development and implementation in healthcare technology.",
     location: "San Francisco, CA",
     achievements: [
-      "Led development of AI-powered diagnostic tools used in 500+ hospitals",
-      "Published 50+ peer-reviewed papers on machine learning",
-      "Forbes 30 Under 30 in Technology",
-      "TED Speaker on AI Ethics",
+      {
+        text: "Led development of AI-powered diagnostic tools used in 500+ hospitals",
+        link: "https://www.healthcareitnews.com/news/ai-diagnostic-tools-transform-healthcare",
+      },
+      {
+        text: "Published 50+ peer-reviewed papers on machine learning",
+        link: "https://scholar.google.com/citations",
+      },
+      {
+        text: "Forbes 30 Under 30 in Technology",
+        link: "https://www.forbes.com/30-under-30/technology",
+      },
+      {
+        text: "TED Speaker on AI Ethics",
+        link: "https://www.ted.com/talks",
+      },
     ],
     expertise: [
       "Artificial Intelligence",
@@ -43,6 +58,7 @@ export const profiles: Profile[] = [
       twitter: "#",
       website: "#",
     },
+    lastUpdated: "December 2025",
   },
   {
     id: "2",
@@ -54,16 +70,28 @@ export const profiles: Profile[] = [
     bio: "Building next-generation cloud infrastructure that powers sustainable and scalable digital transformation for enterprises worldwide.",
     location: "Seattle, WA",
     achievements: [
-      "Raised $150M in Series C funding",
-      "Grew company to 2000+ employees",
-      "Named 'Cloud Innovator of the Year' by Tech Magazine",
-      "MIT Technology Review's 35 Under 35",
+      {
+        text: "Raised $150M in Series C funding",
+        link: "https://techcrunch.com/2025/08/15/cloudscale-raises-150m-series-c",
+      },
+      {
+        text: "Grew company to 2000+ employees",
+      },
+      {
+        text: "Named 'Cloud Innovator of the Year' by Tech Magazine",
+        link: "https://www.techmagazine.com/cloud-innovator-awards-2025",
+      },
+      {
+        text: "MIT Technology Review's 35 Under 35",
+        link: "https://www.technologyreview.com/lists/innovators-under-35",
+      },
     ],
     expertise: ["Cloud Computing", "DevOps", "Enterprise Software", "SaaS"],
     social: {
       linkedin: "#",
       website: "#",
     },
+    lastUpdated: "January 2026",
   },
   {
     id: "3",
@@ -75,10 +103,21 @@ export const profiles: Profile[] = [
     bio: "Leading quantum computing research and development, making quantum technology accessible to developers and researchers globally.",
     location: "Dubai, UAE",
     achievements: [
-      "Led team that developed first commercial quantum API",
-      "IEEE Fellow for contributions to quantum computing",
-      "Author of bestselling book 'Quantum Computing Simplified'",
-      "Keynote speaker at major tech conferences",
+      {
+        text: "Led team that developed first commercial quantum API",
+        link: "https://www.quantumdynamics.com/blog/introducing-quantum-api",
+      },
+      {
+        text: "IEEE Fellow for contributions to quantum computing",
+        link: "https://www.ieee.org/membership/fellows/index.html",
+      },
+      {
+        text: "Author of bestselling book 'Quantum Computing Simplified'",
+        link: "https://www.amazon.com/Quantum-Computing-Simplified",
+      },
+      {
+        text: "Keynote speaker at major tech conferences",
+      },
     ],
     expertise: [
       "Quantum Computing",
@@ -90,6 +129,7 @@ export const profiles: Profile[] = [
       linkedin: "#",
       twitter: "#",
     },
+    lastUpdated: "November 2025",
   },
   {
     id: "4",
@@ -101,10 +141,21 @@ export const profiles: Profile[] = [
     bio: "Protecting critical infrastructure through innovative cybersecurity solutions and leading initiatives to increase diversity in information security.",
     location: "Dublin, Ireland",
     achievements: [
-      "Prevented over 10,000 cyber attacks",
-      "CISO of the Year Award winner",
-      "Founded 'Women in Cybersecurity' mentorship program",
-      "White House cybersecurity advisor",
+      {
+        text: "Prevented over 10,000 cyber attacks",
+      },
+      {
+        text: "CISO of the Year Award winner",
+        link: "https://www.cybersecurityawards.com/ciso-of-the-year-2025",
+      },
+      {
+        text: "Founded 'Women in Cybersecurity' mentorship program",
+        link: "https://www.womenincybersecurity.org/about",
+      },
+      {
+        text: "White House cybersecurity advisor",
+        link: "https://www.whitehouse.gov/briefing-room/statements-releases",
+      },
     ],
     expertise: [
       "Cybersecurity",
@@ -117,6 +168,7 @@ export const profiles: Profile[] = [
       twitter: "#",
       website: "#",
     },
+    lastUpdated: "October 2025",
   },
   {
     id: "5",
@@ -128,10 +180,21 @@ export const profiles: Profile[] = [
     bio: "Revolutionizing biotech through computational biology and advancing personalized medicine with cutting-edge data science.",
     location: "Boston, MA",
     achievements: [
-      "Developed breakthrough gene sequencing algorithms",
-      "Published in Nature and Science journals",
-      "National Science Foundation CAREER Award",
-      "Founded nonprofit for STEM education",
+      {
+        text: "Developed breakthrough gene sequencing algorithms",
+        link: "https://www.nature.com/articles/gene-sequencing-breakthrough-2025",
+      },
+      {
+        text: "Published in Nature and Science journals",
+        link: "https://www.nature.com/search?q=priya+patel",
+      },
+      {
+        text: "National Science Foundation CAREER Award",
+        link: "https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503214",
+      },
+      {
+        text: "Founded nonprofit for STEM education",
+      },
     ],
     expertise: [
       "Computational Biology",
@@ -143,6 +206,7 @@ export const profiles: Profile[] = [
       linkedin: "#",
       website: "#",
     },
+    lastUpdated: "September 2025",
   },
   {
     id: "6",
@@ -154,10 +218,20 @@ export const profiles: Profile[] = [
     bio: "Creating award-winning mobile experiences that have been downloaded over 500 million times worldwide, focusing on emerging markets.",
     location: "New York, NY",
     achievements: [
-      "500M+ app downloads",
-      "Google Play 'App of the Year' winner",
-      "Product Leader Fellowship at Stanford",
-      "Advisor to multiple tech startups",
+      {
+        text: "500M+ app downloads",
+      },
+      {
+        text: "Google Play 'App of the Year' winner",
+        link: "https://play.google.com/store/apps/editorial-collection/promotion_topic_bestof2025",
+      },
+      {
+        text: "Product Leader Fellowship at Stanford",
+        link: "https://www.gsb.stanford.edu/programs/product-leadership",
+      },
+      {
+        text: "Advisor to multiple tech startups",
+      },
     ],
     expertise: [
       "Product Management",
@@ -165,5 +239,10 @@ export const profiles: Profile[] = [
       "UX Design",
       "Growth Strategy",
     ],
+    social: {
+      linkedin: "#",
+      twitter: "#",
+    },
+    lastUpdated: "January 2026",
   },
 ];
