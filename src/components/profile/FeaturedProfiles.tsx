@@ -58,7 +58,7 @@ export default function FeaturedProfiles() {
   };
 
   const handleDragEnd = (
-    e: MouseEvent | TouchEvent | PointerEvent,
+    _e: MouseEvent | TouchEvent | PointerEvent,
     { offset, velocity }: PanInfo
   ) => {
     const swipe = swipePower(offset.x, velocity.x);
