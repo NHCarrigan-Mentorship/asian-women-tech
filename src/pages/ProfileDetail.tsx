@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ProfileNotFound from "../components/ProfileNotFound";
 import BackNavigation from "../components/BackNavigation";
 import ProfileAuthorshipNotice from "../components/ProfileAuthorshipNotice";
+import ProfileCard from "../components/ProfileCard";
 import { profiles } from "../data/profiles";
 
 export default function ProfileDetail() {
@@ -16,9 +17,10 @@ export default function ProfileDetail() {
     );
   }
   return (
-    <div className="bg-white">
+    <div className="flex-1 py-2 bg-gray-50">
       <BackNavigation />
       <ProfileAuthorshipNotice />
+      <ProfileCard id={profile.id} />
     </div>
   );
 }
