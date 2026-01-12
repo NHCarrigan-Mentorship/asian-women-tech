@@ -37,6 +37,7 @@ export default function ProfileSearchBar({
               className="w-full px-10 py-2 border border-pink-200 rounded bg-white focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             ></input>
           </div>
+          {/* Filter Dropdown Panel */}
           <div className="md:w-64">
             <select className="w-full px-5 py-2 border border-pink-200 rounded bg-white text-gray-900 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
               {allExpertise.map((expertise) => {
