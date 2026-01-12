@@ -1,4 +1,6 @@
+import { useMemo } from "react";
 import { Search } from "lucide-react";
+import { profiles } from "../../data/profiles";
 
 interface ProfileSearchBarProps {
   search: string;
@@ -9,6 +11,17 @@ export default function ProfileSearchBar({
   search,
   onSearch,
 }: ProfileSearchBarProps) {
+  // Get all unique expertise areas
+  const allExpertise = useMemo(() => {
+    const expertiseSet = new Set<string>();
+    profiles.forEach((profile) => {
+      profile.expertise.forEach((expertise) => {
+        expertiseSet.add(expertise);
+      });
+    });
+    return Array.from(expertiseSet).sort();
+  }, []);
+
   return (
     <div className="border border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 sticky top-16 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -26,7 +39,9 @@ export default function ProfileSearchBar({
           </div>
           <div className="md:w-64">
             <select className="w-full px-5 py-2 border border-pink-200 rounded bg-white text-gray-900 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-              <option>All Expertise</option>
+              {allExpertise.map((expertise) => {
+                return <option>{expertise}</option>;
+              })}
             </select>
           </div>
         </div>
