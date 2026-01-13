@@ -49,7 +49,7 @@ export default function ProfileSearchBar({
               </select>
             </div>
           </div>
-          <div className="mt-4 text-sm text-pink-800">
+          <div className="mt-4 text-sm text-pink-800 font-medium">
             Showing {profilesCount}{" "}
             {profilesCount === 1 ? "profile" : "profiles"}
           </div>
