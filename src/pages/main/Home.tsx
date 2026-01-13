@@ -1,7 +1,7 @@
 import { useAuth } from "../../contexts/AuthContext";
 import Hero from "../../components/layout/Hero";
-import ProfileCreation from "../../components/profile/ProfileCreation";
-import FeaturedProfiles from "../../components/profile/FeaturedProfiles";
+import ProfileCreation from "../../components/profile/home/ProfileCreation";
+import FeaturedProfiles from "../../components/profile/home/FeaturedProfiles";
 import CallToAction from "../../components/layout/CallToAction";
 
 export default function Home() {

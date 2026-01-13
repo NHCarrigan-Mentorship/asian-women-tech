@@ -1,4 +1,4 @@
-import { profiles } from "../../data/profiles";
+import { profiles } from "../../../data/profiles";
 import { Clock, ExternalLink } from "lucide-react";
 
 interface ProfileContentProps {

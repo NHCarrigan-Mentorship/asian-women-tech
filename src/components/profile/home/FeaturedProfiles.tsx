@@ -9,7 +9,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
-import { profiles } from "../../data/profiles";
+import { profiles } from "../../../data/profiles";
 
 export default function FeaturedProfiles() {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Search } from "lucide-react";
-import { profiles } from "../../data/profiles";
+import { profiles } from "../../../data/profiles";
 
 interface ProfileSearchBarProps {
   search: string;

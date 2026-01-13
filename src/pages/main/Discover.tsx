@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import CallToAction from "../../components/layout/CallToAction";
 import DiscoverHeader from "../../components/layout/DiscoverHeader";
-import FilteredProfiles from "../../components/profile/FilteredProfiles";
-import ProfileSearchBar from "../../components/profile/ProfileSearchBar";
+import FilteredProfiles from "../../components/profile/discover/FilteredProfiles";
+import ProfileSearchBar from "../../components/profile/discover/ProfileSearchBar";
 import { profiles } from "../../data/profiles";
 
 export default function Discover() {
