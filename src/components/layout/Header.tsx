@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
+
+import MobileToggleMenu from "../navigation/MobileToggleMenu";
 import DesktopNavigationMenu from "../navigation/DesktopNavigationMenu";
 import MobileNavigationMenu from "../navigation/MobileNavigationMenu";
 import Logo from "/favicon.svg";
@@ -43,18 +44,11 @@ export default function Header() {
                 PinkTech
               </span>
             </Link>
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
+            {/* Mobile Toggle Menu */}
+            <MobileToggleMenu
+              isMenuOpen={isMenuOpen}
+              onToggle={setIsMenuOpen}
+            />
             {/* Desktop Navigation */}
             <DesktopNavigationMenu
               isActive={isActive}
