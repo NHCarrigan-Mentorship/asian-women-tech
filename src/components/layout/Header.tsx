@@ -1,11 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 
-import MobileToggleMenu from "../navigation/MobileToggleMenu";
 import DesktopNavigationMenu from "../navigation/DesktopNavigationMenu";
+import MobileToggleMenu from "../navigation/MobileToggleMenu";
 import MobileNavigationMenu from "../navigation/MobileNavigationMenu";
-import Logo from "/favicon.svg";
+import HomeNavigation from "../navigation/HomeNavigation";
 
 export default function Header() {
   const location = useLocation();
@@ -30,20 +30,7 @@ export default function Header() {
       <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 md:h-16">
-            <Link
-              to="/"
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer"
-              onClick={closeMenu}
-            >
-              <img
-                src={Logo}
-                alt="PinkTech Logo"
-                className="h-8 w-8 md:h-10 md:w-10"
-              />
-              <span className="text-lg md:text-xl font-bold text-gray-900">
-                PinkTech
-              </span>
-            </Link>
+            <HomeNavigation onClose={closeMenu} />
             {/* Mobile Toggle Menu */}
             <MobileToggleMenu
               isMenuOpen={isMenuOpen}
