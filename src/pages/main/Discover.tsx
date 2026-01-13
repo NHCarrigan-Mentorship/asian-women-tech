@@ -1,3 +1,4 @@
+import CallToAction from "../../components/layout/CallToAction";
 import DiscoverHeader from "../../components/layout/DiscoverHeader";
 import FilteredProfiles from "../../components/profile/FilteredProfiles";
 import ProfileSearchBar from "../../components/profile/ProfileSearchBar";
@@ -26,6 +27,7 @@ export default function Discover() {
         profilesCount={filteredProfiles.length}
       />
       <FilteredProfiles filteredProfiles={filteredProfiles} />
+      <CallToAction />
     </>
   );
 }
