@@ -1,5 +1,5 @@
-import { useRef, useEffect } from "react";
-import { X, Search, Filter } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { X, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 
 interface MobileFilterModalProps {
   isOpen: boolean;
@@ -25,6 +25,13 @@ export default function MobileFilterModal({
   filteredProfilesCount,
 }: MobileFilterModalProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [showAllExpertise, setShowAllExpertise] = useState(false);
+
+  const INITIAL_DISPLAY_COUNT = 8;
+  const displayedExpertise = showAllExpertise
+    ? allExpertise
+    : allExpertise.slice(0, INITIAL_DISPLAY_COUNT);
+  const hasMore = allExpertise.length > INITIAL_DISPLAY_COUNT;
 
   // Focus search input when modal opens
   useEffect(() => {
@@ -131,8 +138,8 @@ export default function MobileFilterModal({
               </div>
 
               {/* Expertise Chips - Horizontal Scrollable */}
-              <div className="flex flex-wrap gap-1.5 max-h-[400px] overflow-y-auto overscroll-contain">
-                {allExpertise.map((exp) => {
+              <div className="flex flex-wrap gap-1.5">
+                {displayedExpertise.map((exp) => {
                   const isSelected = selectedExpertise.includes(exp);
                   return (
                     <button
@@ -149,6 +156,27 @@ export default function MobileFilterModal({
                   );
                 })}
               </div>
+
+              {/* Show More/Less Button */}
+              {hasMore && (
+                <button
+                  onClick={() => setShowAllExpertise(!showAllExpertise)}
+                  className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-white border-2 border-pink-200 text-pink-700 rounded-xl hover:bg-pink-50 hover:border-pink-300 transition-all cursor-pointer font-medium text-sm"
+                >
+                  <span>
+                    {showAllExpertise
+                      ? "Show Less"
+                      : `Show ${
+                          allExpertise.length - INITIAL_DISPLAY_COUNT
+                        } More`}
+                  </span>
+                  {showAllExpertise ? (
+                    <ChevronUp className="w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </div>
