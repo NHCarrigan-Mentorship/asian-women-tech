@@ -1,0 +1,41 @@
+import { Search, X } from "lucide-react";
+
+interface SearchInputProps {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+}
+
+export default function SearchInput({
+  value,
+  onChange,
+  placeholder = "Search leaders...",
+}: SearchInputProps) {
+  return (
+    <div className="w-full relative">
+      <div className="relative">
+        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-pink-400 w-5 h-5 md:w-5 md:h-5 pointer-events-none" />
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full pl-12 pr-12 py-3.5 md:py-3 text-base border-2 border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 bg-white transition-all placeholder:text-gray-400"
+        />
+        {value && (
+          <button
+            onClick={() => onChange("")}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-pink-500 transition-colors p-1 rounded-full hover:bg-pink-50"
+            aria-label="Clear search"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
+      </div>
+      {/* Mobile helper text */}
+      <p className="text-xs text-gray-600 mt-2 md:hidden">
+        Search by name, role, or company
+      </p>
+    </div>
+  );
+}
