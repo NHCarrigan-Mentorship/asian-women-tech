@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import CallToAction from "../../components/layout/CallToAction";
-import DiscoverHeader from "../../components/layout/DiscoverHeader";
+import DiscoverHeader from "../../components/profile/discover/DiscoverHeader";
 import FilteredProfiles from "../../components/profile/discover/FilteredProfiles";
 import ProfileSearchBar from "../../components/profile/discover/ProfileSearchBar";
 import { profiles } from "../../data/profiles";
