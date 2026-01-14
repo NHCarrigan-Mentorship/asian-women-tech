@@ -15,7 +15,7 @@ export default function ProfileCreation() {
 
   return (
     <div className="py-8 md:py-16 bg-gray-50 border-t-2 border-pink-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6 md:mb-8">
           <h2 className="text-2xl md:text-4xl text-gray-900 mb-2 font-bold border-b-2 border-pink-200 pb-2 inline-block">
             Create Your Profile
