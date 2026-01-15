@@ -1,82 +1,76 @@
 import { Home, LogIn, LogOut, User, Search } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { Link, useLocation } from "react-router-dom";
 
-interface MobileNavigationMenuProps {
-  isActive: (path: string) => {};
-  isAuthenticated: boolean;
-  onClose: () => void;
-  onLogout: () => void;
-}
-export default function MobileNavigationMenu({
-  isActive,
-  isAuthenticated,
-  onClose,
-  onLogout,
-}: MobileNavigationMenuProps) {
+export default function MobileNavigationMenu() {
+  const location = useLocation();
+  const { isAuthenticated, logout } = useAuth();
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
-    <div className="md:hidden py-3 border-t border-gray-200">
-      <div className="flex flex-col gap-1">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 safe-area-bottom">
+      <div className="flex justify-around items-center h-16 px-2">
         <Link
           to="/"
-          onClick={onClose}
-          className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors ${
-            isActive("/")
-              ? "bg-pink-50 text-pink-700"
-              : "text-gray-600 hover:bg-gray-50"
+          className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-lg transition-colors min-w-[70px] ${
+            isActive("/") ? "text-pink-600" : "text-gray-600"
           }`}
         >
-          <Search className="w-5 h-5" />
-          <span className="text-base">Home</span>
+          <Home className={`w-6 h-6 ${isActive("/") ? "stroke-[2.5]" : ""}`} />
+          <span className="text-xs font-medium">Home</span>
         </Link>
+
         <Link
           to="/discover"
-          onClick={onClose}
-          className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors ${
-            isActive("/discover")
-              ? "bg-pink-50 text-pink-700"
-              : "text-gray-600 hover:bg-gray-50"
+          className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-lg transition-colors min-w-[70px] ${
+            isActive("/discover") ? "text-pink-600" : "text-gray-600"
           }`}
         >
-          <Home className="w-5 h-5" />
-          <span className="text-base">Discover</span>
+          <Search
+            className={`w-6 h-6 ${isActive("/discover") ? "stroke-[2.5]" : ""}`}
+          />
+          <span className="text-xs font-medium">Discover</span>
         </Link>
+
         {isAuthenticated ? (
           <>
             <Link
               to="/my-profile"
-              onClick={onClose}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors ${
-                isActive("/my-profile")
-                  ? "bg-pink-50 text-pink-700"
-                  : "text-gray-600 hover:bg-gray-50"
+              className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-lg transition-colors min-w-[70px] ${
+                isActive("/my-profile") ? "text-pink-600" : "text-gray-600"
               }`}
             >
-              <User className="w-5 h-5" />
-              <span className="text-base">My Profile</span>
+              <User
+                className={`w-6 h-6 ${
+                  isActive("/my-profile") ? "stroke-[2.5]" : ""
+                }`}
+              />
+              <span className="text-xs font-medium">Profile</span>
             </Link>
             <button
-              onClick={onLogout}
-              className="flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors text-gray-600 hover:bg-gray-50 cursor-pointer text-left"
+              onClick={logout}
+              className="flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-lg transition-colors text-gray-600 cursor-pointer min-w-[70px]"
             >
-              <LogOut className="w-5 h-5" />
-              <span className="text-base">Logout</span>
+              <LogOut className="w-6 h-6" />
+              <span className="text-xs font-medium">Logout</span>
             </button>
           </>
         ) : (
           <Link
             to="/login"
-            onClick={onClose}
-            className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors ${
-              isActive("/login")
-                ? "bg-pink-50 text-pink-700"
-                : "text-gray-600 hover:bg-gray-50"
+            className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-lg transition-colors min-w-[70px] ${
+              isActive("/login") ? "text-pink-600" : "text-gray-600"
             }`}
           >
-            <LogIn className="w-5 h-5" />
-            <span className="text-base">Login</span>
+            <LogIn
+              className={`w-6 h-6 ${isActive("/login") ? "stroke-[2.5]" : ""}`}
+            />
+            <span className="text-xs font-medium">Login</span>
           </Link>
         )}
       </div>
-    </div>
+    </nav>
   );
 }
