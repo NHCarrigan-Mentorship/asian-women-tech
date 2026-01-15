@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNavigationMenu from "../navigation/MobileNavigationMenu";
+import ScrollToTopButton from "../navigation/ScrollToTopButton";
 
 export default function Layout() {
   return (
@@ -9,6 +10,7 @@ export default function Layout() {
       <Header />
       <main className="flex-1 flex flex-col">
         <Outlet />
+        <ScrollToTopButton />
       </main>
       <MobileNavigationMenu />
       <Footer />

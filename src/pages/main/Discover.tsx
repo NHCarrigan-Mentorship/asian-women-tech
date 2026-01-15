@@ -1,6 +1,5 @@
 import { useMemo, useState, useRef } from "react";
 import CallToAction from "../../components/layout/CallToAction";
-import ScrollToTopButton from "../../components/layout/ScrollToTopButton";
 import DiscoverHeader from "../../components/profile/discover/DiscoverHeader";
 import FilteredProfiles from "../../components/profile/discover/FilteredProfiles";
 import ProfileSearchBar from "../../components/profile/discover/ProfileSearchBar";
@@ -90,8 +89,6 @@ export default function Discover() {
         clearAllFilters={clearAllFilters}
         filteredProfilesCount={filteredProfiles.length}
       />
-
-      <ScrollToTopButton />
     </div>
   );
 }
