@@ -1,17 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 import { LogIn, LogOut, Home, User, Search } from "lucide-react";
 
-interface DesktopHeaderNavigation {
-  isActive: (path: string) => {};
-  isAuthenticated: boolean;
-  onLogout: () => void;
-}
+export default function DesktopNavigationMenu() {
+  const location = useLocation();
+  const { isAuthenticated, logout } = useAuth();
 
-export default function DesktopNavigationMenu({
-  isActive,
-  isAuthenticated,
-  onLogout,
-}: DesktopHeaderNavigation) {
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
   return (
     <div className="hidden md:flex gap-6">
       <Link
@@ -50,7 +47,7 @@ export default function DesktopNavigationMenu({
             <span>My Profile</span>
           </Link>
           <button
-            onClick={onLogout}
+            onClick={logout}
             className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors text-gray-600 hover:bg-gray-50 cursor-pointer"
           >
             <LogOut className="w-4 h-4" />
