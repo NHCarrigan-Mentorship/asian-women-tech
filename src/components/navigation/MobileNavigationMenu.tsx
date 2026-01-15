@@ -1,4 +1,4 @@
-import { Compass, LogIn, LogOut, User, Users } from "lucide-react";
+import { Home, LogIn, LogOut, User, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MobileNavigationMenuProps {
@@ -25,7 +25,7 @@ export default function MobileNavigationMenu({
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
-          <Users className="w-5 h-5" />
+          <Search className="w-5 h-5" />
           <span className="text-base">Home</span>
         </Link>
         <Link
@@ -37,7 +37,7 @@ export default function MobileNavigationMenu({
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
-          <Compass className="w-5 h-5" />
+          <Home className="w-5 h-5" />
           <span className="text-base">Discover</span>
         </Link>
         {isAuthenticated ? (

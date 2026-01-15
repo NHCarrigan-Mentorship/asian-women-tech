@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Compass, LogIn, LogOut, User, Users } from "lucide-react";
+import { LogIn, LogOut, Home, User, Search } from "lucide-react";
 
 interface DesktopHeaderNavigation {
   isActive: (path: string) => {};
@@ -22,7 +22,7 @@ export default function DesktopNavigationMenu({
             : "text-gray-600 hover:bg-gray-50"
         }`}
       >
-        <Users className="w-4 h-4" />
+        <Home className="w-4 h-4" />
         <span>Home</span>
       </Link>
       <Link
@@ -33,7 +33,7 @@ export default function DesktopNavigationMenu({
             : "text-gray-600 hover:bg-gray-50"
         }`}
       >
-        <Compass className="w-4 h-4" />
+        <Search className="w-4 h-4" />
         <span>Discover</span>
       </Link>
       {isAuthenticated ? (
