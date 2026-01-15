@@ -3,7 +3,6 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 
 import DesktopNavigationMenu from "../navigation/DesktopNavigationMenu";
-import MobileToggleMenu from "../navigation/MobileToggleMenu";
 import MobileNavigationMenu from "../navigation/MobileNavigationMenu";
 import HomeNavigation from "../navigation/HomeNavigation";
 
@@ -31,11 +30,6 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 md:h-16">
             <HomeNavigation onClose={closeMenu} />
-            {/* Mobile Toggle Menu */}
-            <MobileToggleMenu
-              isMenuOpen={isMenuOpen}
-              onToggle={setIsMenuOpen}
-            />
             {/* Desktop Navigation */}
             <DesktopNavigationMenu
               isActive={isActive}
