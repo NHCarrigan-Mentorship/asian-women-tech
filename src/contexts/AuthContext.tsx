@@ -54,7 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, [user]);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, _password: string) => {
     // Mock authentication - in real app, this would call an API
     await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -83,7 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(mockUser);
   };
 
-  const signup = async (email: string, password: string, name: string) => {
+  const signup = async (email: string, _password: string, name: string) => {
     // Mock signup - in real app, this would call an API
     await new Promise((resolve) => setTimeout(resolve, 500));
 
