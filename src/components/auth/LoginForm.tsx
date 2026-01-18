@@ -7,6 +7,7 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
+  const [rememberLogin, setRememberLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -112,6 +113,26 @@ export default function LoginForm() {
               )}
             </button>
           </div>
+        </div>
+
+        {/* Remember Login Field */}
+
+        <div className="flex justify-between">
+          <label htmlFor="remember-login" className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="remember-login"
+              name="remember-login"
+              checked={rememberLogin}
+              onChange={(e) => setRememberLogin(e.target.checked)}
+              disabled={isLoading}
+              className="w-4 h-4 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            />
+            <span className="text-sm font-medium text-gray-600 cursor-pointer">
+              Remember Me
+            </span>
+          </label>
+          
         </div>
       </form>
     </div>
