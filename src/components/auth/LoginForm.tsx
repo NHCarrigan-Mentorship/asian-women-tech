@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { Eye, EyeOff, Lock, LogIn, Mail } from "lucide-react";
+import { toast } from "sonner";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -31,6 +32,20 @@ export default function LoginForm() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleForgotPassword = () => {
+    toast("Password reset email sent!", {
+      description:
+        "Please check your email for instructions to reset your password.",
+      duration: 5000,
+      style: {
+        background: "#fdf2f8",
+        border: "1px solid #ec4899",
+        color: "#831843",
+      },
+      className: "font-medium",
+    });
   };
 
   return (
@@ -115,9 +130,8 @@ export default function LoginForm() {
           </div>
         </div>
 
-        {/* Remember Login Field */}
-
         <div className="flex justify-between">
+          {/* Remember Login Field */}
           <label htmlFor="remember-login" className="flex items-center gap-2">
             <input
               type="checkbox"
@@ -132,7 +146,14 @@ export default function LoginForm() {
               Remember Me
             </span>
           </label>
-          
+          {/* Forgot Password Field */}
+          <button
+            type="button"
+            className="text-sm text-pink-500 font-medium cursor-pointer"
+            onClick={handleForgotPassword}
+          >
+            Forgot Password?
+          </button>
         </div>
       </form>
     </div>
