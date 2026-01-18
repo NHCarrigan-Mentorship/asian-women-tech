@@ -1,5 +1,5 @@
 import AuthBackNavigation from "../../components/navigation/AuthBackNavigation";
-import AuthCard from "../../components/auth/AuthCard";
+import LoginForm from "../../components/auth/LoginForm";
 
 export default function Login() {
   return (
@@ -7,7 +7,7 @@ export default function Login() {
       <div className="flex-1 flex justify-center items-center px-4 py-12">
         <div className="w-full max-w-md">
           <AuthBackNavigation />
-          <AuthCard type="login" />
+          <LoginForm />
         </div>
       </div>
     </div>

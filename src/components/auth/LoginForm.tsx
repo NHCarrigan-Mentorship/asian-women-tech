@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { LogIn, Mail } from "lucide-react";
 
-interface AuthCardProps {
-  type: string;
-}
-
-export default function AuthCard({ type }: AuthCardProps) {
+export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [isLoading, setLoading] = useState(false);
 
-  const loginCard = (
+  return (
     <div className="bg-white p-8 border border-pink-100 rounded-2xl shadow-xl">
       <div className="text-center mb-8">
         <div className="inline-flex justify-center items-center w-16 h-16 mb-4 bg-gradient-to-br from-pink-500 to-rose-500 text-white rounded-full">
@@ -48,12 +44,4 @@ export default function AuthCard({ type }: AuthCardProps) {
       </form>
     </div>
   );
-
-  const signupCard = (
-    <>
-      <h1>Sign Up</h1>
-    </>
-  );
-
-  return <div>{type === "login" ? loginCard : signupCard}</div>;
 }
