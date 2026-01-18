@@ -202,7 +202,7 @@ export default function ProfileCreation() {
             <div className="text-center md:text-left">
               <Link
                 to="/signup"
-                className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded hover:from-pink-600 hover:to-rose-600 transition-all shadow-md text-sm md:text-base group cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all shadow-md text-sm md:text-base group cursor-pointer"
               >
                 Get Started
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />

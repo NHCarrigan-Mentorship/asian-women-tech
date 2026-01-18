@@ -6,7 +6,7 @@ export default function ErrorBackNavigation() {
 
   return (
     <button
-      className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded hover:from-pink-600 hover:to-rose-600 transition-all shadow-md cursor-pointer"
+      className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all shadow-md cursor-pointer"
       onClick={() => navigate(-1)}
     >
       <ArrowLeft className="w-4 h-4" />

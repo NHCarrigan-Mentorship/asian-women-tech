@@ -76,7 +76,7 @@ export default function FeaturedProfileCard({
 
           <Link
             to={`/profile/${profile.id}`}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded hover:from-pink-600 hover:to-rose-600 transition-all text-xs md:text-sm group cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all text-xs md:text-sm group cursor-pointer"
           >
             Read Full Profile
             <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
