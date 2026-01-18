@@ -72,6 +72,7 @@ export default function DesktopSearchBar({
           onToggleExpertise={toggleExpertise}
           onClearAll={clearAllFilters}
           onClose={() => setShowFilters(false)}
+          filteredProfilesCount={filteredProfilesCount}
         />
       </div>
 

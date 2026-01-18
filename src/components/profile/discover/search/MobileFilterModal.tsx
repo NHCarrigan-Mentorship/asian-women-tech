@@ -27,12 +27,6 @@ export default function MobileFilterModal({
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [showAllExpertise, setShowAllExpertise] = useState(false);
 
-  const INITIAL_DISPLAY_COUNT = 8;
-  const displayedExpertise = showAllExpertise
-    ? allExpertise
-    : allExpertise.slice(0, INITIAL_DISPLAY_COUNT);
-  const hasMore = allExpertise.length > INITIAL_DISPLAY_COUNT;
-
   // Focus search input when modal opens
   useEffect(() => {
     if (isOpen && searchInputRef.current) {
@@ -65,10 +59,10 @@ export default function MobileFilterModal({
       />
 
       {/* Filter Panel */}
-      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up max-h-[90vh] flex flex-col">
+      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up max-h-[85vh] flex flex-col">
         {/* Header */}
-        <div className="flex-shrink-0 px-6 py-4 border-b-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50">
-          <div className="flex items-center justify-between mb-3">
+        <div className="flex-shrink-0 px-6 py-5 border-b-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 rounded-t-3xl">
+          <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2.5">
               <Filter className="w-6 h-6 text-pink-600" />
               <h2 className="text-xl font-bold text-gray-900">
@@ -77,7 +71,7 @@ export default function MobileFilterModal({
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-pink-100 rounded-full transition-colors cursor-pointer"
+              className="p-2 hover:bg-pink-100 rounded-full transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Close filters"
             >
               <X className="w-6 h-6 text-gray-600" />
@@ -137,46 +131,50 @@ export default function MobileFilterModal({
                 )}
               </div>
 
-              {/* Expertise Chips - Horizontal Scrollable */}
-              <div className="flex flex-wrap gap-1.5">
-                {displayedExpertise.map((exp) => {
-                  const isSelected = selectedExpertise.includes(exp);
-                  return (
-                    <button
-                      key={exp}
-                      onClick={() => toggleExpertise(exp)}
-                      className={`px-3 py-2 rounded-full font-medium text-xs transition-all cursor-pointer active:scale-95 whitespace-nowrap ${
-                        isSelected
-                          ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white border-2 border-pink-500 shadow-md"
-                          : "bg-white text-gray-700 border-2 border-pink-200 hover:border-pink-400 hover:bg-pink-50"
-                      }`}
-                    >
-                      {exp}
-                    </button>
-                  );
-                })}
-              </div>
+              {/* Expertise Chips - With See More/Less Toggle */}
+              <div className="space-y-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {(showAllExpertise
+                    ? allExpertise
+                    : allExpertise.slice(0, 10)
+                  ).map((exp) => {
+                    const isSelected = selectedExpertise.includes(exp);
+                    return (
+                      <button
+                        key={exp}
+                        onClick={() => toggleExpertise(exp)}
+                        className={`px-3 py-2 rounded-full font-medium text-xs transition-all cursor-pointer active:scale-95 whitespace-nowrap ${
+                          isSelected
+                            ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white border-2 border-pink-500 shadow-md"
+                            : "bg-white text-gray-700 border-2 border-pink-200 hover:border-pink-400 hover:bg-pink-50"
+                        }`}
+                      >
+                        {exp}
+                      </button>
+                    );
+                  })}
+                </div>
 
-              {/* Show More/Less Button */}
-              {hasMore && (
-                <button
-                  onClick={() => setShowAllExpertise(!showAllExpertise)}
-                  className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-white border-2 border-pink-200 text-pink-700 rounded-xl hover:bg-pink-50 hover:border-pink-300 transition-all cursor-pointer font-medium text-sm"
-                >
-                  <span>
-                    {showAllExpertise
-                      ? "Show Less"
-                      : `Show ${
-                          allExpertise.length - INITIAL_DISPLAY_COUNT
-                        } More`}
-                  </span>
-                  {showAllExpertise ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
-              )}
+                {/* See More/Less Button */}
+                {allExpertise.length > 10 && (
+                  <button
+                    onClick={() => setShowAllExpertise(!showAllExpertise)}
+                    className="w-full py-3 bg-white border-2 border-pink-200 text-pink-600 rounded-xl hover:bg-pink-50 hover:border-pink-400 transition-all cursor-pointer flex items-center justify-center gap-2 font-semibold text-sm"
+                  >
+                    {showAllExpertise ? (
+                      <>
+                        <span>See less</span>
+                        <ChevronUp className="w-4 h-4" />
+                      </>
+                    ) : (
+                      <>
+                        <span>See more ({allExpertise.length - 10} more)</span>
+                        <ChevronDown className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ interface FilterDropdownProps {
   onToggleExpertise: (expertise: string) => void;
   onClearAll: () => void;
   onClose: () => void;
+  filteredProfilesCount?: number;
 }
 
 export default function FilterDropdown({
@@ -16,6 +17,7 @@ export default function FilterDropdown({
   onToggleExpertise,
   onClearAll,
   onClose,
+  filteredProfilesCount,
 }: FilterDropdownProps) {
   if (!isOpen) return null;
 
@@ -91,6 +93,9 @@ export default function FilterDropdown({
           onClick={onClose}
           className="w-full px-4 py-3.5 md:py-2.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all cursor-pointer text-base md:text-sm shadow-lg active:scale-[0.98]"
         >
+          {selectedExpertise.length > 0 && filteredProfilesCount !== undefined
+            ? `Show ${filteredProfilesCount} Result${filteredProfilesCount !== 1 ? "s" : ""}`
+            : "Apply Filters"}
           Apply Filters
         </button>
       </div>
