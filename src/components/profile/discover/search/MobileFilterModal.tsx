@@ -59,7 +59,7 @@ export default function MobileFilterModal({
       />
 
       {/* Filter Panel */}
-      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up max-h-[85vh] flex flex-col">
+      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up max-h-[75vh] flex flex-col mb-16">
         {/* Header */}
         <div className="flex-shrink-0 px-6 py-5 border-b-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 rounded-t-3xl">
           <div className="flex items-center justify-between mb-2">
