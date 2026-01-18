@@ -66,7 +66,7 @@ export default function FilterDropdown({
                     type="checkbox"
                     checked={isSelected}
                     onChange={() => onToggleExpertise(exp)}
-                    className="w-5 h-5 md:w-4 md:h-4 text-pink-600 border-2 border-pink-300 rounded focus:ring-2 focus:ring-pink-500 cursor-pointer transition-all"
+                    className="w-5 h-5 md:w-4 md:h-4 text-pink-600 border-2 border-pink-300 outline-pink-500 cursor-pointer transition-all"
                   />
                 </div>
                 {/* Label Text */}

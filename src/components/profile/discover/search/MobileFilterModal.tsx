@@ -104,7 +104,7 @@ export default function MobileFilterModal({
                   placeholder="Name, role, or company..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-12 py-4 text-base border-2 border-pink-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 bg-white transition-all placeholder:text-gray-400"
+                  className="w-full pl-12 pr-12 py-4 text-base border-2 border-pink-200 rounded-xl outline-pink-500 focus:border-pink-500 bg-white transition-all placeholder:text-gray-400"
                 />
                 {searchQuery && (
                   <button
