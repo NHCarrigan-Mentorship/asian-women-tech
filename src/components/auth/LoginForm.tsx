@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import { LogIn, Mail } from "lucide-react";
+import { Eye, EyeOff, Lock, LogIn, Mail } from "lucide-react";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -51,6 +52,7 @@ export default function LoginForm() {
           >
             Email Address
           </label>
+
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
@@ -66,6 +68,43 @@ export default function LoginForm() {
               placeholder="you@example.com"
             ></input>
           </div>
+        </div>
+
+        {/* Password Field */}
+        <label
+          htmlFor="password"
+          className="block mb-2 text-sm text-gray-600 font-medium"
+        >
+          Password
+        </label>
+
+        <div className="relative">
+          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+
+          <input
+            id="password"
+            type={showPassword ? "text" : "password"}
+            name="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            disabled={isLoading}
+            placeholder="••••••••"
+            className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          ></input>
+
+          <button
+            type="button"
+            onClick={() => setShowPassword((prev) => !prev)}
+            disabled={isLoading}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer hover:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {showPassword ? (
+              <EyeOff className="w-5 h-5" />
+            ) : (
+              <Eye className="w-5 h-5" />
+            )}
+          </button>
         </div>
       </form>
     </div>
