@@ -79,40 +79,39 @@ export default function LoginForm() {
         </div>
 
         {/* Password Field */}
-        <label
-          htmlFor="password"
-          className="block mb-2 text-sm text-gray-600 font-medium"
-        >
-          Password
-        </label>
-
-        <div className="relative">
-          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-
-          <input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            name="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            disabled={isLoading}
-            placeholder="••••••••"
-            className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          ></input>
-
-          <button
-            type="button"
-            onClick={() => setShowPassword((prev) => !prev)}
-            disabled={isLoading}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer hover:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        <div>
+          <label
+            htmlFor="password"
+            className="block mb-2 text-sm text-gray-600 font-medium"
           >
-            {showPassword ? (
-              <EyeOff className="w-5 h-5" />
-            ) : (
-              <Eye className="w-5 h-5" />
-            )}
-          </button>
+            Password
+          </label>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <input
+              id="password"
+              type={showPassword ? "text" : "password"}
+              name="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              disabled={isLoading}
+              placeholder="••••••••"
+              className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            ></input>
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              disabled={isLoading}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer hover:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {showPassword ? (
+                <EyeOff className="w-5 h-5" />
+              ) : (
+                <Eye className="w-5 h-5" />
+              )}
+            </button>
+          </div>
         </div>
       </form>
     </div>
