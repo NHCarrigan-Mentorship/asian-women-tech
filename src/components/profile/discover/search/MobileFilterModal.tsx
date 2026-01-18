@@ -51,7 +51,7 @@ export default function MobileFilterModal({
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden fixed inset-0 z-50 flex items-end pb-16">
+    <div className="md:hidden fixed inset-0 z-50 flex items-end pt-16 pb-16">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in"
@@ -59,7 +59,7 @@ export default function MobileFilterModal({
       />
 
       {/* Filter Panel */}
-      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up h-[calc(100vh-4rem)] flex flex-col">
+      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up h-full flex flex-col">
         {/* Header */}
         <div className="flex-shrink-0 px-6 py-5 border-b-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 rounded-t-3xl">
           <div className="flex items-center justify-between mb-2">
