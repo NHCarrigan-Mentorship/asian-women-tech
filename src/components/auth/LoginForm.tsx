@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { Eye, EyeOff, Lock, LogIn, Mail } from "lucide-react";
 import { toast } from "sonner";
@@ -165,7 +165,7 @@ export default function LoginForm() {
           {isLoading ? "Signing In" : "Sign In"}
         </button>
       </form>
-      
+
       {/* Divider */}
       <div className="relative my-6">
         <div className="absolute inset-0 flex items-center">
@@ -214,6 +214,15 @@ export default function LoginForm() {
           <span className="text-sm font-medium">LinkedIn</span>
         </button>
       </div>
+
+      <p className="mt-6 text-center text-gray-600 font-medium">
+        Don't have an account?{" "}
+        <span>
+          <Link to={"/signup"} className="text-pink-500 hover:text-pink-600">
+            Join PinkTech
+          </Link>
+        </span>
+      </p>
     </div>
   );
 }
