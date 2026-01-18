@@ -1,9 +1,35 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 import { LogIn, Mail } from "lucide-react";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
-  const [isLoading, setLoading] = useState(false);
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
+
+    try {
+      await login(email, password);
+      navigate("/");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "An error occurred while logging in.",
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="bg-white p-8 border border-pink-100 rounded-2xl shadow-xl">
@@ -16,7 +42,7 @@ export default function LoginForm() {
         <p className="text-gray-600">Sign in to continue your story</p>
       </div>
       {/* Form */}
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Email Field */}
         <div>
           <label
