@@ -42,7 +42,15 @@ export default function LoginForm() {
         <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
         <p className="text-gray-600">Sign in to continue your story</p>
       </div>
-      {/* Form */}
+
+      {/* Error Message  */}
+      {error && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+          {error}
+        </div>
+      )}
+
+      {/* Login Form */}
       <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Email Field */}
         <div>
