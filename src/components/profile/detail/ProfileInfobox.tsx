@@ -88,7 +88,7 @@ export default function ProfileInfobox({ id }: ProfileInfoboxProps) {
                         <a
                           href={url}
                           aria-label={`${profile.name}'s ${platform} profile`}
-                          className="p-2 border border-pink-200 bg-white rounded hover:bg-pink-100 transition-colors"
+                          className="flex items-center justify-center min-w-[44px] min-h-[44px] border border-pink-200 bg-white rounded hover:bg-pink-100 transition-colors"
                         >
                           <Icon
                             className="w-5 h-5 text-pink-700"
