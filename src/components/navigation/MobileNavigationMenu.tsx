@@ -3,6 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Link, useLocation } from "react-router-dom";
 
 export default function MobileNavigationMenu() {
+  // Add a class to allow hiding when modal is open
   const location = useLocation();
   const { isAuthenticated, logout } = useAuth();
   const isActive = (path: string) => {
@@ -10,7 +11,7 @@ export default function MobileNavigationMenu() {
   };
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 safe-area-bottom">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 safe-area-bottom mobile-nav-hide-on-modal">
       <div className="flex justify-around items-center h-16 px-2">
         <Link
           to="/"

@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+// Custom event to hide/show mobile nav
 import { X, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 
 interface MobileFilterModalProps {
@@ -48,10 +49,23 @@ export default function MobileFilterModal({
     };
   }, [isOpen]);
 
+  // Hide mobile nav when modal is open
+  useEffect(() => {
+    const nav = document.querySelector(".mobile-nav-hide-on-modal");
+    if (isOpen && nav) {
+      (nav as HTMLElement).style.display = "none";
+    } else if (nav) {
+      (nav as HTMLElement).style.display = "";
+    }
+    return () => {
+      if (nav) (nav as HTMLElement).style.display = "";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden fixed inset-0 z-50 flex items-end pt-16 pb-16">
+    <div className="md:hidden fixed inset-0 z-[100] flex items-end pt-0 pb-0 bg-white">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in"
@@ -59,7 +73,7 @@ export default function MobileFilterModal({
       />
 
       {/* Filter Panel */}
-      <div className="relative w-full bg-white rounded-t-3xl shadow-2xl animate-slide-up h-full flex flex-col">
+      <div className="relative w-full h-full bg-white rounded-none shadow-none flex flex-col">
         {/* Header */}
         <div className="flex-shrink-0 px-6 py-5 border-b-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50 rounded-t-3xl">
           <div className="flex items-center justify-between mb-2">
