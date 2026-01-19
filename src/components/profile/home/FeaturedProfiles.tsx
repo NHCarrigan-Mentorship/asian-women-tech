@@ -103,7 +103,7 @@ export default function FeaturedProfiles() {
   };
 
   return (
-    <div className="py-8 md:py-16 bg-gray-50">
+    <div className="py-8 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="mb-6 md:mb-8">

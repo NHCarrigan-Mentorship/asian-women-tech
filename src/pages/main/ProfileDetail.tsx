@@ -11,13 +11,13 @@ export default function ProfileDetail() {
 
   if (!profile) {
     return (
-      <div className="flex flex-1 justify-center items-center p-10 bg-gray-50">
+      <div className="flex flex-1 justify-center items-center p-10">
         <ProfileNotFound />
       </div>
     );
   }
   return (
-    <div className="flex-1 py-2 bg-gray-50">
+    <div className="flex-1 py-2">
       <BackNavigation />
       <ProfileAuthorshipNotice />
       <ProfileCard id={profile.id} />
