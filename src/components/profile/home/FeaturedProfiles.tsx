@@ -10,8 +10,11 @@ import {
 import { useNavigate } from "react-router-dom";
 import { profiles } from "../../../data/profiles";
 import FeaturedProfileCard from "./FeaturedProfileCard";
+import Pagination from "../../ui/Pagination";
 
 export default function FeaturedProfiles() {
+  const FEATURED_COUNT = 5;
+  const featuredProfiles = profiles.slice(0, FEATURED_COUNT);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(0);
@@ -25,21 +28,16 @@ export default function FeaturedProfiles() {
 
   useEffect(() => {
     if (isPaused) return;
-
-    // Only auto-play on medium screens and up
     const mediaQuery = window.matchMedia("(min-width: 768px)");
-
-    if (!mediaQuery.matches) return; // Don't auto-play on mobile
-
+    if (!mediaQuery.matches) return;
     const interval = setInterval(() => {
       setDirection(1);
-      setCurrentIndex((prev) => (prev + 1) % profiles.length);
+      setCurrentIndex((prev) => (prev + 1) % featuredProfiles.length);
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, featuredProfiles.length]);
 
-  const currentProfile = profiles[currentIndex];
+  const currentProfile = featuredProfiles[currentIndex];
 
   const handleLearnMore = () => {
     navigate(`/profile/${currentProfile.id}`);
@@ -52,13 +50,15 @@ export default function FeaturedProfiles() {
   const handlePrevious = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click
     setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + profiles.length) % profiles.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + featuredProfiles.length) % featuredProfiles.length,
+    );
   };
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click
     setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % profiles.length);
+    setCurrentIndex((prev) => (prev + 1) % featuredProfiles.length);
   };
 
   const handleDragEnd = (
@@ -70,11 +70,14 @@ export default function FeaturedProfiles() {
     if (swipe < -swipeConfidenceThreshold) {
       // Swiped left - go to next
       setDirection(1);
-      setCurrentIndex((prev) => (prev + 1) % profiles.length);
+      setCurrentIndex((prev) => (prev + 1) % featuredProfiles.length);
     } else if (swipe > swipeConfidenceThreshold) {
       // Swiped right - go to previous
       setDirection(-1);
-      setCurrentIndex((prev) => (prev - 1 + profiles.length) % profiles.length);
+      setCurrentIndex(
+        (prev) =>
+          (prev - 1 + featuredProfiles.length) % featuredProfiles.length,
+      );
     }
   };
 
@@ -196,25 +199,14 @@ export default function FeaturedProfiles() {
 
           {/* Number Pagination - All screens */}
           <div className="flex items-center justify-center gap-1 md:gap-2 mt-4">
-            {profiles.map((_, index) => (
-              <button
-                key={index}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setDirection(index > currentIndex ? 1 : -1);
-                  setCurrentIndex(index);
-                }}
-                className={`w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-lg font-medium text-sm transition-all cursor-pointer ${
-                  index === currentIndex
-                    ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md"
-                    : "bg-white border border-pink-200 text-pink-600 hover:bg-pink-50"
-                }`}
-                aria-label={`Go to profile ${index + 1}`}
-                aria-current={index === currentIndex ? "page" : undefined}
-              >
-                {index + 1}
-              </button>
-            ))}
+            <Pagination
+              currentPage={currentIndex + 1}
+              totalPages={featuredProfiles.length}
+              onPageChange={(page) => {
+                setDirection(page - 1 > currentIndex ? 1 : -1);
+                setCurrentIndex(page - 1);
+              }}
+            />
           </div>
 
           {/* Mobile Swipe Hint - Only show on first load */}
