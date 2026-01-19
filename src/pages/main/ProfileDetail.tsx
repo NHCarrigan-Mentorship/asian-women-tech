@@ -18,7 +18,7 @@ export default function ProfileDetail() {
   }
   return (
     <div className="flex-1 py-2">
-      <BackNavigation />
+      <BackNavigation />      
       <ProfileAuthorshipNotice />
       <ProfileCard id={profile.id} />
     </div>
