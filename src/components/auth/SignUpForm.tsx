@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 import { UserPlus } from "lucide-react";
 
@@ -7,6 +9,22 @@ export default function SignUpForm() {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+  const { signup } = useAuth();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    try {
+      e.preventDefault();
+      setError("");
+      setIsLoading(true);
+    } catch (err) {
+      err instanceof Error ? err.message : "An error occurred while signing up";
+    } finally {
+      signup(email, password, name);
+      navigate("/");
+    }
+  };
 
   return (
     <div className="bg-white p-8 border border-pink-100 rounded-2xl shadow-2xl">
