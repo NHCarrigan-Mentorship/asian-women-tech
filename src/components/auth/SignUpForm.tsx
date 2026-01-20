@@ -14,15 +14,16 @@ export default function SignUpForm() {
   const { signup } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
     try {
-      e.preventDefault();
-      setError("");
-      setIsLoading(true);
+      await signup(email, password, name);
+      navigate("/");
     } catch (err) {
       err instanceof Error ? err.message : "An error occurred while signing up";
     } finally {
-      signup(email, password, name);
-      navigate("/");
+      setIsLoading(false);
     }
   };
 
