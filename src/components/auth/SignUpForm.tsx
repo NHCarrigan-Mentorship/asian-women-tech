@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { UserPlus } from "lucide-react";
 
 export default function SignUpForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
   return (
     <div className="bg-white p-8 border border-pink-100 rounded-2xl shadow-2xl">
       <div className="text-center mb-8">
