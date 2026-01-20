@@ -96,7 +96,6 @@ export default function FilterDropdown({
           {selectedExpertise.length > 0 && filteredProfilesCount !== undefined
             ? `Show ${filteredProfilesCount} Result${filteredProfilesCount !== 1 ? "s" : ""}`
             : "Apply Filters"}
-          Apply Filters
         </button>
       </div>
     </div>
