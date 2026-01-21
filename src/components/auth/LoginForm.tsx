@@ -108,6 +108,7 @@ export default function LoginForm() {
               id="password"
               type={showPassword ? "text" : "password"}
               name="password"
+              autoComplete="current-password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
