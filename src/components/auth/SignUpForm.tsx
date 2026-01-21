@@ -77,6 +77,29 @@ export default function SignUpForm() {
               ></input>
             </div>
           </div>
+
+          {/* Email Field */}
+          <div>
+            <label htmlFor="email" className="block mb-2 text-sm font-medium">
+              Email
+            </label>
+            <div className="relative">
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                autoComplete="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                disabled={isLoading}
+                className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              ></input>
+            </div>
+          </div>
         </div>
       </form>
     </div>
