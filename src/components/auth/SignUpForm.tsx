@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
-import { User, UserPlus } from "lucide-react";
+import { Mail, User, UserPlus } from "lucide-react";
 
 export default function SignUpForm() {
   const [name, setName] = useState("");
@@ -67,6 +67,8 @@ export default function SignUpForm() {
                 type="text"
                 name="name"
                 id="name"
+                autoComplete="name"
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Jane Smith"
