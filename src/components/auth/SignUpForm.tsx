@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 import { Eye, EyeOff, Lock, Mail, User, UserPlus } from "lucide-react";
@@ -190,6 +190,13 @@ export default function SignUpForm() {
           <span className="text-sm font-medium">LinkedIn</span>
         </button>
       </div>
+
+      <p className="mt-6 text-center text-gray-600 text-sm font-medium">
+        Already have an account?{" "}
+        <span className="text-pink-500 hover:text-pink-600">
+          <Link to="/login">Sign In</Link>
+        </span>
+      </p>
     </div>
   );
 }
