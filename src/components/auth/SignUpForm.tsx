@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
-import { UserPlus } from "lucide-react";
+import { User, UserPlus } from "lucide-react";
 
 export default function SignUpForm() {
   const [name, setName] = useState("");
@@ -17,11 +17,16 @@ export default function SignUpForm() {
     e.preventDefault();
     setError("");
     setIsLoading(true);
+
     try {
       await signup(email, password, name);
       navigate("/");
     } catch (err) {
-      err instanceof Error ? err.message : "An error occurred while signing up";
+      setError(
+        err instanceof Error
+          ? err.message
+          : "An error occurred while signing up",
+      );
     } finally {
       setIsLoading(false);
     }
