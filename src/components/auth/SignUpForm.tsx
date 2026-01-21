@@ -53,92 +53,94 @@ export default function SignUpForm() {
       )}
 
       {/* Sign Up Form */}
-      <form onSubmit={handleSubmit}>
-        <div className="space-y-6">
-          {/* Name Field */}
-          <div>
-            <label htmlFor="name" className="block mb-2 text-sm font-medium">
-              Full Name
-            </label>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Name Field */}
+        <div>
+          <label htmlFor="name" className="block mb-2 text-sm font-medium">
+            Full Name
+          </label>
 
-            <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <div className="relative">
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
 
-              <input
-                type="text"
-                name="name"
-                id="name"
-                autoComplete="name"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Jane Smith"
-                disabled={isLoading}
-                className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              ></input>
-            </div>
-          </div>
-
-          {/* Email Field */}
-          <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium">
-              Email
-            </label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                autoComplete="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                disabled={isLoading}
-                className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              ></input>
-            </div>
-          </div>
-
-          {/* Password Field */}
-          <div>
-            <label
-              htmlFor="password"
-              className="block mb-2 text-sm font-medium"
-            >
-              Password
-            </label>
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                id="password"
-                value={password}
-                autoComplete="new-password"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                disabled={isLoading}
-                className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              ></input>
-
-              <button
-                className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 cursor-pointer"
-                onClick={() => setShowPassword((prev) => !prev)}
-              >
-                {showPassword ? (
-                  <EyeOff className="w-5 h-5" />
-                ) : (
-                  <Eye className="w-5 h-5" />
-                )}
-              </button>
-            </div>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              autoComplete="name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Jane Smith"
+              disabled={isLoading}
+              className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            ></input>
           </div>
         </div>
+
+        {/* Email Field */}
+        <div>
+          <label htmlFor="email" className="block mb-2 text-sm font-medium">
+            Email
+          </label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              autoComplete="email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              disabled={isLoading}
+              className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            ></input>
+          </div>
+        </div>
+
+        {/* Password Field */}
+        <div>
+          <label htmlFor="password" className="block mb-2 text-sm font-medium">
+            Password
+          </label>
+          <div className="relative">
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              id="password"
+              value={password}
+              autoComplete="new-password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              disabled={isLoading}
+              className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg outline-pink-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            ></input>
+
+            <button
+              className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 cursor-pointer"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? (
+                <EyeOff className="w-5 h-5" />
+              ) : (
+                <Eye className="w-5 h-5" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full py-3 rounded-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold cursor-pointer hover:from-pink-600 to-rose-600 hover:scale-105 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        >
+          {isLoading ? "Signing Up" : "Sign Up"}
+        </button>
       </form>
     </div>
   );
