@@ -1,5 +1,5 @@
 import { profiles } from "../../../data/profiles";
-import { Clock, ExternalLink } from "lucide-react";
+import { Clock } from "lucide-react";
 
 interface ProfileContentProps {
   id: string;
@@ -27,34 +27,6 @@ export default function ProfileContent({ id }: ProfileContentProps) {
           About
         </h2>
         <p className="text-base">{profile?.bio}</p>
-      </div>
-
-      {/* Profile Achievements */}
-      <div className="mb-8">
-        <h2 className="mb-4 border-b-1 border-pink-200 pb-1 text-2xl text-gray-900 font-bold">
-          Key Achievements
-        </h2>
-        <ul className="space-y-3">
-          {profile?.achievements.map((achievement, index) => {
-            return (
-              <li className="flex flex-wrap gap-2 text-base" key={index}>
-                <span className="text-pink-600">•</span>
-                <span className="flex flex-wrap gap-1 flex-1 text-gray-900">
-                  <span>{achievement.text}</span>
-                  {achievement.link && (
-                    <a
-                      href={achievement.link}
-                      className="flex items-center gap-1 text-pink-700"
-                    >
-                      [link]
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </div>
   );
