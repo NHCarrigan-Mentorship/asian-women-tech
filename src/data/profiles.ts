@@ -21,7 +21,7 @@ export const profiles: Profile[] = [
   {
     id: "1",
     name: "Dr. Amara Johnson",
-    username: "amara_johnson",
+    username: "amarajohnson",
     role: "Chief AI Officer",
     company: "TechVision AI",
     imageUrl:
