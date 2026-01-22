@@ -40,7 +40,9 @@ export const profiles: Profile[] = [
       website: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Dr. Amara Johnson** (born March 15, 1992) is an American computer scientist and entrepreneur, currently serving as the Chief AI Officer at TechVision AI. She is widely recognized for her pioneering work in ethical artificial intelligence and healthcare technology.
+    content: `# Dr. Amara Johnson
+
+**Dr. Amara Johnson** (born March 15, 1992) is an American computer scientist and entrepreneur, currently serving as the Chief AI Officer at TechVision AI. She is widely recognized for her pioneering work in ethical artificial intelligence and healthcare technology.
 
 ## Early Life and Education
 
@@ -99,7 +101,9 @@ Johnson is based in San Francisco and serves on the board of several nonprofit o
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Sofia Rodriguez** (born July 22, 1991) is an American entrepreneur and software engineer, currently serving as the Founder and CEO of CloudScale Solutions. She is recognized as a leading innovator in cloud computing and enterprise software development.
+    content: `# Sofia Rodriguez
+
+**Sofia Rodriguez** (born July 22, 1991) is an American entrepreneur and software engineer, currently serving as the Founder and CEO of CloudScale Solutions. She is recognized as a leading innovator in cloud computing and enterprise software development.
 
 ## Early Life and Education
 
@@ -163,7 +167,9 @@ Rodriguez is based in Seattle and serves on the board of Code2040, a nonprofit f
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Dr. Layla Hassan** (born November 8, 1988) is an Emirati computer scientist and engineer, currently serving as the Vice President of Engineering at Quantum Dynamics. She is internationally recognized for her work in making quantum computing accessible to mainstream developers and enterprises.
+    content: `# Dr. Layla Hassan
+
+**Dr. Layla Hassan** (born November 8, 1988) is an Emirati computer scientist and engineer, currently serving as the Vice President of Engineering at Quantum Dynamics. She is internationally recognized for her work in making quantum computing accessible to mainstream developers and enterprises.
 
 ## Early Life and Education
 
@@ -228,7 +234,9 @@ Hassan is based in Dubai and serves as an advisor to the UAE Ministry of Technol
       website: "#",
     },
     lastUpdated: "October 2025",
-    content: `**Grace O'Connor** (born February 14, 1987) is an Irish cybersecurity expert and executive, currently serving as the Head of Cybersecurity at SecureNet Global. She is widely regarded as one of the world's foremost experts in critical infrastructure protection and threat intelligence.
+    content: `# Grace O'Connor
+
+**Grace O'Connor** (born February 14, 1987) is an Irish cybersecurity expert and executive, currently serving as the Head of Cybersecurity at SecureNet Global. She is widely regarded as one of the world's foremost experts in critical infrastructure protection and threat intelligence.
 
 ## Early Life and Education
 
@@ -294,7 +302,9 @@ O'Connor is based in Dublin and is an active member of the Irish tech community.
       website: "#",
     },
     lastUpdated: "September 2025",
-    content: `**Dr. Priya Patel** (born May 3, 1989) is an Indian-American computational biologist and data scientist, currently serving as the Director of Research at BioTech Innovations. She is recognized for her groundbreaking work in gene sequencing algorithms and personalized medicine.
+    content: `# Dr. Priya Patel
+
+**Dr. Priya Patel** (born May 3, 1989) is an Indian-American computational biologist and data scientist, currently serving as the Director of Research at BioTech Innovations. She is recognized for her groundbreaking work in gene sequencing algorithms and personalized medicine.
 
 ## Early Life and Education
 
@@ -362,7 +372,9 @@ Patel is based in Boston and serves on the scientific advisory board of several 
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Maya Thompson** (born September 19, 1990) is an American product leader and entrepreneur, currently serving as the Chief Product Officer at MobileFirst Labs. She is recognized for creating mobile experiences that have reached over 500 million users worldwide, with a particular focus on emerging markets.
+    content: `# Maya Thompson
+
+**Maya Thompson** (born September 19, 1990) is an American product leader and entrepreneur, currently serving as the Chief Product Officer at MobileFirst Labs. She is recognized for creating mobile experiences that have reached over 500 million users worldwide, with a particular focus on emerging markets.
 
 ## Early Life and Education
 
@@ -429,7 +441,9 @@ Thompson is based in New York City and is involved in various philanthropic effo
       website: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Jennifer Chen** (born April 12, 1986) is an American-Chinese data engineer and technology executive, currently serving as the VP of Data Engineering at DataStream Analytics. She is recognized for building some of the world's largest and most sophisticated data processing systems.
+    content: `# Jennifer Chen
+
+**Jennifer Chen** (born April 12, 1986) is an American-Chinese data engineer and technology executive, currently serving as the VP of Data Engineering at DataStream Analytics. She is recognized for building some of the world's largest and most sophisticated data processing systems.
 
 ## Early Life and Education
 
@@ -495,7 +509,9 @@ Chen is based in Austin and serves on the advisory board of the UT Austin Comput
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Samantha Williams** (born June 28, 1993) is an American technology innovator and director, currently leading VR/AR development at Immersive Technologies. She is recognized as a pioneer in applying virtual and augmented reality to solve real-world problems in healthcare, education, and entertainment.
+    content: `# Samantha Williams
+
+**Samantha Williams** (born June 28, 1993) is an American technology innovator and director, currently leading VR/AR development at Immersive Technologies. She is recognized as a pioneer in applying virtual and augmented reality to solve real-world problems in healthcare, education, and entertainment.
 
 ## Early Life and Education
 
@@ -553,7 +569,9 @@ Williams is based in Los Angeles and mentors women in VR/AR through the Women in
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Fatima Al-Rashid** (born October 5, 1988) is a Saudi-British financial technology executive, currently serving as Chief Technology Officer at FinTech Innovations. She is widely recognized for transforming financial services through blockchain technology and making banking accessible to underserved communities globally.
+    content: `# Fatima Al-Rashid
+
+**Fatima Al-Rashid** (born October 5, 1988) is a Saudi-British financial technology executive, currently serving as Chief Technology Officer at FinTech Innovations. She is widely recognized for transforming financial services through blockchain technology and making banking accessible to underserved communities globally.
 
 ## Early Life and Education
 
@@ -613,7 +631,9 @@ Al-Rashid is based in London and sits on the board of several fintech startups. 
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Dr. Rachel Kim** (born January 17, 1985) is a Korean-American roboticist and engineer, currently serving as Head of Robotics at AutomaTech Systems. She is internationally recognized for her work in collaborative robotics and human-robot interaction.
+    content: `# Dr. Rachel Kim
+
+**Dr. Rachel Kim** (born January 17, 1985) is a Korean-American roboticist and engineer, currently serving as Head of Robotics at AutomaTech Systems. She is internationally recognized for her work in collaborative robotics and human-robot interaction.
 
 ## Early Life and Education
 
@@ -678,7 +698,9 @@ Kim is based in Tokyo and holds both American and South Korean citizenship. She 
       website: "#",
     },
     lastUpdated: "October 2025",
-    content: `**Isabella Martinez** (born August 3, 1987) is an American software engineer and technology executive of Cuban descent, currently serving as VP of Software Engineering at WebScale Platform. She is recognized for building highly reliable distributed systems that serve billions of requests daily.
+    content: `# Isabella Martinez
+
+**Isabella Martinez** (born August 3, 1987) is an American software engineer and technology executive of Cuban descent, currently serving as VP of Software Engineering at WebScale Platform. She is recognized for building highly reliable distributed systems that serve billions of requests daily.
 
 ## Early Life and Education
 
@@ -738,7 +760,9 @@ Martinez is based in Miami and is involved in the local tech community, frequent
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Dr. Yuki Tanaka** (born December 2, 1990) is a Japanese research scientist specializing in deep learning and neural networks, currently working at Neural Networks Lab in Singapore. She is recognized for her groundbreaking contributions to natural language processing and computer vision.
+    content: `# Dr. Yuki Tanaka
+
+**Dr. Yuki Tanaka** (born December 2, 1990) is a Japanese research scientist specializing in deep learning and neural networks, currently working at Neural Networks Lab in Singapore. She is recognized for her groundbreaking contributions to natural language processing and computer vision.
 
 ## Early Life and Education
 
@@ -793,7 +817,9 @@ Tanaka is based in Singapore and enjoys photography and traditional Japanese tea
       twitter: "#",
     },
     lastUpdated: "September 2025",
-    content: `**Aaliyah Johnson** (born March 25, 1991) is an American DevOps engineer and technology leader, currently serving as Director of DevOps at CloudNative Inc. She is recognized for transforming software delivery processes and enabling organizations to deploy code dramatically faster while maintaining high quality.
+    content: `# Aaliyah Johnson
+
+**Aaliyah Johnson** (born March 25, 1991) is an American DevOps engineer and technology leader, currently serving as Director of DevOps at CloudNative Inc. She is recognized for transforming software delivery processes and enabling organizations to deploy code dramatically faster while maintaining high quality.
 
 ## Early Life and Education
 
@@ -855,7 +881,9 @@ Johnson is based in Chicago and is active in the local tech community. She runs 
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Elena Popescu** (born November 15, 1984) is a Romanian technology executive, currently serving as Chief Information Officer at Global Retail Tech. She is recognized for leading one of Europe's largest retail digital transformation initiatives.
+    content: `# Elena Popescu
+
+**Elena Popescu** (born November 15, 1984) is a Romanian technology executive, currently serving as Chief Information Officer at Global Retail Tech. She is recognized for leading one of Europe's largest retail digital transformation initiatives.
 
 ## Early Life and Education
 
@@ -912,7 +940,9 @@ Popescu is based in Bucharest and is involved in initiatives promoting women's a
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Nadia Ibrahim** (born July 8, 1992) is a Canadian-Egyptian game developer and creative director, currently serving as Lead Game Developer at Epic Gaming Studios. She is recognized for creating immersive gaming experiences that have captivated over 100 million players worldwide.
+    content: `# Nadia Ibrahim
+
+**Nadia Ibrahim** (born July 8, 1992) is a Canadian-Egyptian game developer and creative director, currently serving as Lead Game Developer at Epic Gaming Studios. She is recognized for creating immersive gaming experiences that have captivated over 100 million players worldwide.
 
 ## Early Life and Education
 
@@ -973,7 +1003,9 @@ Ibrahim is based in Montreal and is involved in the city's vibrant game developm
       website: "#",
     },
     lastUpdated: "October 2025",
-    content: `**Dr. Olivia Bennett** (born May 20, 1986) is a British-Ghanaian technology executive and smart cities expert, currently serving as Head of IoT at SmartCity Solutions. She is recognized for transforming urban environments through innovative Internet of Things infrastructure.
+    content: `# Dr. Olivia Bennett
+
+**Dr. Olivia Bennett** (born May 20, 1986) is a British-Ghanaian technology executive and smart cities expert, currently serving as Head of IoT at SmartCity Solutions. She is recognized for transforming urban environments through innovative Internet of Things infrastructure.
 
 ## Early Life and Education
 
@@ -1033,7 +1065,9 @@ Bennett is based in Copenhagen and serves on several smart cities advisory board
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Aisha Okafor** (born September 3, 1989) is a Nigerian technology executive and educational technology pioneer, currently serving as VP of Engineering at EdTech Platforms. She is recognized for democratizing access to quality education through innovative technology solutions that reach 50 million students globally.
+    content: `# Aisha Okafor
+
+**Aisha Okafor** (born September 3, 1989) is a Nigerian technology executive and educational technology pioneer, currently serving as VP of Engineering at EdTech Platforms. She is recognized for democratizing access to quality education through innovative technology solutions that reach 50 million students globally.
 
 ## Early Life and Education
 
@@ -1093,7 +1127,9 @@ Okafor is based in Lagos and is a prominent figure in Nigeria's growing tech eco
       twitter: "#",
     },
     lastUpdated: "September 2025",
-    content: `**Carmen Silva** (born February 11, 1990) is a Brazilian machine learning engineer and MLOps pioneer, currently serving as Director of ML Operations at AI Solutions Corp. She is recognized for operationalizing machine learning at unprecedented scale, managing over 500 models in production.
+    content: `# Carmen Silva
+
+**Carmen Silva** (born February 11, 1990) is a Brazilian machine learning engineer and MLOps pioneer, currently serving as Director of ML Operations at AI Solutions Corp. She is recognized for operationalizing machine learning at unprecedented scale, managing over 500 models in production.
 
 ## Early Life and Education
 
@@ -1153,7 +1189,9 @@ Silva is based in São Paulo and is active in Brazil's growing AI community. She
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Dr. Sarah Lindström** (born April 18, 1987) is a Swedish data scientist and healthcare technology executive, currently serving as Chief Data Officer at HealthTech Analytics. She is recognized for leveraging healthcare data to dramatically improve patient outcomes and clinical decision-making.
+    content: `# Dr. Sarah Lindström
+
+**Dr. Sarah Lindström** (born April 18, 1987) is a Swedish data scientist and healthcare technology executive, currently serving as Chief Data Officer at HealthTech Analytics. She is recognized for leveraging healthcare data to dramatically improve patient outcomes and clinical decision-making.
 
 ## Early Life and Education
 
@@ -1215,7 +1253,9 @@ Lindström is based in Stockholm and serves on the board of several health tech 
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Mei Wang** (born June 25, 1988) is a Chinese platform engineer and technology leader, currently serving as Head of Platform Engineering at one of the world's largest e-commerce companies. She is recognized for building highly resilient infrastructure that handles over 10 million transactions daily.
+    content: `# Mei Wang
+
+**Mei Wang** (born June 25, 1988) is a Chinese platform engineer and technology leader, currently serving as Head of Platform Engineering at one of the world's largest e-commerce companies. She is recognized for building highly resilient infrastructure that handles over 10 million transactions daily.
 
 ## Early Life and Education
 
@@ -1277,7 +1317,9 @@ Wang is based in Shanghai and is involved in China's vibrant tech community. She
       twitter: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Dr. Zara Ahmed** (born August 10, 1989) is a British-Pakistani computational linguist and AI researcher, currently serving as Head of NLP Research at Language AI Labs. She is internationally recognized for developing multilingual AI models that break down language barriers.
+    content: `# Dr. Zara Ahmed
+
+**Dr. Zara Ahmed** (born August 10, 1989) is a British-Pakistani computational linguist and AI researcher, currently serving as Head of NLP Research at Language AI Labs. She is internationally recognized for developing multilingual AI models that break down language barriers.
 
 ## Early Life and Education
 
@@ -1339,7 +1381,9 @@ Ahmed is based in Cambridge and is involved in initiatives promoting diversity i
       website: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Keisha Williams** (born January 30, 1986) is an American cybersecurity executive, currently serving as VP of Security Operations at CyberShield Corp. She is recognized for leading elite security operations and incident response teams protecting Fortune 100 companies from sophisticated cyber threats.
+    content: `# Keisha Williams
+
+**Keisha Williams** (born January 30, 1986) is an American cybersecurity executive, currently serving as VP of Security Operations at CyberShield Corp. She is recognized for leading elite security operations and incident response teams protecting Fortune 100 companies from sophisticated cyber threats.
 
 ## Early Life and Education
 
@@ -1401,7 +1445,9 @@ Williams is based in Washington, DC, and holds top secret security clearance. Sh
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Dr. Lucia Santos** (born March 7, 1985) is a Spanish data scientist and analytics executive, currently serving as Chief Analytics Officer at DataVision Analytics. She is recognized for transforming raw data into actionable business intelligence that drives strategic decisions for global enterprises.
+    content: `# Dr. Lucia Santos
+
+**Dr. Lucia Santos** (born March 7, 1985) is a Spanish data scientist and analytics executive, currently serving as Chief Analytics Officer at DataVision Analytics. She is recognized for transforming raw data into actionable business intelligence that drives strategic decisions for global enterprises.
 
 ## Early Life and Education
 
@@ -1459,7 +1505,9 @@ Santos is based in Barcelona and is active in Spain's growing data science commu
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Ananya Sharma** (born December 12, 1991) is an Indian blockchain architect and cryptocurrency expert, currently working at CryptoNext Solutions. She is recognized for designing decentralized systems and smart contracts that have processed over $10 billion in transactions.
+    content: `# Ananya Sharma
+
+**Ananya Sharma** (born December 12, 1991) is an Indian blockchain architect and cryptocurrency expert, currently working at CryptoNext Solutions. She is recognized for designing decentralized systems and smart contracts that have processed over $10 billion in transactions.
 
 ## Early Life and Education
 
@@ -1519,7 +1567,9 @@ Sharma is based in Mumbai and is active in India's growing blockchain community.
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Hannah Larsson** (born April 15, 1990) is a Swedish user experience designer and creative director, currently serving as Senior UX Director at DesignFirst Studio. She is recognized for creating human-centered digital experiences that have been used by over 100 million people worldwide.
+    content: `# Hannah Larsson
+
+**Hannah Larsson** (born April 15, 1990) is a Swedish user experience designer and creative director, currently serving as Senior UX Director at DesignFirst Studio. She is recognized for creating human-centered digital experiences that have been used by over 100 million people worldwide.
 
 ## Early Life and Education
 
@@ -1574,7 +1624,9 @@ Larsson is based in Stockholm and is active in the Scandinavian design community
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Yuki Nakamura** (born November 2, 1987) is a Japanese cloud architect and technology leader, currently serving as VP of Cloud Architecture at CloudNova Systems. She is recognized for building multi-cloud architectures that have helped over 500 enterprises transition to cloud-native solutions.
+    content: `# Yuki Nakamura
+
+**Yuki Nakamura** (born November 2, 1987) is a Japanese cloud architect and technology leader, currently serving as VP of Cloud Architecture at CloudNova Systems. She is recognized for building multi-cloud architectures that have helped over 500 enterprises transition to cloud-native solutions.
 
 ## Early Life and Education
 
@@ -1634,7 +1686,9 @@ Nakamura is based in Tokyo and is involved in Japan's tech community. She writes
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Dr. Amina Diallo** (born May 25, 1988) is a French-Senegalese computer vision researcher and engineer, currently serving as Director of Computer Vision at Vision AI Technologies. She is internationally recognized for pioneering computer vision applications in autonomous vehicles and robotics.
+    content: `# Dr. Amina Diallo
+
+**Dr. Amina Diallo** (born May 25, 1988) is a French-Senegalese computer vision researcher and engineer, currently serving as Director of Computer Vision at Vision AI Technologies. She is internationally recognized for pioneering computer vision applications in autonomous vehicles and robotics.
 
 ## Early Life and Education
 
@@ -1696,7 +1750,9 @@ Diallo is based in Paris and maintains strong ties to Senegal, where she regular
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Natasha Volkov** (born September 14, 1984) is a Russian-German cybersecurity executive, currently serving as Chief Information Security Officer at SecureTech Global. She is recognized for building comprehensive security programs that have maintained zero successful breaches for five consecutive years.
+    content: `# Natasha Volkov
+
+**Natasha Volkov** (born September 14, 1984) is a Russian-German cybersecurity executive, currently serving as Chief Information Security Officer at SecureTech Global. She is recognized for building comprehensive security programs that have maintained zero successful breaches for five consecutive years.
 
 ## Early Life and Education
 
@@ -1759,7 +1815,9 @@ Volkov is based in Berlin and is fluent in German, Russian, and English. She ser
       website: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Lin Wei** (born January 8, 1989) is a Chinese data scientist and predictive analytics expert, currently serving as Chief Data Scientist at Predictive Analytics Inc. She is recognized for building models that generate over $500 million in business value annually for Fortune 500 companies.
+    content: `# Lin Wei
+
+**Lin Wei** (born January 8, 1989) is a Chinese data scientist and predictive analytics expert, currently serving as Chief Data Scientist at Predictive Analytics Inc. She is recognized for building models that generate over $500 million in business value annually for Fortune 500 companies.
 
 ## Early Life and Education
 
@@ -1821,7 +1879,9 @@ Wei is based in Hong Kong and is active in Asia's growing data science community
       twitter: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Sophia DeFi** (born July 19, 1994) is a Swiss-American decentralized finance innovator and entrepreneur, currently serving as Head of DeFi Innovation at Decentralized Finance Labs. She is recognized for creating accessible financial services for unbanked populations through decentralized protocols managing over $5 billion in total value locked.
+    content: `# Sophia DeFi
+
+**Sophia DeFi** (born July 19, 1994) is a Swiss-American decentralized finance innovator and entrepreneur, currently serving as Head of DeFi Innovation at Decentralized Finance Labs. She is recognized for creating accessible financial services for unbanked populations through decentralized protocols managing over $5 billion in total value locked.
 
 ## Early Life and Education
 
@@ -1882,7 +1942,9 @@ DeFi is based in Zurich and is active in the European blockchain community. She 
       website: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Emily Foster** (born October 11, 1988) is an American product designer and creative leader, currently serving as VP of Product Design at Innovation Studio. She is recognized for leading design teams that create award-winning digital products used by over 50 million people.
+    content: `# Emily Foster
+
+**Emily Foster** (born October 11, 1988) is an American product designer and creative leader, currently serving as VP of Product Design at Innovation Studio. She is recognized for leading design teams that create award-winning digital products used by over 50 million people.
 
 ## Early Life and Education
 
@@ -1942,7 +2004,9 @@ Foster is based in San Francisco and is active in the Bay Area design community.
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Priya Kapoor** (born June 5, 1990) is an Indian site reliability engineer and technology leader, currently serving as Director of Site Reliability at Reliable Systems Inc. She is recognized for maintaining 99.999% uptime for over 1,000 critical services and authoring the bestselling book "The SRE Handbook."
+    content: `# Priya Kapoor
+
+**Priya Kapoor** (born June 5, 1990) is an Indian site reliability engineer and technology leader, currently serving as Director of Site Reliability at Reliable Systems Inc. She is recognized for maintaining 99.999% uptime for over 1,000 critical services and authoring the bestselling book "The SRE Handbook."
 
 ## Early Life and Education
 
@@ -2005,7 +2069,9 @@ Kapoor is based in Bangalore and is active in India's tech community. She runs a
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Dr. Maya Osei** (born February 28, 1987) is a Ghanaian AI ethicist and technology policy expert, currently serving as Head of AI Ethics at the Ethical AI Institute. She is internationally recognized for developing ethical frameworks that guide responsible AI development across industries and governments.
+    content: `# Dr. Maya Osei
+
+**Dr. Maya Osei** (born February 28, 1987) is a Ghanaian AI ethicist and technology policy expert, currently serving as Head of AI Ethics at the Ethical AI Institute. She is internationally recognized for developing ethical frameworks that guide responsible AI development across industries and governments.
 
 ## Early Life and Education
 
@@ -2067,7 +2133,9 @@ Osei is based in Accra and is deeply involved in Ghana's growing tech ecosystem.
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Jade Wong** (born August 17, 1988) is a Singaporean cybersecurity expert specializing in threat intelligence, currently serving as VP of Threat Intelligence at CyberDefense Systems. She is recognized for building threat intelligence platforms used by over 50 nations and identifying over 5,000 cyber attack campaigns.
+    content: `# Jade Wong
+
+**Jade Wong** (born August 17, 1988) is a Singaporean cybersecurity expert specializing in threat intelligence, currently serving as VP of Threat Intelligence at CyberDefense Systems. She is recognized for building threat intelligence platforms used by over 50 nations and identifying over 5,000 cyber attack campaigns.
 
 ## Early Life and Education
 
@@ -2129,7 +2197,9 @@ Wong is based in Singapore and is active in the Asia-Pacific cybersecurity commu
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Dr. Isabelle Laurent** (born March 3, 1986) is a Canadian quantum computing researcher and data scientist, currently serving as Chief Research Scientist at Quantum Data Labs. She is recognized for bridging quantum computing with practical data science applications and developing groundbreaking quantum machine learning algorithms.
+    content: `# Dr. Isabelle Laurent
+
+**Dr. Isabelle Laurent** (born March 3, 1986) is a Canadian quantum computing researcher and data scientist, currently serving as Chief Research Scientist at Quantum Data Labs. She is recognized for bridging quantum computing with practical data science applications and developing groundbreaking quantum machine learning algorithms.
 
 ## Early Life and Education
 
@@ -2192,7 +2262,9 @@ Laurent is based in Montreal and is involved in Quebec's growing quantum technol
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Leila Mansour** (born September 9, 1989) is a Lebanese-Emirati fintech innovator, currently serving as Head of Payments Innovation at Global Pay Solutions. She is recognized for transforming digital payments with solutions that process over $50 billion annually while reducing transaction costs by 70%.
+    content: `# Leila Mansour
+
+**Leila Mansour** (born September 9, 1989) is a Lebanese-Emirati fintech innovator, currently serving as Head of Payments Innovation at Global Pay Solutions. She is recognized for transforming digital payments with solutions that process over $50 billion annually while reducing transaction costs by 70%.
 
 ## Early Life and Education
 
@@ -2254,7 +2326,9 @@ Mansour is based in Dubai and is active in the UAE's thriving fintech ecosystem.
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Tara O'Brien** (born November 22, 1990) is an Irish product leader and entrepreneur, currently serving as Chief Product Officer at Consumer Tech Co. She is recognized for launching 10 products that each reached over 1 million users and increasing product adoption by 300%.
+    content: `# Tara O'Brien
+
+**Tara O'Brien** (born November 22, 1990) is an Irish product leader and entrepreneur, currently serving as Chief Product Officer at Consumer Tech Co. She is recognized for launching 10 products that each reached over 1 million users and increasing product adoption by 300%.
 
 ## Early Life and Education
 
@@ -2316,7 +2390,9 @@ O'Brien is based in Dublin and is active in Ireland's growing tech ecosystem. Sh
       twitter: "#",
     },
     lastUpdated: "November 2025",
-    content: `**Sakura Tanaka** (born June 14, 1991) is a Japanese platform engineer and cloud native expert, currently serving as Director of Kubernetes Platform at Container Solutions Inc. She is recognized for building Kubernetes platforms running over 10,000 containers and dramatically reducing deployment complexity for development teams.
+    content: `# Sakura Tanaka
+
+**Sakura Tanaka** (born June 14, 1991) is a Japanese platform engineer and cloud native expert, currently serving as Director of Kubernetes Platform at Container Solutions Inc. She is recognized for building Kubernetes platforms running over 10,000 containers and dramatically reducing deployment complexity for development teams.
 
 ## Early Life and Education
 
@@ -2379,7 +2455,9 @@ Tanaka is based in Osaka and is active in Japan's cloud native community. She or
       website: "#",
     },
     lastUpdated: "January 2026",
-    content: `**Dr. Anika Mueller** (born April 7, 1984) is a German robotics engineer and AI researcher, currently serving as VP of Autonomous Systems at RoboTech Industries. She is internationally recognized for leading autonomous vehicle programs with over 1 million test miles and developing robots that operate safely in complex real-world environments.
+    content: `# Dr. Anika Mueller
+
+**Dr. Anika Mueller** (born April 7, 1984) is a German robotics engineer and AI researcher, currently serving as VP of Autonomous Systems at RoboTech Industries. She is internationally recognized for leading autonomous vehicle programs with over 1 million test miles and developing robots that operate safely in complex real-world environments.
 
 ## Early Life and Education
 
@@ -2441,7 +2519,9 @@ Mueller is based in Munich and is deeply involved in Germany's robotics and auto
       twitter: "#",
     },
     lastUpdated: "December 2025",
-    content: `**Chioma Adeyemi** (born October 30, 1990) is a Nigerian-South African cybersecurity expert specializing in penetration testing, currently serving as Head of Penetration Testing at Offensive Security Labs. She is recognized for conducting security assessments for over 500 organizations and discovering critical vulnerabilities in major platforms before malicious actors could exploit them.
+    content: `# Chioma Adeyemi
+
+**Chioma Adeyemi** (born October 30, 1990) is a Nigerian-South African cybersecurity expert specializing in penetration testing, currently serving as Head of Penetration Testing at Offensive Security Labs. She is recognized for conducting security assessments for over 500 organizations and discovering critical vulnerabilities in major platforms before malicious actors could exploit them.
 
 ## Early Life and Education
 
