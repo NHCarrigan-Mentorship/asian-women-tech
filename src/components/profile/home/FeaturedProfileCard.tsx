@@ -55,13 +55,6 @@ export default function FeaturedProfileCard({
           <p className="text-sm md:text-base text-gray-900 mb-3 md:mb-4 leading-relaxed">
             {profile.bio}
           </p>
-          {profile.achievements && profile.achievements.length > 0 && (
-            <div className="mb-3 md:mb-4 p-2 md:p-3 bg-pink-50 border-l-4 border-pink-500">
-              <p className="text-xs md:text-sm text-gray-800">
-                {profile.achievements[0].text}
-              </p>
-            </div>
-          )}
 
           {/* Expertise Tags */}
           <div className="flex flex-wrap gap-1 md:gap-1.5 mb-3 md:mb-4">

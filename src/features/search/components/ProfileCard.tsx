@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Award, Briefcase, MapPin } from "lucide-react";
+import { Briefcase, MapPin } from "lucide-react";
 import type { Profile } from "../../../data/profiles";
 
 interface ProfileCardProps {
@@ -27,7 +27,9 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
         {/* Profile Content */}
         <div className="flex-1 min-w-0">
           {/* Name and Role */}
-          <h3 className="text-xl mb-1 text-gray-900 font-bold">{profile.name}</h3>
+          <h3 className="text-xl mb-1 text-gray-900 font-bold">
+            {profile.name}
+          </h3>
           <div className="text-sm text-gray-600 mb-2 space-y-1">
             <div className="flex items-center gap-1.5">
               <Briefcase className="w-3.5 h-3.5 text-pink-600 flex-shrink-0" />
@@ -61,14 +63,6 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
                 +{profile.expertise.length - 4} more
               </span>
             )}
-          </div>
-
-          {/* Key Achievement Preview */}
-          <div className="mt-3 pt-3 border-t border-pink-200">
-            <div className="flex items-start gap-1.5 text-xs text-gray-600">
-              <Award className="w-3.5 h-3.5 text-pink-500 flex-shrink-0 mt-0.5" />
-              <p className="line-clamp-1">{profile.achievements[0].text}</p>
-            </div>
           </div>
         </div>
       </div>
