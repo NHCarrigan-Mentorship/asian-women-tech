@@ -1,0 +1,57 @@
+import EmptyProfiles from "./EmptyProfiles";
+import ProfileList from "../components/ProfileList";
+import type { Profile } from "../../../data/profiles";
+import { useState, useEffect, useMemo } from "react";
+import Pagination from "../../../components/ui/Pagination";
+
+interface FilteredProfilesProps {
+  filteredProfiles: Profile[];
+  onClearFilters: () => void;
+  profilesPerPage?: number;
+}
+
+const DEFAULT_PROFILES_PER_PAGE = 10;
+
+export default function FilteredProfiles({
+  filteredProfiles,
+  onClearFilters,
+  profilesPerPage = DEFAULT_PROFILES_PER_PAGE,
+}: FilteredProfilesProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredProfiles]);
+
+  const totalPages = Math.ceil(filteredProfiles.length / profilesPerPage);
+  const startIndex = (currentPage - 1) * profilesPerPage;
+  const endIndex = startIndex + profilesPerPage;
+  const paginatedProfiles = useMemo(
+    () => filteredProfiles.slice(startIndex, endIndex),
+    [filteredProfiles, startIndex, endIndex],
+  );
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
+  return (
+    <div className="w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {filteredProfiles.length === 0 ? (
+          <EmptyProfiles onClearFilters={onClearFilters} />
+        ) : (
+          <ProfileList filteredProfiles={paginatedProfiles} />
+        )}
+      </div>
+      {/* Pagination */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      </div>
+    </div>
+  );
+}
