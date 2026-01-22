@@ -34,6 +34,7 @@ export default function ProfileInfobox({ id }: ProfileInfoboxProps) {
               <h3 className="mb-2 text-base font-bold text-gray-900">
                 {profile?.name}
               </h3>
+              <p>{profile?.bio}</p>
             </div>
 
             <div className="space-y-3">
