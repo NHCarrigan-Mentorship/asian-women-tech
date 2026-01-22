@@ -9,7 +9,7 @@ interface ProfileCardProps {
 export default function ProfileCard({ profile }: ProfileCardProps) {
   return (
     <Link
-      to={`/profile/${profile.id}`}
+      to={`/${profile.username}`}
       className="block bg-white border border-pink-200 rounded hover:bg-gradient-to-br hover:from-pink-50 hover:to-rose-50 transition-colors cursor-pointer"
     >
       <div className="flex flex-col sm:flex-row gap-4 p-4">

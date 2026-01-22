@@ -40,11 +40,11 @@ export default function FeaturedProfiles() {
   const currentProfile = featuredProfiles[currentIndex];
 
   const handleLearnMore = () => {
-    navigate(`/profile/${currentProfile.id}`);
+    navigate(`/${currentProfile.username}`);
   };
 
   const handleCardClick = () => {
-    navigate(`/profile/${currentProfile.id}`);
+    navigate(`/${currentProfile.username}`);
   };
 
   const handlePrevious = (e: React.MouseEvent) => {

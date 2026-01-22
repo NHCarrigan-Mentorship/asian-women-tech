@@ -7,8 +7,8 @@ import ProfileNotFound from "../../features/search/results/ProfileNotFound";
 import { profiles } from "../../data/profiles";
 
 export default function ProfileDetail() {
-  const { id } = useParams();
-  const profile = profiles.find((profile) => profile.id === id);
+  const { username } = useParams();
+  const profile = profiles.find((profile) => profile.username === username);
   const [showBottomNotice, setShowBottomNotice] = useState(false);
   const [noticeDismissed, setNoticeDismissed] = useState(false);
 
