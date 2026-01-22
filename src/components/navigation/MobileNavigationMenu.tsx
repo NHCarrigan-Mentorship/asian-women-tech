@@ -24,15 +24,15 @@ export default function MobileNavigationMenu() {
         </Link>
 
         <Link
-          to="/discover"
+          to="/search"
           className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-lg transition-colors min-w-[70px] ${
-            isActive("/discover") ? "text-pink-600" : "text-gray-600"
+            isActive("/search") ? "text-pink-600" : "text-gray-600"
           }`}
         >
           <Search
-            className={`w-6 h-6 ${isActive("/discover") ? "stroke-[2.5]" : ""}`}
+            className={`w-6 h-6 ${isActive("/search") ? "stroke-[2.5]" : ""}`}
           />
-          <span className="text-xs font-medium">Discover</span>
+          <span className="text-xs font-medium">Search</span>
         </Link>
 
         {isAuthenticated ? (

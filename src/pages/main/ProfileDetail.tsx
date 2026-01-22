@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ProfileNotFound from "../../components/profile/discover/ProfileNotFound";
 import BackNavigation from "../../components/navigation/BackNavigation";
 import ProfileAuthorshipNotice from "../../components/profile/detail/ProfileAuthorshipNotice";
 import ProfileCard from "../../components/profile/detail/ProfileCard";
+import ProfileNotFound from "../../features/search/results/ProfileNotFound";
 import { profiles } from "../../data/profiles";
 
 export default function ProfileDetail() {

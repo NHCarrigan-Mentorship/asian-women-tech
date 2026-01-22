@@ -8,7 +8,7 @@ export default function BackNavigation() {
     if (window.history.length > 1) {
       navigate(-1);
     } else {
-      navigate("/discover"); // Fallback to discover page
+      navigate("/search"); // Fallback to search page
     }
   };
 

@@ -23,15 +23,15 @@ export default function DesktopNavigationMenu() {
         <span>Home</span>
       </Link>
       <Link
-        to="/discover"
+        to="/search"
         className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
-          isActive("/discover")
+          isActive("/search")
             ? "bg-pink-50 text-pink-700"
             : "text-gray-600 hover:bg-gray-50"
         }`}
       >
         <Search className="w-4 h-4" />
-        <span>Discover</span>
+        <span>Search</span>
       </Link>
       {isAuthenticated ? (
         <>

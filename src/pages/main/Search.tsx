@@ -1,12 +1,12 @@
 import { useMemo, useState, useRef } from "react";
 import CallToAction from "../../components/layout/CallToAction";
-import DiscoverHeader from "../../components/profile/discover/DiscoverHeader";
-import FilteredProfiles from "../../components/profile/discover/FilteredProfiles";
-import ProfileSearchBar from "../../components/profile/discover/ProfileSearchBar";
-import MobileFilterModal from "../../components/profile/discover/search/MobileFilterModal";
+import SearchHeader from "../../features/search/components/SearchHeader";
+import FilteredProfiles from "../../features/search/results/FilteredProfiles";
+import ProfileSearchBar from "../../features/search/components/ProfileSearchBar";
+import MobileFilterModal from "../../features/search/responsive/MobileFilterModal";
 import { profiles } from "../../data/profiles";
 
-export default function Discover() {
+export default function Search() {
   const [search, setSearch] = useState<string>("");
   const [selectedExpertise, setSelectedExpertise] = useState<string[]>([]);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
@@ -18,7 +18,7 @@ export default function Discover() {
     profiles.forEach((profile) =>
       profile.expertise.forEach((expertise) => {
         expertiseSet.add(expertise);
-      })
+      }),
     );
     return Array.from(expertiseSet).sort();
   }, []);
@@ -45,7 +45,7 @@ export default function Discover() {
     setSelectedExpertise((prev) =>
       prev.includes(expertise)
         ? prev.filter((e) => e !== expertise)
-        : [...prev, expertise]
+        : [...prev, expertise],
     );
   };
 
@@ -57,7 +57,7 @@ export default function Discover() {
 
   return (
     <div className="min-h-screen bg-white">
-      <DiscoverHeader />
+      <SearchHeader />
 
       <ProfileSearchBar
         search={search}
