@@ -4,7 +4,7 @@ import { LogIn, LogOut, Home, User, Search } from "lucide-react";
 
 export default function DesktopNavigationMenu() {
   const location = useLocation();
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, user } = useAuth();
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -36,7 +36,7 @@ export default function DesktopNavigationMenu() {
       {isAuthenticated ? (
         <>
           <Link
-            to="/my-profile"
+            to={`/${user?.username}`}
             className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
               isActive("/my-profile")
                 ? "bg-pink-50 text-pink-700"
