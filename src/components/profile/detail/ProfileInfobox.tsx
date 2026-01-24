@@ -1,3 +1,4 @@
+import type { Profile } from "../../../data/profiles";
 import {
   Award,
   Building2,
@@ -6,18 +7,21 @@ import {
   Twitter,
   Globe,
 } from "lucide-react";
-import { profiles } from "../../../data/profiles";
 
 interface ProfileInfoboxProps {
-  id: string;
+  isOwner: boolean;
+  profile?: Profile;
 }
 
-export default function ProfileInfobox({ id }: ProfileInfoboxProps) {
-  const profile = profiles.find((profile) => profile.id === id);
+export default function ProfileInfobox({
+  profile,
+  isOwner,
+}: ProfileInfoboxProps) {
   return (
     <>
       <aside className="md:w-72 lg:w-80 flex-shrink-0">
         <div className="bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded">
+          {isOwner && <p>You're the owner</p>}
           {/* Profile Image */}
           <div className="aspect-square overflow-hidden bg-gray-100">
             <img
