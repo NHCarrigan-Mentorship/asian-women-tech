@@ -1,11 +1,11 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Clock } from "lucide-react";
-import type { Profile } from "../../../data/profiles";
+import type { UserProfile } from "../../../contexts/AuthContext";
 
 interface ProfileContentProps {
   isOwner: boolean;
-  profile?: Profile;
+  profile?: UserProfile;
 }
 
 export default function ProfileContent({

@@ -1,4 +1,4 @@
-import type { Profile } from "../../../data/profiles";
+import type { UserProfile } from "../../../contexts/AuthContext";
 import {
   Award,
   Building2,
@@ -10,7 +10,7 @@ import {
 
 interface ProfileInfoboxProps {
   isOwner: boolean;
-  profile?: Profile;
+  profile?: UserProfile;
 }
 
 export default function ProfileInfobox({
@@ -25,7 +25,7 @@ export default function ProfileInfobox({
           {/* Profile Image */}
           <div className="aspect-square overflow-hidden bg-gray-100">
             <img
-              src={profile?.imageUrl}
+              src={profile?.image}
               alt={profile?.name}
               className="w-full h-full object-cover"
             />
