@@ -23,7 +23,7 @@ export const profiles: UserProfile[] = [
       twitter: "#",
       website: "#",
     },
-    lastUpdated: "2025-12-01T00:00:00.000Z",
+    lastUpdated: "January 2026",
     content: `# Dr. Amara Johnson
 
 **Dr. Amara Johnson** (born March 15, 1992) is an American computer scientist and entrepreneur, currently serving as the Chief AI Officer at TechVision AI. She is widely recognized for her pioneering work in ethical artificial intelligence and healthcare technology.
