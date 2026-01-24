@@ -39,8 +39,6 @@ Johnson completed her Ph.D. in Artificial Intelligence at MIT in 2019, under the
 ### Early Career (2019-2021)
 
 After completing her doctorate, Johnson joined Google Brain as a Research Scientist, where she worked on natural language processing and computer vision applications. During this period, she co-authored several influential papers on bias detection in machine learning models.
-  },
-  // ...existing profiles, update each to match UserProfile interface
 
 ### TechVision AI (2021-Present)
 
