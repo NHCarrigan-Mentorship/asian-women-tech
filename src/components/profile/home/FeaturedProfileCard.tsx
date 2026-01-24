@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 import { ArrowRight, MapPin, Briefcase } from "lucide-react";
-import type { Profile } from "../../../data/profiles";
+import type { UserProfile } from "../../../contexts/AuthContext";
 
 interface FeaturedProfileCardProps {
-  profile: Profile;
+  profile: UserProfile;
   onLearnMore: () => void;
 }
 
@@ -16,7 +16,7 @@ export default function FeaturedProfileCard({
       {/* Image */}
       <div className="md:col-span-1 relative h-[250px] md:h-[400px] border-r-2 border-pink-200">
         <img
-          src={profile.imageUrl}
+          src={profile.image}
           alt={profile.name}
           className="w-full h-full object-cover"
         />
