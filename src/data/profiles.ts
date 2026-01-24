@@ -1,33 +1,17 @@
-export interface Profile {
-  id: string;
-  name: string;
-  username: string;
-  role: string;
-  company: string;
-  imageUrl: string;
-  bio: string; // Short summary for cards/previews (1-2 sentences)
-  location: string;
-  expertise: string[];
-  social?: {
-    linkedin?: string;
-    twitter?: string;
-    website?: string;
-  };
-  lastUpdated?: string;
-  content?: string; // Free-form markdown content for Wikipedia-style profile
-}
+import type { UserProfile } from "../contexts/AuthContext";
 
-export const profiles: Profile[] = [
+export const profiles: UserProfile[] = [
   {
     id: "1",
-    name: "Dr. Amara Johnson",
     username: "amarajohnson",
+    email: "amarajohnson@example.com",
+    image:
+      "https://images.unsplash.com/photo-1649589244330-09ca58e4fa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODgzNjM4N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    name: "Dr. Amara Johnson",
     role: "Chief AI Officer",
     company: "TechVision AI",
-    imageUrl:
-      "https://images.unsplash.com/photo-1649589244330-09ca58e4fa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODgzNjM4N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    bio: "Pioneering artificial intelligence research with a focus on ethical AI development and implementation in healthcare technology.",
     location: "San Francisco, CA",
+    bio: "Pioneering artificial intelligence research with a focus on ethical AI development and implementation in healthcare technology.",
     expertise: [
       "Artificial Intelligence",
       "Machine Learning",
@@ -39,7 +23,7 @@ export const profiles: Profile[] = [
       twitter: "#",
       website: "#",
     },
-    lastUpdated: "December 2025",
+    lastUpdated: "2025-12-01T00:00:00.000Z",
     content: `# Dr. Amara Johnson
 
 **Dr. Amara Johnson** (born March 15, 1992) is an American computer scientist and entrepreneur, currently serving as the Chief AI Officer at TechVision AI. She is widely recognized for her pioneering work in ethical artificial intelligence and healthcare technology.
@@ -55,6 +39,8 @@ Johnson completed her Ph.D. in Artificial Intelligence at MIT in 2019, under the
 ### Early Career (2019-2021)
 
 After completing her doctorate, Johnson joined Google Brain as a Research Scientist, where she worked on natural language processing and computer vision applications. During this period, she co-authored several influential papers on bias detection in machine learning models.
+  },
+  // ...existing profiles, update each to match UserProfile interface
 
 ### TechVision AI (2021-Present)
 
@@ -89,9 +75,10 @@ Johnson is based in San Francisco and serves on the board of several nonprofit o
     id: "2",
     name: "Sofia Rodriguez",
     username: "sofiarodriguez",
+    email: "sofiarodriguez@example.com",
     role: "Founder & CEO",
     company: "CloudScale Solutions",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1562935345-5080389daccd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwZXhlY3V0aXZlfGVufDF8fHx8MTc2ODgwNTIzMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building next-generation cloud infrastructure that powers sustainable and scalable digital transformation for enterprises worldwide.",
     location: "Seattle, WA",
@@ -150,9 +137,10 @@ Rodriguez is based in Seattle and serves on the board of Code2040, a nonprofit f
     id: "3",
     name: "Dr. Layla Hassan",
     username: "laylahassan",
+    email: "laylahassan@example.com",
     role: "VP of Engineering",
     company: "Quantum Dynamics",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1655814563963-0fe0a7d6c279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNjaWVudGlzdCUyMGxhYnxlbnwxfHx8fDE3Njg4MTYwNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading quantum computing research and development, making quantum technology accessible to developers and researchers globally.",
     location: "Dubai, UAE",
@@ -216,9 +204,10 @@ Hassan is based in Dubai and serves as an advisor to the UAE Ministry of Technol
     id: "4",
     name: "Grace O'Connor",
     username: "graceoconnor",
+    email: "graceoconnor@example.com",
     role: "Head of Cybersecurity",
     company: "SecureNet Global",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1581093199592-d3c46ae94f40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGVuZ2luZWVyJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3Njg4OTcyNTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Protecting critical infrastructure through innovative cybersecurity solutions and leading initiatives to increase diversity in information security.",
     location: "Dublin, Ireland",
@@ -285,9 +274,10 @@ O'Connor is based in Dublin and is an active member of the Irish tech community.
     id: "5",
     name: "Dr. Priya Patel",
     username: "priyapatel",
+    email: "priyapatel@example.com",
     role: "Director of Research",
     company: "BioTech Innovations",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1573495804669-ec82ad00f327?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwcHJvZmVzc2lvbmFsJTIwd29tYW58ZW58MXx8fHwxNzY4ODM2ODI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Revolutionizing biotech through computational biology and advancing personalized medicine with cutting-edge data science.",
     location: "Boston, MA",
@@ -355,9 +345,10 @@ Patel is based in Boston and serves on the scientific advisory board of several 
     id: "6",
     name: "Maya Thompson",
     username: "mayathompson",
+    email: "mayathompson@example.com",
     role: "Chief Product Officer",
     company: "MobileFirst Labs",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1581065178026-390bc4e78dad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMHdvbWFuJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2ODg5NzI1OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Creating award-winning mobile experiences that have been downloaded over 500 million times worldwide, focusing on emerging markets.",
     location: "New York, NY",
@@ -423,9 +414,10 @@ Thompson is based in New York City and is involved in various philanthropic effo
     id: "7",
     name: "Jennifer Chen",
     username: "jenniferchen",
+    email: "jenniferchen@example.com",
     role: "VP of Data Engineering",
     company: "DataStream Analytics",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1655720357761-f18ea9e5e7e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHdvbWFuJTIwZXhlY3V0aXZlfGVufDF8fHx8MTc2ODg5NzI1OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building scalable data infrastructure processing petabytes of data daily, empowering data-driven decision making across Fortune 500 companies.",
     location: "Austin, TX",
@@ -492,9 +484,10 @@ Chen is based in Austin and serves on the advisory board of the UT Austin Comput
     id: "8",
     name: "Samantha Williams",
     username: "samanthawilliams",
+    email: "samanthawilliams@example.com",
     role: "Director of VR/AR",
     company: "Immersive Technologies",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1687293233192-230bc0f6869e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXRpbmElMjBidXNpbmVzcyUyMHdvbWFufGVufDF8fHx8MTc2ODg5NzI2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Pioneering immersive experiences in virtual and augmented reality, creating innovative solutions for education, healthcare, and entertainment.",
     location: "Los Angeles, CA",
@@ -552,9 +545,10 @@ Williams is based in Los Angeles and mentors women in VR/AR through the Women in
     id: "9",
     name: "Fatima Al-Rashid",
     username: "fatimaalrashid",
+    email: "fatimaalrashid@example.com",
     role: "Chief Technology Officer",
     company: "FinTech Innovations",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1740153204804-200310378f2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaWRkbGUlMjBlYXN0ZXJuJTIwd29tYW4lMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzY4NzkxMTcwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Transforming financial services through blockchain and digital payments, making banking accessible to underserved communities globally.",
     location: "London, UK",
@@ -614,9 +608,10 @@ Al-Rashid is based in London and sits on the board of several fintech startups. 
     id: "10",
     name: "Dr. Rachel Kim",
     username: "rachelkim",
+    email: "rachelkim@example.com",
     role: "Head of Robotics",
     company: "AutomaTech Systems",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1551727981-bfe3e86eaa00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMENFTyUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODg5NzI2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Advancing robotics and automation with a focus on collaborative robots that work safely alongside humans in manufacturing and logistics.",
     location: "Tokyo, Japan",
@@ -680,9 +675,10 @@ Kim is based in Tokyo and holds both American and South Korean citizenship. She 
     id: "11",
     name: "Isabella Martinez",
     username: "isabellamartinez",
+    email: "isabellamartinez@example.com",
     role: "VP of Software Engineering",
     company: "WebScale Platform",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1739298061751-d233df973afc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHRlY2hub2xvZ3klMjBsZWFkZXJ8ZW58MXx8fHwxNzY4ODk3MjYxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading large-scale distributed systems development, building platforms that serve billions of requests daily with 99.99% uptime.",
     location: "Miami, FL",
@@ -743,9 +739,10 @@ Martinez is based in Miami and is involved in the local tech community, frequent
     id: "12",
     name: "Dr. Yuki Tanaka",
     username: "yukitanaka",
+    email: "yukitanaka@example.com",
     role: "Research Scientist",
     company: "Neural Networks Lab",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHdvbWFufGVufDF8fHx8MTc2ODg2NzI1OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Researching deep learning and neural networks to solve complex problems in natural language processing and computer vision.",
     location: "Singapore",
@@ -805,9 +802,10 @@ Tanaka is based in Singapore and enjoys photography and traditional Japanese tea
     id: "13",
     name: "Aaliyah Johnson",
     username: "aaliyahjohnson",
+    email: "aaliyahjohnson@example.com",
     role: "Director of DevOps",
     company: "CloudNative Inc",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1573497620013-7f7660da1a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNvZnR3YXJlJTIwZGV2ZWxvcGVyfGVufDF8fHx8MTc2ODg5NzI2Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Streamlining software delivery through modern DevOps practices, enabling companies to deploy code 100x faster with higher quality.",
     location: "Chicago, IL",
@@ -864,9 +862,10 @@ Johnson is based in Chicago and is active in the local tech community. She runs 
     id: "14",
     name: "Elena Popescu",
     username: "elenapopescu",
+    email: "elenapopescu@example.com",
     role: "Chief Information Officer",
     company: "Global Retail Tech",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1758685848208-e108b6af94cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRhdGElMjBzY2llbnRpc3R8ZW58MXx8fHwxNzY4ODk3MjYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Driving digital transformation in retail, implementing AI-powered solutions that enhance customer experiences across 5,000+ stores.",
     location: "Bucharest, Romania",
@@ -928,9 +927,10 @@ Popescu is based in Bucharest and is involved in initiatives promoting women's a
     id: "15",
     name: "Nadia Ibrahim",
     username: "nadiaibrahim",
+    email: "nadiaibrahim@example.com",
     role: "Lead Game Developer",
     company: "Epic Gaming Studios",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1670223364099-eb3f7738cd93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB3b21hbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3Njg4OTcyNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Creating immersive gaming experiences that have captivated 100 million players worldwide, pushing the boundaries of interactive storytelling.",
     location: "Montreal, Canada",
@@ -985,9 +985,10 @@ Ibrahim is based in Montreal and is involved in the city's vibrant game developm
     id: "16",
     name: "Dr. Olivia Bennett",
     username: "oliviabennett",
+    email: "oliviabennett@example.com",
     role: "Head of IoT",
     company: "SmartCity Solutions",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1563132337-f159f484226c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwd29tYW4lMjBleGVjdXRpdmV8ZW58MXx8fHwxNzY4ODk3MjYzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building connected cities through IoT infrastructure, improving urban living with smart sensors and data-driven insights for millions.",
     location: "Copenhagen, Denmark",
@@ -1048,9 +1049,10 @@ Bennett is based in Copenhagen and serves on several smart cities advisory board
     id: "17",
     name: "Aisha Okafor",
     username: "aishaokafor",
+    email: "aishaokafor@example.com",
     role: "VP of Engineering",
     company: "EdTech Platforms",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1625641116537-0e08a7e7b6e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldXJvcGVhbiUyMHdvbWFuJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzY4ODk3MjYzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Democratizing education through technology, building platforms that provide quality learning experiences to 50 million students globally.",
     location: "Lagos, Nigeria",
@@ -1110,9 +1112,10 @@ Okafor is based in Lagos and is a prominent figure in Nigeria's growing tech eco
     id: "18",
     name: "Carmen Silva",
     username: "carmensilva",
+    email: "carmensilva@example.com",
     role: "Director of ML Operations",
     company: "AI Solutions Corp",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1607868431640-8540f29f7d29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGVudHJlcHJlbmV1ciUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODg0MzEzMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Operationalizing machine learning at scale, deploying and monitoring hundreds of ML models in production serving billions of predictions.",
     location: "São Paulo, Brazil",
@@ -1172,9 +1175,10 @@ Silva is based in São Paulo and is active in Brazil's growing AI community. She
     id: "19",
     name: "Dr. Sarah Lindström",
     username: "sarahlindstrom",
+    email: "sarahlindstrom@example.com",
     role: "Chief Data Officer",
     company: "HealthTech Analytics",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1552127966-d24b805b9be7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGxlYWRlciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3Njg4OTcyNjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leveraging healthcare data to improve patient outcomes, building analytics platforms that help providers make better clinical decisions.",
     location: "Stockholm, Sweden",
@@ -1236,9 +1240,10 @@ Lindström is based in Stockholm and serves on the board of several health tech 
     id: "20",
     name: "Mei Wang",
     username: "meiwang",
+    email: "meiwang@example.com",
     role: "Head of Platform Engineering",
     company: "E-Commerce Giant",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRpcmVjdG9yJTIwZXhlY3V0aXZlfGVufDF8fHx8MTc2ODg5NzI2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building resilient platform infrastructure that powers one of the world's largest e-commerce sites, handling millions of transactions per day.",
     location: "Shanghai, China",
@@ -1300,9 +1305,10 @@ Wang is based in Shanghai and is involved in China's vibrant tech community. She
     id: "21",
     name: "Dr. Zara Ahmed",
     username: "zaraahmed",
+    email: "zaraahmed@example.com",
     role: "Head of NLP Research",
     company: "Language AI Labs",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1610631066894-62452ccb927c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMG1hbmFnZXIlMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzY4ODk3MjY0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Advancing natural language processing technology to break down language barriers and enable seamless global communication.",
     location: "Cambridge, UK",
@@ -1364,9 +1370,10 @@ Ahmed is based in Cambridge and is involved in initiatives promoting diversity i
     id: "22",
     name: "Keisha Williams",
     username: "keishawilliams",
+    email: "keishawilliams@example.com",
     role: "VP of Security Operations",
     company: "CyberShield Corp",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1730952875153-c5c052698508?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHRlY2glMjBleHBlcnR8ZW58MXx8fHwxNzY4ODk3MjY1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading enterprise security operations and incident response teams, protecting critical infrastructure for Fortune 100 companies.",
     location: "Washington, DC",
@@ -1428,9 +1435,10 @@ Williams is based in Washington, DC, and holds top secret security clearance. Sh
     id: "23",
     name: "Dr. Lucia Santos",
     username: "luciasantos",
+    email: "luciasantos@example.com",
     role: "Chief Analytics Officer",
     company: "DataVision Analytics",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1758691737587-7630b4d31d16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGlubm92YXRpb24lMjBsZWFkZXJ8ZW58MXx8fHwxNzY4ODk3MjY1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Transforming raw data into actionable insights, building advanced analytics platforms that drive business intelligence for global enterprises.",
     location: "Barcelona, Spain",
@@ -1492,9 +1500,10 @@ Santos is based in Barcelona and is active in Spain's growing data science commu
     id: "24",
     name: "Ananya Sharma",
     username: "ananyasharma",
+    email: "ananyasharma@example.com",
     role: "Blockchain Architect",
     company: "CryptoNext Solutions",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1573166654059-ea1dfc013353?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGN5YmVyc2VjdXJpdHklMjBleHBlcnR8ZW58MXx8fHwxNzY4ODk3MjY1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Designing decentralized systems and smart contracts that revolutionize how businesses handle trust and transactions in the digital age.",
     location: "Mumbai, India",
@@ -1550,9 +1559,10 @@ Sharma is based in Mumbai and is active in India's growing blockchain community.
     id: "25",
     name: "Hannah Larsson",
     username: "hannahlarsson",
+    email: "hannahlarsson@example.com",
     role: "Senior UX Director",
     company: "DesignFirst Studio",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1758685848602-09e52ef9c7d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMEFJJTIwcmVzZWFyY2hlcnxlbnwxfHx8fDE3Njg4OTcyNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Creating human-centered digital experiences that delight users and drive business results through research-driven design processes.",
     location: "Stockholm, Sweden",
@@ -1612,9 +1622,10 @@ Larsson is based in Stockholm and is active in the Scandinavian design community
     id: "26",
     name: "Yuki Nakamura",
     username: "yukinakamura",
+    email: "yukinakamura@example.com",
     role: "VP of Cloud Architecture",
     company: "CloudNova Systems",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1753162658653-d33c53910d9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRlc2lnbmVyJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2ODg5NzI2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building multi-cloud architectures that enable seamless scalability and resilience for enterprises transitioning to cloud-native solutions.",
     location: "Tokyo, Japan",
@@ -1669,9 +1680,10 @@ Nakamura is based in Tokyo and is involved in Japan's tech community. She writes
     id: "27",
     name: "Dr. Amina Diallo",
     username: "aminadiallo",
+    email: "aminadiallo@example.com",
     role: "Director of Computer Vision",
     company: "Vision AI Technologies",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1736939666660-d4c776e0532c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHByb2R1Y3QlMjBtYW5hZ2VyfGVufDF8fHx8MTc2ODg5NzI2Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Pioneering computer vision applications in autonomous vehicles and robotics, making machines see and understand the world like humans do.",
     location: "Paris, France",
@@ -1733,9 +1745,10 @@ Diallo is based in Paris and maintains strong ties to Senegal, where she regular
     id: "28",
     name: "Natasha Volkov",
     username: "natashavolkov",
+    email: "natashavolkov@example.com",
     role: "Chief Information Security Officer",
     company: "SecureTech Global",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1612116144183-d1ba477239f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGNvbnN1bHRhbnQlMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzY4ODk3MjY3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Protecting organizations from cyber threats through comprehensive security strategies, leading teams that defend against advanced persistent threats.",
     location: "Berlin, Germany",
@@ -1797,9 +1810,10 @@ Volkov is based in Berlin and is fluent in German, Russian, and English. She ser
     id: "29",
     name: "Lin Wei",
     username: "linwei",
+    email: "linwei@example.com",
     role: "Chief Data Scientist",
     company: "Predictive Analytics Inc",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1753162657433-813150c27d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFyY2hpdGVjdCUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzY4ODk3MjY3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building predictive models that forecast market trends and consumer behavior, helping Fortune 500 companies make data-driven strategic decisions.",
     location: "Hong Kong",
@@ -1862,9 +1876,10 @@ Wei is based in Hong Kong and is active in Asia's growing data science community
     id: "30",
     name: "Sophia DeFi",
     username: "sophiadefi",
+    email: "sophiadefi@example.com",
     role: "Head of DeFi Innovation",
     company: "Decentralized Finance Labs",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1758685848006-1bc450061624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFuYWx5dGljcyUyMGV4cGVydHxlbnwxfHx8fDE3Njg4OTcyNjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Revolutionizing traditional finance through decentralized protocols, creating accessible financial services for the unbanked population worldwide.",
     location: "Zurich, Switzerland",
@@ -1924,9 +1939,10 @@ DeFi is based in Zurich and is active in the European blockchain community. She 
     id: "31",
     name: "Emily Foster",
     username: "emilyfoster",
+    email: "emilyfoster@example.com",
     role: "VP of Product Design",
     company: "Innovation Studio",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1585335559291-f94d268f8b17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGJsb2NrY2hhaW4lMjBleHBlcnR8ZW58MXx8fHwxNzY4ODk3MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading product design teams to create award-winning digital products that balance business goals with exceptional user experiences.",
     location: "San Francisco, CA",
@@ -1987,9 +2003,10 @@ Foster is based in San Francisco and is active in the Bay Area design community.
     id: "32",
     name: "Priya Kapoor",
     username: "priyakapoor",
+    email: "priyakapoor@example.com",
     role: "Director of Site Reliability",
     company: "Reliable Systems Inc",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGZpbnRlY2glMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzY4ODk3MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Ensuring 99.999% uptime for critical services through SRE best practices, automation, and building a culture of reliability engineering.",
     location: "Bangalore, India",
@@ -2051,9 +2068,10 @@ Kapoor is based in Bangalore and is active in India's tech community. She runs a
     id: "33",
     name: "Dr. Maya Osei",
     username: "mayaosei",
+    email: "mayaosei@example.com",
     role: "Head of AI Ethics",
     company: "Ethical AI Institute",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1744957326092-13cdeec574c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGNsb3VkJTIwYXJjaGl0ZWN0fGVufDF8fHx8MTc2ODg5NzI2OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Ensuring AI systems are fair, transparent, and accountable, developing frameworks that guide responsible AI development across industries.",
     location: "Accra, Ghana",
@@ -2116,9 +2134,10 @@ Osei is based in Accra and is deeply involved in Ghana's growing tech ecosystem.
     id: "34",
     name: "Jade Wong",
     username: "jadewong",
+    email: "jadewong@example.com",
     role: "VP of Threat Intelligence",
     company: "CyberDefense Systems",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1667842503541-965849144d33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRldm9wcyUyMGVuZ2luZWVyfGVufDF8fHx8MTc2ODg5NzI2OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Tracking and analyzing cyber threats globally, providing intelligence that helps organizations stay ahead of sophisticated threat actors.",
     location: "Singapore",
@@ -2180,9 +2199,10 @@ Wong is based in Singapore and is active in the Asia-Pacific cybersecurity commu
     id: "35",
     name: "Dr. Isabelle Laurent",
     username: "isabellelaurent",
+    email: "isabellelaurent@example.com",
     role: "Chief Research Scientist",
     company: "Quantum Data Labs",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1662595573446-3be7cfcb4b08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNlY3VyaXR5JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2ODg5NzI2OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Researching quantum algorithms for data analysis and optimization, bridging quantum computing with practical data science applications.",
     location: "Montreal, Canada",
@@ -2244,9 +2264,10 @@ Laurent is based in Montreal and is involved in Quebec's growing quantum technol
     id: "36",
     name: "Leila Mansour",
     username: "leilamansour",
+    email: "leilamansour@example.com",
     role: "Head of Payments Innovation",
     company: "Global Pay Solutions",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1581094271453-1298de1aa392?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHJvYm90aWNzJTIwZW5naW5lZXJ8ZW58MXx8fHwxNzY4ODk3MjY5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Transforming digital payments with innovative solutions that make transactions faster, cheaper, and more secure for billions of users worldwide.",
     location: "Dubai, UAE",
@@ -2309,9 +2330,10 @@ Mansour is based in Dubai and is active in the UAE's thriving fintech ecosystem.
     id: "37",
     name: "Tara O'Brien",
     username: "taraobrien",
+    email: "taraobrien@example.com",
     role: "Chief Product Officer",
     company: "Consumer Tech Co",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1706700502001-83a026ccd090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMG1lZGljYWwlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2ODg5NzI3MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Building consumer products that delight millions of users daily, combining innovative technology with intuitive design and strategic vision.",
     location: "Dublin, Ireland",
@@ -2373,9 +2395,10 @@ O'Brien is based in Dublin and is active in Ireland's growing tech ecosystem. Sh
     id: "38",
     name: "Sakura Tanaka",
     username: "sakuratanaka",
+    email: "sakuratanaka@example.com",
     role: "Director of Kubernetes Platform",
     company: "Container Solutions Inc",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1758685845906-6f705cde4fb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHF1YW50dW0lMjBzY2llbnRpc3R8ZW58MXx8fHwxNzY4ODk3MjcwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading Kubernetes platform engineering, enabling developers to deploy and scale applications efficiently on container orchestration systems.",
     location: "Osaka, Japan",
@@ -2437,9 +2460,10 @@ Tanaka is based in Osaka and is active in Japan's cloud native community. She or
     id: "39",
     name: "Dr. Anika Mueller",
     username: "anikamueller",
+    email: "anikamueller@example.com",
     role: "VP of Autonomous Systems",
     company: "RoboTech Industries",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1623578240928-9473b76272ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRpZ2l0YWwlMjB0cmFuc2Zvcm1hdGlvbnxlbnwxfHx8fDE3Njg4OTcyNzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Developing autonomous systems that operate safely in complex environments, from self-driving vehicles to warehouse automation robots.",
     location: "Munich, Germany",
@@ -2502,9 +2526,10 @@ Mueller is based in Munich and is deeply involved in Germany's robotics and auto
     id: "40",
     name: "Chioma Adeyemi",
     username: "chiomaadeyemi",
+    email: "chiomaadeyemi@example.com",
     role: "Head of Penetration Testing",
     company: "Offensive Security Labs",
-    imageUrl:
+    image:
       "https://images.unsplash.com/photo-1551727981-bfe3e86eaa00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHx3b21hbiUyMENFTyUyMHBvcnRyYWl0fGVufDF8fHx8MTc2ODg5NzI2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Leading ethical hacking teams that identify vulnerabilities before attackers do, protecting organizations through offensive security testing.",
     location: "Cape Town, South Africa",
