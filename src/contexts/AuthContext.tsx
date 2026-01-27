@@ -5,20 +5,18 @@ export interface UserProfile {
   id: string;
   email: string;
   username: string;
-  image: string;
   name: string;
-  role: string;
-  company: string;
-  location: string;
-  bio: string; // Short summary for cards/previews (1-2 sentences)
-  expertise: string[];
-  social?: {
-    website?: string;
-    linkedin?: string;
-    twitter?: string;
-  };
-  lastUpdated?: string;
-  content?: string; // Free-form markdown content for Wikipedia-style profile
+  image?: string | null;
+  bio?: string | null; // Short summary for cards/previews (1-2 sentences)
+  role?: string | null;
+  company?: string | null;
+  location?: string;
+  expertise?: string[] | null;
+  website?: string | null;
+  linkedin?: string | null;
+  twitter?: string | null;
+  lastUpdated?: string | null;
+  content?: string | null; // Free-form markdown content for Wikipedia-style profile
 }
 
 interface AuthContextType {
@@ -79,11 +77,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       location: "San Francisco, CA",
       bio: "Passionate about creating innovative solutions and empowering women in technology.",
       expertise: ["Software Development", "Leadership"],
-      social: {
-        website: "https://example.com",
-        linkedin: "https://linkedin.com/in/janesmith",
-        twitter: "@janesmith",
-      },
+      website: "https://example.com",
+      linkedin: "https://linkedin.com/in/janesmith",
+      twitter: "@janesmith",
+      lastUpdated: new Date().toISOString(),
     };
 
     setUser(mockUser);
@@ -110,10 +107,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       location: "",
       bio: "",
       expertise: [],
-      social: {
-        linkedin: "",
-        twitter: "",
-      },
+      linkedin: "",
+      twitter: "",
+      lastUpdated: new Date().toISOString(),
     };
 
     setUser(newUser);
