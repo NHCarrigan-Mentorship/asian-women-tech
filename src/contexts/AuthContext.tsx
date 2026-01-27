@@ -2,19 +2,19 @@ import { useState, useEffect, createContext, useContext } from "react";
 import { type ReactNode } from "react";
 
 export interface UserProfile {
-  id: string;
-  email: string;
-  username: string;
+  id?: string;
   name: string;
+  username: string;
+  email: string;
   image?: string | null;
   bio?: string | null; // Short summary for cards/previews (1-2 sentences)
   role?: string | null;
   company?: string | null;
   location?: string;
-  expertise?: string[] | null;
   website?: string | null;
   linkedin?: string | null;
   twitter?: string | null;
+  expertise?: string[] | null;
   lastUpdated?: string | null;
   content?: string | null; // Free-form markdown content for Wikipedia-style profile
 }
