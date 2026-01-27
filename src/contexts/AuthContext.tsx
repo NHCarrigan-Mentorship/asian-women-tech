@@ -1,23 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { type ReactNode } from "react";
-
-export interface UserProfile {
-  id?: string;
-  name: string;
-  username: string;
-  email: string;
-  image?: string | null;
-  bio?: string | null; // Short summary for cards/previews (1-2 sentences)
-  role?: string | null;
-  company?: string | null;
-  location?: string;
-  website?: string | null;
-  linkedin?: string | null;
-  twitter?: string | null;
-  expertise?: string[] | null;
-  lastUpdated?: string | null;
-  content?: string | null; // Free-form markdown content for Wikipedia-style profile
-}
+import type { UserProfile } from "../types/UserProfile";
 
 interface AuthContextType {
   user: UserProfile | null;
@@ -66,9 +49,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     // Create a mock user
     const mockUser: UserProfile = {
-      id: "user-" + Date.now(),
+      id: crypto.randomUUID(),
       username: "janesmith",
       email: "janesmith@example.com",
+      createdAt: new Date().toISOString(),
+      lastLogin: new Date().toISOString(),
+      lastUpdated: new Date().toISOString(),
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
       name: "Jane Smith",
@@ -80,7 +66,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       website: "https://example.com",
       linkedin: "https://linkedin.com/in/janesmith",
       twitter: "@janesmith",
-      lastUpdated: new Date().toISOString(),
     };
 
     setUser(mockUser);
@@ -96,11 +81,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     const newUser: UserProfile = {
-      id: "user-" + Date.now(),
+      id: crypto.randomUUID(),
       username,
       email,
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
+      createdAt: new Date().toISOString(),
+      lastLogin: new Date().toISOString(),
+      lastUpdated: new Date().toISOString(),
+      image: "",
       name,
       role: "",
       company: "",
@@ -109,7 +96,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       expertise: [],
       linkedin: "",
       twitter: "",
-      lastUpdated: new Date().toISOString(),
     };
 
     setUser(newUser);
