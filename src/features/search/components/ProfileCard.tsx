@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Briefcase, MapPin } from "lucide-react";
-import type { UserProfile } from "../../../contexts/AuthContext";
+import type { UserProfile } from "../../../types/UserProfile";
+import ImageWithFallback from "../../../components/ui/ImageWithFallback";
 
 interface ProfileCardProps {
   profile: UserProfile;
@@ -16,7 +17,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
         {/* Profile Image - Thumbnail */}
         <div className="flex-shrink-0">
           <div className="w-32 h-32 sm:w-24 sm:h-24 overflow-hidden rounded border border-pink-200 bg-gray-100">
-            <img
+            <ImageWithFallback
               src={profile.image}
               alt={profile.name}
               className="w-full h-full object-cover"
@@ -49,21 +50,23 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
           </p>
 
           {/* Expertise Tags */}
-          <div className="flex flex-wrap gap-1.5">
-            {profile.expertise.slice(0, 4).map((exp, index) => (
-              <span
-                key={index}
-                className="px-2 py-0.5 bg-white border border-pink-200 text-pink-700 rounded text-xs"
-              >
-                {exp}
-              </span>
-            ))}
-            {profile.expertise.length > 4 && (
-              <span className="px-2 py-0.5 bg-white border border-pink-200 text-gray-600 rounded text-xs">
-                +{profile.expertise.length - 4} more
-              </span>
-            )}
-          </div>
+          {profile?.expertise && (
+            <div className="flex flex-wrap gap-1.5">
+              {profile.expertise.slice(0, 4).map((exp, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-0.5 bg-white border border-pink-200 text-pink-700 rounded text-xs"
+                >
+                  {exp}
+                </span>
+              ))}
+              {profile.expertise.length > 4 && (
+                <span className="px-2 py-0.5 bg-white border border-pink-200 text-gray-600 rounded text-xs">
+                  +{profile.expertise.length - 4} more
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </Link>
