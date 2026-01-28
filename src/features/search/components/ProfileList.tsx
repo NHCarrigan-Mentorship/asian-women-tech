@@ -1,8 +1,8 @@
-import type { Profile } from "../../../data/profiles";
+import type { UserProfile } from "../../../types/UserProfile";
 import ProfileCard from "./ProfileCard";
 
 interface ProfileListProps {
-  filteredProfiles: Profile[];
+  filteredProfiles: UserProfile[];
 }
 
 export default function ProfileList({ filteredProfiles }: ProfileListProps) {

@@ -1,11 +1,11 @@
 import EmptyProfiles from "./EmptyProfiles";
 import ProfileList from "../components/ProfileList";
-import type { Profile } from "../../../data/profiles";
+import type { UserProfile } from "../../../types/UserProfile";
 import { useState, useEffect, useMemo } from "react";
 import Pagination from "../../../components/ui/Pagination";
 
 interface FilteredProfilesProps {
-  filteredProfiles: Profile[];
+  filteredProfiles: UserProfile[];
   onClearFilters: () => void;
   profilesPerPage?: number;
 }
