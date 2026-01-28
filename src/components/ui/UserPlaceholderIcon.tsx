@@ -4,8 +4,8 @@ export default function UserPlaceholderIcon() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 200 200"
-        width="100"
-        height="100"
+        width="100%"
+        height="100%"
       >
         <rect width="200" height="200" fill="#fce7f3" />
         <circle cx="100" cy="75" r="35" fill="#ec4899" />

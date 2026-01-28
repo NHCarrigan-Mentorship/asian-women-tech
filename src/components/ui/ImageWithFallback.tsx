@@ -38,6 +38,7 @@ export default function ImageWithFallback(
           alt="Error loading image"
           {...rest}
           data-original-url={src}
+          className="w-100"
         />
       </div>
     </div>
