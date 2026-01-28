@@ -18,7 +18,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
         <div className="flex-shrink-0">
           <div className="w-32 h-32 sm:w-24 sm:h-24 overflow-hidden rounded border border-pink-200 bg-gray-100">
             <ImageWithFallback
-              src={profile.image}
+              src={profile.image ? profile.image : ""}
               alt={profile.name}
               className="w-full h-full object-cover"
             />
