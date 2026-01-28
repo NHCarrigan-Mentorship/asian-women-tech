@@ -1,4 +1,4 @@
-import type { UserProfile } from "../../../contexts/AuthContext";
+import type { UserProfile } from "../../../types/UserProfile";
 import {
   Award,
   Building2,
@@ -17,6 +17,30 @@ export default function ProfileInfobox({
   profile,
   isOwner,
 }: ProfileInfoboxProps) {
+  const socialClassName = "w-5 h-5 text-pink-600";
+
+  const socials = [
+    {
+      key: "linkedin",
+      label: "Linkedin",
+      icon: <Linkedin className={socialClassName} />,
+    },
+    {
+      key: "twitter",
+      label: "Twitter",
+      icon: <Twitter className={socialClassName} />,
+    },
+    {
+      key: "website",
+      label: "website",
+      icon: <Globe className={socialClassName} />,
+    },
+  ];
+
+  const availableSocials = socials.filter(
+    ({ key }) => profile && profile[key as keyof UserProfile],
+  );
+
   return (
     <>
       <aside className="md:w-72 lg:w-80 flex-shrink-0">
@@ -25,7 +49,7 @@ export default function ProfileInfobox({
           {/* Profile Image */}
           <div className="aspect-square overflow-hidden bg-gray-100">
             <img
-              src={profile?.image}
+              src={profile?.image ? profile.image : ""}
               alt={profile?.name}
               className="w-full h-full object-cover"
             />
@@ -50,7 +74,6 @@ export default function ProfileInfobox({
                   <div className="text-gray-900">{profile?.role}</div>
                 </div>
               </div>
-
               {/* Profile Company */}
               <div>
                 <div className="text-pink-700 font-semibold">
@@ -61,7 +84,6 @@ export default function ProfileInfobox({
                   <div className="text-gray-900">{profile?.company}</div>
                 </div>
               </div>
-
               {/* Profile Location */}
               <div>
                 <div className="text-pink-700 font-semibold">Location</div>
@@ -70,48 +92,35 @@ export default function ProfileInfobox({
                   <div className="text-gray-900">{profile?.location}</div>
                 </div>
               </div>
-
               {/* Profile Links */}
-              <div>
-                <div className="mb-2 text-pink-700 font-semibold">Links</div>
-                <div className="flex items-center gap-3">
-                  {profile?.social &&
-                    Object.entries(profile.social).map(([platform, url]) => {
-                      if (!url) return null;
-
-                      const socialConfig = {
-                        linkedin: { icon: Linkedin, label: "Linkedin" },
-                        twitter: { icon: Twitter, label: "Twitter" },
-                        website: { icon: Globe, label: "Website" },
-                      };
-
-                      const config =
-                        socialConfig[platform as keyof typeof socialConfig];
-                      const Icon = config.icon;
-
+              {availableSocials.length > 0 && (
+                <div>
+                  <div className="mb-2 text-pink-700 font-semibold">Links</div>
+                  <div className="flex items-center gap-3">
+                    {availableSocials.map(({ key, label, icon }) => {
                       return (
                         <a
-                          href={url}
-                          aria-label={`${profile.name}'s ${platform} profile`}
-                          className="flex items-center justify-center min-w-[44px] min-h-[44px] border border-pink-200 bg-white rounded hover:bg-pink-100 transition-colors"
+                          href={profile![key as keyof UserProfile] as string}
+                          key={key}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="min-w-[44px] min-h-[44px] bg-white border border-pink-200 hover:bg-pink-100 rounded flex items-center justify-center transition-colors"
                         >
-                          <Icon
-                            className="w-5 h-5 text-pink-700"
-                            aria-hidden="true"
-                          />
+                          {icon}
+                          <span className="sr-only">{label}</span>
                         </a>
                       );
                     })}
+                  </div>
                 </div>
-              </div>
-
+              )}{" "}
               {/* Profile Expertise */}
               <div>
                 <div className="mb-2 text-pink-700 font-semibold">
                   Expertise
                 </div>
                 <div className="flex items-center flex-wrap gap-1">
-                  {profile?.expertise.map((expertise) => {
+                  {profile?.expertise?.map((expertise) => {
                     return (
                       <span className="px-2 py-0.5 border border-pink-200 bg-white text-pink-700 text-xs rounded hover:bg-pink-100 transition-colors">
                         {expertise}
