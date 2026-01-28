@@ -1,3 +1,4 @@
+import ImageWithFallback from "../../ui/ImageWithFallback";
 import type { UserProfile } from "../../../types/UserProfile";
 import {
   Award,
@@ -48,7 +49,7 @@ export default function ProfileInfobox({
           {isOwner && <p>You're the owner</p>}
           {/* Profile Image */}
           <div className="aspect-square overflow-hidden bg-gray-100">
-            <img
+            <ImageWithFallback
               src={profile?.image ? profile.image : ""}
               alt={profile?.name}
               className="w-full h-full object-cover"
@@ -113,7 +114,7 @@ export default function ProfileInfobox({
                     })}
                   </div>
                 </div>
-              )}{" "}
+              )}
               {/* Profile Expertise */}
               <div>
                 <div className="mb-2 text-pink-700 font-semibold">
