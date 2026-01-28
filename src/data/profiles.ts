@@ -9,7 +9,8 @@ export const profiles: UserProfile[] = [
     createdAt: new Date().toISOString(),
     lastLogin: new Date().toISOString(),
     lastUpdated: new Date().toISOString(),
-    image: "https://images.unsplash.com/photo-1562935345-5080389daccd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwZXhlY3V0aXZlfGVufDF8fHx8MTc2ODgwNTIzMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image:
+      "https://images.unsplash.com/photo-1562935345-5080389daccd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwZXhlY3V0aXZlfGVufDF8fHx8MTc2ODgwNTIzMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     bio: "Pioneering artificial intelligence research with a focus on ethical AI development and implementation in healthcare technology.",
     role: "Chief AI Officer",
     company: "TechVision AI",
