@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Clock } from "lucide-react";
-import type { UserProfile } from "../../../contexts/AuthContext";
+import type { UserProfile } from "../../../types/UserProfile";
 
 interface ProfileContentProps {
   isOwner: boolean;
@@ -12,13 +12,22 @@ export default function ProfileContent({
   profile,
   isOwner,
 }: ProfileContentProps) {
+  const isoString = profile?.lastUpdated;
+
+  const formattedDate = isoString
+    ? new Date(isoString).toLocaleString("en-US", {
+        month: "long",
+        year: "numeric",
+      })
+    : undefined;
+
   return (
     <article className="prose prose-gray max-w-none">
       {isOwner && <p>You're the owner</p>}
       {/* Profile Last Updated */}
       <div className="flex items-center gap-1.5 mb-4 text-sm text-gray-600 italic font-medium">
         <Clock className="w-3.5 h-3.5" />
-        <span>Last updated: {profile?.lastUpdated}</span>
+        <span>Last updated: {formattedDate}</span>
       </div>
       {/* Profile Content */}
       {profile?.content ? (
