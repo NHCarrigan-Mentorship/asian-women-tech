@@ -116,20 +116,20 @@ export default function ProfileInfobox({
                 </div>
               )}
               {/* Profile Expertise */}
-              <div>
-                <div className="mb-2 text-pink-700 font-semibold">
-                  Expertise
-                </div>
-                <div className="flex items-center flex-wrap gap-1">
-                  {profile?.expertise?.map((expertise) => {
-                    return (
+              {profile?.expertise && (
+                <div>
+                  <div className="mb-2 text-pink-700 font-semibold">
+                    Expertise
+                  </div>
+                  <div className="flex items-center flex-wrap gap-1">
+                    {profile.expertise.map((expertise) => (
                       <span className="px-2 py-0.5 border border-pink-200 bg-white text-pink-700 text-xs rounded hover:bg-pink-100 transition-colors">
                         {expertise}
                       </span>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
