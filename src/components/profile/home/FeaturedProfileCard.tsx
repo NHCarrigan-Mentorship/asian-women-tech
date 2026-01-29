@@ -18,9 +18,7 @@ export default function FeaturedProfileCard({
   return (
     <div className="grid md:grid-cols-3 gap-0">
       {/* Image */}
-      <div
-        className={`md:col-span-1 relative border-r-2 border-pink-200 ${imageStyle}`}
-      >
+      <div className={`md:col-span-1 relative border-r-2 border-pink-200 ${imageStyle}`}>
         <ImageWithFallback
           src={profile?.image ? profile.image : ""}
           alt={profile?.name}

@@ -20,7 +20,7 @@ export default function ImageWithFallback(
         className={`inline-block bg-pink-50 ${className ?? ""}`}
         style={style}
       >
-        <div className="flex items-center justify-center w-full h-full">
+        <div className="w-full h-full">
           <UserPlaceholderIcon />
         </div>
       </div>
