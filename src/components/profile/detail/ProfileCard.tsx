@@ -2,11 +2,13 @@ import ProfileContent from "./ProfileContent";
 import ProfileInfobox from "./ProfileInfobox";
 import { useAuth } from "../../../contexts/AuthContext";
 import { useParams } from "react-router-dom";
-import { profiles } from "../../../data/profiles";
+import useProfiles from "../../../hooks/useProfiles";
 
 export default function ProfileCard() {
   const { username } = useParams();
   const { isAuthenticated, user } = useAuth();
+
+  const { profiles } = useProfiles();
 
   const currentProfile = profiles.find(
     (profile) => profile.username === username,
