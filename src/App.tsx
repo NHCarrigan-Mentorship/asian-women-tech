@@ -6,21 +6,24 @@ import ProfileDetail from "./pages/main/ProfileDetail";
 import Login from "./pages/auth/Login";
 import Search from "./pages/main/Search";
 import SignUp from "./pages/auth/SignUp";
+import { ProfilesProvider } from "./contexts/ProfilesContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Toaster position="top-center" richColors />
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/:username" element={<ProfileDetail />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ProfilesProvider>
+      <BrowserRouter>
+        <Toaster position="top-center" richColors />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/:username" element={<ProfileDetail />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ProfilesProvider>
   );
 }
 
