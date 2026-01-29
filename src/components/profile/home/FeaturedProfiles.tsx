@@ -8,12 +8,13 @@ import {
   ChevronsRight,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { profiles } from "../../../data/profiles";
+import { useProfilesContext } from "../../../contexts/ProfilesContext";
 import FeaturedProfileCard from "./FeaturedProfileCard";
 import Pagination from "../../ui/Pagination";
 
 export default function FeaturedProfiles() {
   const FEATURED_COUNT = 5;
+  const { profiles } = useProfilesContext();
   const featuredProfiles = profiles.slice(0, FEATURED_COUNT);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
