@@ -4,21 +4,27 @@ import SearchHeader from "../../features/search/components/SearchHeader";
 import FilteredProfiles from "../../features/search/results/FilteredProfiles";
 import ProfileSearchBar from "../../features/search/components/ProfileSearchBar";
 import MobileFilterModal from "../../features/search/responsive/MobileFilterModal";
-import { profiles } from "../../data/profiles";
+import { useProfilesContext } from "../../contexts/ProfilesContext";
 
 export default function Search() {
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState("");
   const [selectedExpertise, setSelectedExpertise] = useState<string[]>([]);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const ctaRef = useRef<HTMLDivElement>(null);
 
+  const { profiles } = useProfilesContext();
+
+  console.log(profiles);
+
   // Get all unique expertise areas
   const allExpertise = useMemo(() => {
     const expertiseSet = new Set<string>();
-    profiles.forEach((profile) =>
-      profile.expertise.forEach((expertise) => {
-        expertiseSet.add(expertise);
-      }),
+    profiles.forEach(
+      (profile) =>
+        profile?.expertise &&
+        profile.expertise.forEach((expertise) => {
+          expertiseSet.add(expertise);
+        }),
     );
     return Array.from(expertiseSet).sort();
   }, []);
@@ -27,14 +33,20 @@ export default function Search() {
   const filteredProfiles = useMemo(() => {
     return profiles.filter((profile) => {
       const matchesSearch =
-        profile.name.toLowerCase().includes(search.toLowerCase()) ||
-        profile.role.toLowerCase().includes(search.toLowerCase()) ||
-        profile.company.toLowerCase().includes(search.toLowerCase()) ||
-        profile.bio.toLowerCase().includes(search.toLowerCase());
+        search != ""
+          ? profile?.name.toLowerCase().includes(search.toLowerCase()) ||
+            (profile?.role &&
+              profile?.role.toLowerCase().includes(search.toLowerCase())) ||
+            (profile?.company &&
+              profile?.company.toLowerCase().includes(search.toLowerCase())) ||
+            (profile?.bio &&
+              profile?.bio.toLowerCase().includes(search.toLowerCase()))
+          : true;
 
       const matchesExpertise =
         selectedExpertise.length === 0 ||
-        profile.expertise.some((exp) => selectedExpertise.includes(exp));
+        (profile?.expertise &&
+          profile?.expertise.some((exp) => selectedExpertise.includes(exp)));
 
       return matchesSearch && matchesExpertise;
     });
