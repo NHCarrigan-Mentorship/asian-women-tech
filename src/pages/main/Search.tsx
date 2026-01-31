@@ -5,6 +5,7 @@ import FilteredProfiles from "../../features/search/results/FilteredProfiles";
 import ProfileSearchBar from "../../features/search/components/ProfileSearchBar";
 import MobileFilterModal from "../../features/search/responsive/MobileFilterModal";
 import { useProfilesContext } from "../../contexts/ProfilesContext";
+import LoadingState from "../../components/ui/LoadingState";
 
 export default function Search() {
   const [search, setSearch] = useState("");
@@ -12,7 +13,7 @@ export default function Search() {
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  const { profiles } = useProfilesContext();
+  const { profiles, loading } = useProfilesContext();
 
   console.log(profiles);
 
@@ -81,10 +82,16 @@ export default function Search() {
         onOpenMobileFilter={() => setShowMobileFilter(true)}
       />
 
-      <FilteredProfiles
-        filteredProfiles={filteredProfiles}
-        onClearFilters={clearAllFilters}
-      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        {loading ? (
+          <LoadingState message="Loading profiles..." />
+        ) : (
+          <FilteredProfiles
+            filteredProfiles={filteredProfiles}
+            onClearFilters={clearAllFilters}
+          />
+        )}
+      </div>
 
       <div ref={ctaRef}>
         <CallToAction />

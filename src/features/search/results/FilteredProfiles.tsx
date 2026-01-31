@@ -36,22 +36,18 @@ export default function FilteredProfiles({
   }, [currentPage]);
 
   return (
-    <div className="w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {filteredProfiles.length === 0 ? (
-          <EmptyProfiles onClearFilters={onClearFilters} />
-        ) : (
-          <ProfileList filteredProfiles={paginatedProfiles} />
-        )}
-      </div>
-      {/* Pagination */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        />
-      </div>
+    <div className="py-4">
+      {filteredProfiles.length === 0 ? (
+        <EmptyProfiles onClearFilters={onClearFilters} />
+      ) : (
+        <ProfileList filteredProfiles={paginatedProfiles} />
+      )}
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </div>
   );
 }
