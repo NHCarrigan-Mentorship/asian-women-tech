@@ -1,3 +1,4 @@
+import camelcaseKeys from "camelcase-keys";
 import { useState, useEffect } from "react";
 import supabase from "../config/supabaseClient";
 import type { UserProfile } from "../types/UserProfile";
@@ -17,7 +18,7 @@ export default function useProfiles() {
           setError(error);
           console.error(error);
         } else {
-          setProfiles(data);
+          setProfiles(camelcaseKeys(data, { deep: true }));
         }
       } catch (err) {
         setError(err as Error);

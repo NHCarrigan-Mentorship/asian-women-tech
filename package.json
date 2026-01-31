@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.91.1",
     "@tailwindcss/vite": "^4.1.18",
+    "camelcase-keys": "^10.0.2",
     "fs": "0.0.1-security",
     "lucide-react": "^0.562.0",
     "motion": "^12.23.26",
@@ -21,6 +22,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.11.0",
     "remark-gfm": "^4.0.1",
+    "snakecase-keys": "^9.0.2",
     "sonner": "^2.0.7",
     "tailwindcss": "^4.1.18"
   },

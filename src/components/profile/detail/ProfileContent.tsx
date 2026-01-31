@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import snakecaseKeys from "snakecase-keys";
 import remarkGfm from "remark-gfm";
 import { Clock } from "lucide-react";
 import type { UserProfile } from "../../../types/UserProfile";
@@ -12,7 +13,17 @@ export default function ProfileContent({
   profile,
   isOwner,
 }: ProfileContentProps) {
-  const isoString = profile?.lastUpdated;
+  const supabaseProfile = profile
+    ? snakecaseKeys(profile as unknown as Record<string, unknown>, {
+        deep: true,
+      })
+    : undefined;
+
+  const isoString =
+    supabaseProfile?.last_updated === "string" ||
+    supabaseProfile?.last_updated === "number"
+      ? supabaseProfile.last_updated
+      : undefined;
 
   const formattedDate = isoString
     ? new Date(isoString).toLocaleString("en-US", {
